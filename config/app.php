@@ -168,6 +168,8 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
+        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+        App\Shopify\ServiceProvider::class,
 
         /*
          * Application Service Providers...
