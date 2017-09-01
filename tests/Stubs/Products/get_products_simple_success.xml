@@ -1,0 +1,175 @@
+<ProductsSimple xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Type="Array" TotalRows="2931" PageStartRow="1" PageRows="10">
+    <ProductSimple>
+        <Id>31321</Id>
+        <RowNumber>1</RowNumber>
+        <Code>10005KNDE</Code>
+        <Name>IMOGEN CF CABLE KNIT</Name>
+        <Description>QUALITY CONFIRMED: 1/2NM 85% ACRYLIC 15% WOOL SLUB YARN
+
+            TIGHT BUY
+
+            APRIL: MID GREY MARLE (770)</Description>
+        <OriginalPriceFrom>109.95</OriginalPriceFrom>
+        <PriceFrom>50</PriceFrom>
+        <OriginalPriceTo>109.95</OriginalPriceTo>
+        <PriceTo>50</PriceTo>
+        <AvailableStock>0</AvailableStock>
+        <UpdateTimeStamp>2017-06-07T15:06:26</UpdateTimeStamp>
+    </ProductSimple>
+    <ProductSimple>
+        <Id>30726</Id>
+        <RowNumber>2</RowNumber>
+        <Code>10006ACDE</Code>
+        <Name>LUXE TEXTURED CAP</Name>
+        <Description />
+        <OriginalPriceFrom>39.95</OriginalPriceFrom>
+        <PriceFrom>20</PriceFrom>
+        <OriginalPriceTo>109.95</OriginalPriceTo>
+        <PriceTo>20</PriceTo>
+        <AvailableStock>0</AvailableStock>
+        <UpdateTimeStamp>2017-06-07T15:09:35</UpdateTimeStamp>
+    </ProductSimple>
+    <ProductSimple>
+        <Id>30728</Id>
+        <RowNumber>3</RowNumber>
+        <Code>10007ACDE</Code>
+        <Name>GEOMETRIC FEDORA</Name>
+        <Description />
+        <OriginalPriceFrom>39.95</OriginalPriceFrom>
+        <PriceFrom>10</PriceFrom>
+        <OriginalPriceTo>109.95</OriginalPriceTo>
+        <PriceTo>10</PriceTo>
+        <AvailableStock>0</AvailableStock>
+        <UpdateTimeStamp>2017-06-07T15:33:07</UpdateTimeStamp>
+    </ProductSimple>
+    <ProductSimple>
+        <Id>30704</Id>
+        <RowNumber>4</RowNumber>
+        <Code>10008AWDE</Code>
+        <Name>BASEBALL NUMBER TEE</Name>
+        <Description>FABRICATION: 95% VISCOSE, 5% ELASTANE, 190G JERSEY
+
+            DEC: MID GREY MARLE/WHITE PRINT DROP 2
+
+
+            BLOCK: 9153 V-NECK TEE</Description>
+        <OriginalPriceFrom>49.95</OriginalPriceFrom>
+        <PriceFrom>20</PriceFrom>
+        <OriginalPriceTo>109.95</OriginalPriceTo>
+        <PriceTo>20</PriceTo>
+        <AvailableStock>0</AvailableStock>
+        <UpdateTimeStamp>2017-06-07T15:09:58</UpdateTimeStamp>
+    </ProductSimple>
+    <ProductSimple>
+        <Id>30727</Id>
+        <RowNumber>5</RowNumber>
+        <Code>10010TWDE</Code>
+        <Name>HIGH NECK TOP</Name>
+        <Description>QUALITY CONFIRMED: 100% RUNNING VISCOSE CRINKLE
+
+            BUY TYPE: ALL STORE
+
+            COLOURS:
+            DEC D1: BLACK, KHAKI</Description>
+        <OriginalPriceFrom>69.95</OriginalPriceFrom>
+        <PriceFrom>35</PriceFrom>
+        <OriginalPriceTo>109.95</OriginalPriceTo>
+        <PriceTo>35</PriceTo>
+        <AvailableStock>0</AvailableStock>
+        <UpdateTimeStamp>2017-06-07T15:08:51</UpdateTimeStamp>
+    </ProductSimple>
+    <ProductSimple>
+        <Id>30870</Id>
+        <RowNumber>6</RowNumber>
+        <Code>10011DWDE</Code>
+        <Name>MEXICO PRINT DRAWSTRING DRESS</Name>
+        <Description>QUALITY CONFIRMED: 100% VISCOSE CREPE WITH FLAT FINISH
+            100% FLAT VISCOSE LINING
+            LIABILITY FROM 9363DWDE SLEEVELESS SHIFT DRESS
+
+            BUY TYPE: ALL STORE
+
+            COLOURS:
+            DEC: PEACH PINK STRIPE</Description>
+        <OriginalPriceFrom>129.95</OriginalPriceFrom>
+        <PriceFrom>65</PriceFrom>
+        <OriginalPriceTo>129.95</OriginalPriceTo>
+        <PriceTo>65</PriceTo>
+        <AvailableStock>0</AvailableStock>
+        <UpdateTimeStamp>2017-06-07T15:31:30</UpdateTimeStamp>
+    </ProductSimple>
+    <ProductSimple>
+        <Id>30824</Id>
+        <RowNumber>7</RowNumber>
+        <Code>10012AWDE</Code>
+        <Name>LUXE FITTED CREW NECK TEE</Name>
+        <Description>FABRIC QUALITY: 95% COTTON 5% ELASTANE 1X1 RIB 200G
+
+            BUY TYPE: ALL STORE
+
+            FEB: BLACK, WHITE
+            MAR-JUNE: BLACK, WHITE, LIGHT GREY MARLE
+
+        </Description>
+        <OriginalPriceFrom>39.95</OriginalPriceFrom>
+        <PriceFrom>39.95</PriceFrom>
+        <OriginalPriceTo>129.95</OriginalPriceTo>
+        <PriceTo>39.95</PriceTo>
+        <AvailableStock>274</AvailableStock>
+        <UpdateTimeStamp>2017-06-07T17:42:48</UpdateTimeStamp>
+    </ProductSimple>
+    <ProductSimple>
+        <Id>30724</Id>
+        <RowNumber>8</RowNumber>
+        <Code>10013PWDE</Code>
+        <Name>LUXE PRINTED DROP CROTCH PANT</Name>
+        <Description>FABRIC QUALITY: 95% COTTON 5% ELASTANE 250G (220G KHAKI CAMO &amp; TIE DYE)
+
+            DEC: TIE DYE
+            FEB: CAMO PRINT
+            JUL 1 (1200u)- AUG 1 (600u): GREY CAMOUFLAGE
+            SEPT-OCT: ZEBRA PRINT (SEPT 1800u) OCT no buy
+            FEB: DARK CAMO</Description>
+        <OriginalPriceFrom>69.95</OriginalPriceFrom>
+        <PriceFrom>34.95</PriceFrom>
+        <OriginalPriceTo>129.95</OriginalPriceTo>
+        <PriceTo>69.95</PriceTo>
+        <AvailableStock>51</AvailableStock>
+        <UpdateTimeStamp>2017-07-12T09:30:11</UpdateTimeStamp>
+    </ProductSimple>
+    <ProductSimple>
+        <Id>30725</Id>
+        <RowNumber>9</RowNumber>
+        <Code>10014SCDE</Code>
+        <Name>LIGHTWEIGHT JERSEY SCARF</Name>
+        <Description>FABRIC QUALITY: VISOCOSE
+
+
+            LUXE BASICS</Description>
+        <OriginalPriceFrom>39.95</OriginalPriceFrom>
+        <PriceFrom>20</PriceFrom>
+        <OriginalPriceTo>129.95</OriginalPriceTo>
+        <PriceTo>20</PriceTo>
+        <AvailableStock>0</AvailableStock>
+        <UpdateTimeStamp>2017-06-07T15:09:34</UpdateTimeStamp>
+    </ProductSimple>
+    <ProductSimple>
+        <Id>30837</Id>
+        <RowNumber>10</RowNumber>
+        <Code>10015PWDE</Code>
+        <Name>LUXE RUNNING LEGGING</Name>
+        <Description>FABRIC QUALITY: 95% COTTON 5% ELASTANE 200G
+
+            BUY TYPE: ALL STORE
+
+            FLOW FEB - JUNE: BLACK, LIGHT GREY MARLE
+
+            O/S: TNA</Description>
+        <OriginalPriceFrom>39.95</OriginalPriceFrom>
+        <PriceFrom>39.95</PriceFrom>
+        <OriginalPriceTo>129.95</OriginalPriceTo>
+        <PriceTo>39.95</PriceTo>
+        <AvailableStock>232</AvailableStock>
+        <UpdateTimeStamp>2017-06-07T15:08:03</UpdateTimeStamp>
+    </ProductSimple>
+</ProductsSimple>

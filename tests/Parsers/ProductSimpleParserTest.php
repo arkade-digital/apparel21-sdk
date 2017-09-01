@@ -1,0 +1,28 @@
+<?php
+
+namespace Arkade\Apparel21\Parsers;
+
+use Carbon\Carbon;
+use Arkade\Apparel21\Entities;
+use PHPUnit\Framework\TestCase;
+
+class ProductSimpleParserTest extends TestCase
+{
+    /**
+     * @test
+     */
+    public function returns_populated_product_entity()
+    {
+        $product = (new ProductSimpleParser)->parse(
+            (new PayloadParser)->parse(file_get_contents(__DIR__.'/../Stubs/Products/product_simple.xml'))
+        );
+
+        $this->assertInstanceOf(Entities\Product::class, $product);
+
+        $this->assertEquals('31321', $product->getIdentifier('ap21_id'));
+        $this->assertEquals('10005KNDE', $product->getIdentifier('ap21_code'));
+        $this->assertEquals('IMOGEN CF CABLE KNIT', $product->getName());
+        $this->assertEquals('TEST DESCRIPTION', $product->getDescription());
+        $this->assertEquals(Carbon::parse('2017-06-07 15:06:26'), $product->getUpdatedAt());
+    }
+}

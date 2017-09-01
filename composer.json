@@ -1,0 +1,25 @@
+{
+    "name": "arkade/apparel21-sdk",
+    "description": "PHP SDK for the Apparel21 API",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Arkade\\Apparel21\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Arkade\\Apparel21\\": "tests/"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "nesbot/carbon": "^1.22",
+        "illuminate/support": "^5.2",
+        "psr/http-message": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.1"
+    }
+}
