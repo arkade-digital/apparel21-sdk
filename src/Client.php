@@ -139,7 +139,7 @@ class Client
      */
     public function getReferenceResolver()
     {
-        return $this->referenceResolver ?: $this->referenceResolver = new Resolvers\ReferenceResolver;
+        return $this->referenceResolver ?: $this->referenceResolver = new Resolvers\ReferenceResolver($this);
     }
 
     /**
