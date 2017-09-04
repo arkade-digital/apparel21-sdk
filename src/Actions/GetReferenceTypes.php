@@ -9,7 +9,7 @@ use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-class GetReferenceTypes implements Contracts\Action
+class GetReferenceTypes extends BaseAction implements Contracts\Action
 {
     /**
      * Build a PSR-7 request.

@@ -9,7 +9,7 @@ use Arkade\Apparel21\Contracts;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-class GetProduct implements Contracts\Action
+class GetProduct extends BaseAction implements Contracts\Action
 {
     /**
      * Apparel21 product ID.
@@ -46,8 +46,8 @@ class GetProduct implements Contracts\Action
      */
     public function response(ResponseInterface $response)
     {
-        return (new Parsers\ProductParser)->parse(
-            (new Parsers\PayloadParser)->parse((string) $response->getBody())
-        );
+        return (new Parsers\ProductParser)
+            ->setReferenceResolver($this->getClient() ? $this->getClient()->getReferenceResolver() : null)
+            ->parse((new Parsers\PayloadParser)->parse((string) $response->getBody()));
     }
 }

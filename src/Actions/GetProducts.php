@@ -10,7 +10,7 @@ use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-class GetProducts implements Contracts\Action
+class GetProducts extends BaseAction implements Contracts\Action
 {
     /**
      * How many records to skip.

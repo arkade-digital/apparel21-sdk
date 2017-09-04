@@ -10,7 +10,7 @@ use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-class GetReferences implements Contracts\Action
+class GetReferences extends BaseAction implements Contracts\Action
 {
     /**
      * Reference type.
@@ -55,7 +55,14 @@ class GetReferences implements Contracts\Action
             ->setName((string) $data->ReferenceTypeName);
 
         foreach ($data->References->Reference as $reference) {
-            $referenceType->getReferences()->push((new Parsers\ReferenceParser)->parse($reference));
+
+            $reference = (new Parsers\ReferenceParser)->parse($reference);
+
+            $referenceType->getReferences()->offsetSet(
+                $reference->getId(),
+                $reference
+            );
+
         }
 
         return $referenceType;

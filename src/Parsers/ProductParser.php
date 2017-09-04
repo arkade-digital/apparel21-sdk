@@ -5,10 +5,31 @@ namespace Arkade\Apparel21\Parsers;
 use Carbon\Carbon;
 use SimpleXMLElement;
 use Arkade\Apparel21\Entities;
+use Arkade\Apparel21\Contracts;
 use Illuminate\Support\Collection;
 
 class ProductParser
 {
+    /**
+     * Reference resolver.
+     *
+     * @var Contracts\ReferenceResolver
+     */
+    protected $referenceResolver;
+
+    /**
+     * Set reference resolver.
+     *
+     * @param  Contracts\ReferenceResolver|null $referenceResolver
+     * @return static
+     */
+    public function setReferenceResolver(Contracts\ReferenceResolver $referenceResolver = null)
+    {
+        $this->referenceResolver = $referenceResolver;
+
+        return $this;
+    }
+
     /**
      * Parse the given SimpleXmlElement to a Product entity.
      *
@@ -26,6 +47,8 @@ class ProductParser
             ->setName((string) $payload->Name)
             ->setDescription((string) $payload->Description)
             ->setUpdatedAt(Carbon::parse((string) $payload->UpdateTimeStamp));
+
+        $this->parseReferences($product, $payload->References);
 
         foreach ($payload->Clrs->Clr as $colour) {
             foreach ($colour->SKUs->SKU as $sku) {
@@ -52,5 +75,29 @@ class ProductParser
         }
 
         return $product;
+    }
+
+    /**
+     * Parse references to attributes on product.
+     *
+     * @param Entities\Product $product
+     * @param SimpleXMLElement $payload
+     */
+    protected function parseReferences(Entities\Product $product, SimpleXMLElement $payload)
+    {
+        if (! $this->referenceResolver) return;
+
+        foreach ($payload->Reference as $r) {
+
+            $reference = $this->referenceResolver->resolveFromIds(
+                (string) $r->ReferenceTypeId,
+                (string) $r->Id
+            );
+
+            if ($reference) {
+                $product->getAttributes()->offsetSet('ap21_'.$reference->getType()->getCode(), $reference->getCode());
+            }
+
+        }
     }
 }

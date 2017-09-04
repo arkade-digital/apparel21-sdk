@@ -2,7 +2,7 @@
 
 namespace Arkade\Apparel21\Exceptions;
 
-class UnauthorizedException extends Apparel21Exception
+class Apparel21Exception extends \Exception
 {
     //
 }

@@ -41,4 +41,16 @@ class GetReferencesTest extends TestCase
         $this->assertEquals('ACTIVEWEAR', $referenceType->getReferences()->first()->getCode());
         $this->assertEquals('Activewear', $referenceType->getReferences()->first()->getName());
     }
+
+    /**
+     * @test
+     */
+    public function references_collection_is_keyed_by_id()
+    {
+        $referenceType = (new GetReferences((new Entities\ReferenceType)->setId('123')))->response(
+            new Response(200, [], file_get_contents(__DIR__.'/../Stubs/References/get_references_success.xml'))
+        );
+
+        $this->assertEquals('36167', $referenceType->getReferences()->get('36167')->getId());
+    }
 }

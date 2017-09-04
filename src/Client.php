@@ -2,7 +2,10 @@
 
 namespace Arkade\Apparel21;
 
+use Exception;
 use GuzzleHttp;
+use Arkade\Apparel21\Exceptions;
+use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
 
 class Client
@@ -34,6 +37,13 @@ class Client
      * @var string
      */
     protected $countryCode;
+
+    /**
+     * Reference resolver.
+     *
+     * @var Contracts\ReferenceResolver
+     */
+    protected $referenceResolver;
 
     /**
      * Guzzle client for HTTP transport.
@@ -123,6 +133,29 @@ class Client
     }
 
     /**
+     * Return reference resolver.
+     *
+     * @return Contracts\ReferenceResolver
+     */
+    public function getReferenceResolver()
+    {
+        return $this->referenceResolver ?: $this->referenceResolver = new Resolvers\ReferenceResolver;
+    }
+
+    /**
+     * Set reference resolver.
+     *
+     * @param  Contracts\ReferenceResolver $referenceResolver
+     * @return static
+     */
+    public function setReferenceResolver(Contracts\ReferenceResolver $referenceResolver)
+    {
+        $this->referenceResolver = $referenceResolver;
+
+        return $this;
+    }
+
+    /**
      * Setup Guzzle client with optional provided handler stack.
      *
      * @param  GuzzleHttp\HandlerStack|null $stack
@@ -147,13 +180,20 @@ class Client
      * Execute the given action.
      *
      * @param  Contracts\Action $action
-     * @return Contracts\Entity $entity
+     * @return mixed|Collection
+     * @throws Exceptions\Apparel21Exception
      */
-    public function do(Contracts\Action $action)
+    public function action(Contracts\Action $action)
     {
-        return $action->response(
-            $this->client->send($action->request())
-        );
+        try {
+            return $action
+                ->setClient($this)
+                ->response(
+                    $this->client->send($action->request())
+                );
+        } catch (Exception $e) {
+            throw $this->convertException($e);
+        }
     }
 
     /**
@@ -166,6 +206,21 @@ class Client
     public function __call($name, $arguments)
     {
         return call_user_func_array([$this->client, $name], $arguments);
+    }
+
+    /**
+     * Convert the provided exception.
+     *
+     * @param  Exception $e
+     * @return Exceptions\Apparel21Exception|Exception
+     */
+    protected function convertException(Exception $e)
+    {
+        if ($e instanceof GuzzleHttp\Exception\ClientException && 404 == $e->getResponse()->getStatusCode()) {
+            return new Exceptions\NotFoundException;
+        }
+
+        return $e;
     }
 
     /**
