@@ -18,7 +18,7 @@
         "nesbot/carbon": "^1.22",
         "illuminate/support": "^5.2",
         "psr/http-message": "^1.0",
-        "arkade/support": "dev-master"
+        "arkade/support": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.1"
@@ -28,6 +28,5 @@
             "type": "git",
             "url": "git@github.com:arkade-digital/support.git"
         }
-    },
-    "minimum-stability": "dev"
+    }
 }

@@ -1,0 +1,1257 @@
+<ReferenceTypes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ReferenceType>
+    <Id>335</Id>
+    <Code>APCONT</Code>
+    <Name>AP Control Account</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>422</Id>
+    <Code>APStatus</Code>
+    <Name>Status</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>389</Id>
+    <Code>ARAgeFmt</Code>
+    <Name>AR Aged Format Number</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>334</Id>
+    <Code>ARCONT</Code>
+    <Name>AR Control Account</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>342</Id>
+    <Code>ARSmtFmt</Code>
+    <Name>AR Statement Format Number</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>38</Id>
+    <Code>Age Plan</Code>
+    <Name>Age Planning SQL Statements</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>373</Id>
+    <Code>Alt Size</Code>
+    <Name>Alternative sizes</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>392</Id>
+    <Code>Ap21 Doc</Code>
+    <Name>Documentation Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>427</Id>
+    <Code>ArmsLeng</Code>
+    <Name>Arms Length Posting Flag</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>323</Id>
+    <Code>Asn Fmt</Code>
+    <Name>Delivery label formats</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>312</Id>
+    <Code>AudTrans</Code>
+    <Name>Audit Transactions</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>376</Id>
+    <Code>B2BDocTy</Code>
+    <Name>B2B Document Types</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>381</Id>
+    <Code>B2BSel</Code>
+    <Name>B2B Selection Setup</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>101</Id>
+    <Code>BOM Type</Code>
+    <Name>BOM Saved Types</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1181</Id>
+    <Code>Bank</Code>
+    <Name>Bank</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1602</Id>
+    <Code>Bar Appr</Code>
+    <Name>Barcode Approvals</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>315</Id>
+    <Code>Batch Tp</Code>
+    <Name>Batch Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1202</Id>
+    <Code>Bin Bay</Code>
+    <Name>Bin Bay</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>25</Id>
+    <Code>Bin Role</Code>
+    <Name>Bin Role</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>24</Id>
+    <Code>Bin Type</Code>
+    <Name>Bin Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1201</Id>
+    <Code>BinAisle</Code>
+    <Name>BinAisle</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>26</Id>
+    <Code>BinLevel</Code>
+    <Name>Bin Level</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>36</Id>
+    <Code>Bud Type</Code>
+    <Name>Budget type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>308</Id>
+    <Code>Bud. pr.</Code>
+    <Name>Budget profiles</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>355</Id>
+    <Code>BulkPurc</Code>
+    <Name>Bulk Purchase Planning</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>252</Id>
+    <Code>C.Class</Code>
+    <Name>Customer Class</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>261</Id>
+    <Code>C.Zone</Code>
+    <Name>Customer Zone</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>205</Id>
+    <Code>CNReas</Code>
+    <Name>Credit Note Reasons</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>209</Id>
+    <Code>CNType</Code>
+    <Name>Credit Note Types</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1121</Id>
+    <Code>CZ Clear</Code>
+    <Name>Clearance Codes</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>41</Id>
+    <Code>CZ Duty</Code>
+    <Name>Duty Codes</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>42</Id>
+    <Code>CZ Frght</Code>
+    <Name>Freight Codes</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>434</Id>
+    <Code>CardFee</Code>
+    <Name>Credit Card Fees</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>417</Id>
+    <Code>CardType</Code>
+    <Name>Retail card type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>202</Id>
+    <Code>Carrier</Code>
+    <Name>Carrier</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1</Id>
+    <Code>Category</Code>
+    <Name>Category</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1501</Id>
+    <Code>Channel</Code>
+    <Name>Channel</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>15</Id>
+    <Code>Charactr</Code>
+    <Name>Character</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>359</Id>
+    <Code>Charset</Code>
+    <Name>Charset</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>326</Id>
+    <Code>Cheque</Code>
+    <Name>Cheque Format</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>331</Id>
+    <Code>Chg Type</Code>
+    <Name>Charge Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>211</Id>
+    <Code>CmplReas</Code>
+    <Name>Completed Reason</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>426</Id>
+    <Code>ColrType</Code>
+    <Name>Colour Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>100</Id>
+    <Code>Comments</Code>
+    <Name>Comments</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>2</Id>
+    <Code>Comp Grp</Code>
+    <Name>Component Group</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>22</Id>
+    <Code>Company</Code>
+    <Name>Company</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>318</Id>
+    <Code>ConNotes</Code>
+    <Name>Consignment Note Formats available</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>33</Id>
+    <Code>Content</Code>
+    <Name>Content</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>16</Id>
+    <Code>Cost Cnt</Code>
+    <Name>Cost Centre</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>348</Id>
+    <Code>Cost Cod</Code>
+    <Name>Cost Code</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>313</Id>
+    <Code>CredRtng</Code>
+    <Name>Credit Rating</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>306</Id>
+    <Code>CredTrms</Code>
+    <Name>Credit Terms</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>8</Id>
+    <Code>Currency</Code>
+    <Name>Currency</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>260</Id>
+    <Code>Cust Grp</Code>
+    <Name>Customer Group</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1381</Id>
+    <Code>CustComm</Code>
+    <Name>PO Comment by Customer</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>9</Id>
+    <Code>Customer</Code>
+    <Name>Customer</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>369</Id>
+    <Code>DateType</Code>
+    <Name>Date Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1221</Id>
+    <Code>DelDate</Code>
+    <Name>Delivery Instore Date</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>319</Id>
+    <Code>DelLabel</Code>
+    <Name>Delivery Label Formats available</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>371</Id>
+    <Code>Denomin.</Code>
+    <Name>Denominations</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>340</Id>
+    <Code>Deposit</Code>
+    <Name>Deposit format</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1483</Id>
+    <Code>Dept</Code>
+    <Name>Department</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>12</Id>
+    <Code>Design</Code>
+    <Name>Design</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1521</Id>
+    <Code>DetType</Code>
+    <Name>Detail Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>11</Id>
+    <Code>Dimensn</Code>
+    <Name>Dimension</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>357</Id>
+    <Code>Doc Type</Code>
+    <Name>Document Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>442</Id>
+    <Code>DockText</Code>
+    <Name>POS Docket Text</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1441</Id>
+    <Code>Drop</Code>
+    <Name>Drop Date</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>314</Id>
+    <Code>Dsp Prio</Code>
+    <Name>Depatch Priority</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>429</Id>
+    <Code>DynPrint</Code>
+    <Name>Dynamic Printers</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>378</Id>
+    <Code>ExpReas</Code>
+    <Name>Expense Reasons</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>413</Id>
+    <Code>ExpShip</Code>
+    <Name>Export Shipment</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>440</Id>
+    <Code>ExtRef</Code>
+    <Name>External Reference Codes</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>365</Id>
+    <Code>FTP Serv</Code>
+    <Name>B2B FTP Server Info</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>307</Id>
+    <Code>FYear</Code>
+    <Name>Financial Year</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1222</Id>
+    <Code>Fabric</Code>
+    <Name>Fabrication</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>370</Id>
+    <Code>Feedback</Code>
+    <Name>Feedback Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>360</Id>
+    <Code>Fortnite</Code>
+    <Name>Fortnight</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>339</Id>
+    <Code>Fr. Man.</Code>
+    <Name>Freight Manifest Format</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>30</Id>
+    <Code>Freight</Code>
+    <Name>Freight Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>303</Id>
+    <Code>GL Ac</Code>
+    <Name>General Ledger Account Codes</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>302</Id>
+    <Code>GL Ac Ty</Code>
+    <Name>General Ledger Account types</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1541</Id>
+    <Code>GL Cat</Code>
+    <Name>GL Account Category</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1021</Id>
+    <Code>GL Dept</Code>
+    <Name>GL Department</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1161</Id>
+    <Code>GL Group</Code>
+    <Name>GL Account Group for reporting</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>433</Id>
+    <Code>GLAmtTyp</Code>
+    <Name>GL Amount Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>311</Id>
+    <Code>GLBANKTR</Code>
+    <Name>GL Bank Transactions</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1341</Id>
+    <Code>GLDeprec</Code>
+    <Name>GL Asset Depriciation</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>304</Id>
+    <Code>GLIT</Code>
+    <Name>General Ledger Interface Translation</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>310</Id>
+    <Code>GLSptTpl</Code>
+    <Name>GL Split templates</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>309</Id>
+    <Code>GLSubSys</Code>
+    <Name>GL Sub System</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>301</Id>
+    <Code>GLTTDet</Code>
+    <Name>General Ledger Transaction Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>300</Id>
+    <Code>GLTTHdr</Code>
+    <Name>Financial transaction type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>264</Id>
+    <Code>GLedge</Code>
+    <Name>General Ledger Code</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>428</Id>
+    <Code>GRStage</Code>
+    <Name>Grading Stage</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1083</Id>
+    <Code>GST Acq</Code>
+    <Name>GST Acquisition Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1081</Id>
+    <Code>GST_IN</Code>
+    <Name>GST Input</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1082</Id>
+    <Code>GST_OUT</Code>
+    <Name>GST OUTPUT</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>403</Id>
+    <Code>Grading</Code>
+    <Name>Grading</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>358</Id>
+    <Code>Img Type</Code>
+    <Name>Image Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>325</Id>
+    <Code>Invoice</Code>
+    <Name>Invoice Format</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>344</Id>
+    <Code>Job Code</Code>
+    <Name>Job Code</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>330</Id>
+    <Code>Job Type</Code>
+    <Name>Job Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1561</Id>
+    <Code>KidsGL</Code>
+    <Name>Kids GL</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>258</Id>
+    <Code>Label</Code>
+    <Name>Product Label</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>356</Id>
+    <Code>Language</Code>
+    <Name>Language</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>379</Id>
+    <Code>LayBy</Code>
+    <Name>POS Lay By Terms</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1484</Id>
+    <Code>Length</Code>
+    <Name>Length</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>14</Id>
+    <Code>Licencee</Code>
+    <Name>Licencee</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>270</Id>
+    <Code>Line Typ</Code>
+    <Name>Product Specification Line Types</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>210</Id>
+    <Code>ListView</Code>
+    <Name>Listing tab view setup</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>401</Id>
+    <Code>Locale</Code>
+    <Name>Locale</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>17</Id>
+    <Code>Location</Code>
+    <Name>Location</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>212</Id>
+    <Code>Log type</Code>
+    <Name>Log types</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>328</Id>
+    <Code>LogQuery</Code>
+    <Name>Log Query Setup</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>336</Id>
+    <Code>Logo</Code>
+    <Name>Logo</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>437</Id>
+    <Code>LoyStat</Code>
+    <Name>Loyalty Status</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>366</Id>
+    <Code>Loyalty</Code>
+    <Name>Loyalty Types</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>421</Id>
+    <Code>MRPGroup</Code>
+    <Name>MRP Group</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>387</Id>
+    <Code>MadeIn</Code>
+    <Name>Made In</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1361</Id>
+    <Code>Main Lab</Code>
+    <Name>Main Label</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>439</Id>
+    <Code>Mandrill</Code>
+    <Name>Mandrill Accounts</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>262</Id>
+    <Code>Manuf</Code>
+    <Name>EAN Manufacturer</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>352</Id>
+    <Code>Mkd_Reas</Code>
+    <Name>Retail markdown reasons</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>346</Id>
+    <Code>Module</Code>
+    <Name>Module</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>37</Id>
+    <Code>Modules</Code>
+    <Name>Module names</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>204</Id>
+    <Code>OCanR</Code>
+    <Name>Order Cancel Reasons</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>396</Id>
+    <Code>OHeadtyp</Code>
+    <Name>Overhead type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>203</Id>
+    <Code>Onforw</Code>
+    <Name>Onforwarder</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>399</Id>
+    <Code>OpenTill</Code>
+    <Name>Open Till Reason</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1061</Id>
+    <Code>Ord Typ</Code>
+    <Name>Order Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>406</Id>
+    <Code>OrdConfF</Code>
+    <Name>Order Confirmation Format</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>47</Id>
+    <Code>PO Cat.</Code>
+    <Name>PO Category</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>21</Id>
+    <Code>PO Type</Code>
+    <Name>Purchase Order Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>394</Id>
+    <Code>POH</Code>
+    <Name>Production Overhead</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>398</Id>
+    <Code>POSPrint</Code>
+    <Name>POS printers</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>206</Id>
+    <Code>POStatus</Code>
+    <Name>Purc Order Status</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>390</Id>
+    <Code>PR_Plan</Code>
+    <Name>Product Replenishment Number</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1601</Id>
+    <Code>PS Samp</Code>
+    <Name>PS Sample</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>29</Id>
+    <Code>Pack Typ</Code>
+    <Name>Pack Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>31</Id>
+    <Code>Pay Prio</Code>
+    <Name>Payment Priority</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>28</Id>
+    <Code>Pay Type</Code>
+    <Name>Payment Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>337</Id>
+    <Code>PayTerms</Code>
+    <Name>Payment Terms</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>372</Id>
+    <Code>PaymtLst</Code>
+    <Name>Payment List Format</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>45</Id>
+    <Code>PdnCancl</Code>
+    <Name>Production Cancellation</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>20</Id>
+    <Code>Per Att</Code>
+    <Name>Person Atribute</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>412</Id>
+    <Code>Per_Prof</Code>
+    <Name>Planning Periods Profile</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>305</Id>
+    <Code>Periods</Code>
+    <Name>Period end date setups</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>18</Id>
+    <Code>Phone</Code>
+    <Name>Phone</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>383</Id>
+    <Code>Pick Grp</Code>
+    <Name>Picker Group</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>324</Id>
+    <Code>PickSlip</Code>
+    <Name>Picking slip Format</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>410</Id>
+    <Code>PlanStat</Code>
+    <Name>Plan Status</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>341</Id>
+    <Code>PmntStat</Code>
+    <Name>Payment Status</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>374</Id>
+    <Code>Port</Code>
+    <Name>Shipment Port</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>317</Id>
+    <Code>Position</Code>
+    <Name>Comment Position</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>5</Id>
+    <Code>Prch Grp</Code>
+    <Name>Purchase Group</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>435</Id>
+    <Code>PriceOvr</Code>
+    <Name>Price Override Reasons</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>329</Id>
+    <Code>PrintSvr</Code>
+    <Name>Print Servers</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>393</Id>
+    <Code>PrintTyp</Code>
+    <Name>Print Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>320</Id>
+    <Code>Printers</Code>
+    <Name>Printers</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>395</Id>
+    <Code>Privacy</Code>
+    <Name>Customer Privacy</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>418</Id>
+    <Code>ProType</Code>
+    <Name>Promotion Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1261</Id>
+    <Code>ProdCo</Code>
+    <Name>Production Coordinator</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>367</Id>
+    <Code>ProdExp</Code>
+    <Name>Product Export</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>436</Id>
+    <Code>ProdMap</Code>
+    <Name>Product Map</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>430</Id>
+    <Code>ProdNote</Code>
+    <Name>Product Note Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1485</Id>
+    <Code>ProdType</Code>
+    <Name>Product Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>327</Id>
+    <Code>Product</Code>
+    <Name>Product Label Formats</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>347</Id>
+    <Code>Project</Code>
+    <Name>Project</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>411</Id>
+    <Code>PurPlan</Code>
+    <Name>Purchase Plan</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>420</Id>
+    <Code>PurcType</Code>
+    <Name>Purchase Transaction Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>321</Id>
+    <Code>QCReason</Code>
+    <Name>QC Reason codes</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>384</Id>
+    <Code>RF Error</Code>
+    <Name>RF Pick Errors</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>257</Id>
+    <Code>Range</Code>
+    <Name>Product Range</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>404</Id>
+    <Code>ReTrnTyp</Code>
+    <Name>Retail transfer type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>32</Id>
+    <Code>Reason</Code>
+    <Name>Reason Codes</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1461</Id>
+    <Code>Region</Code>
+    <Name>Store Region</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>345</Id>
+    <Code>Release</Code>
+    <Name>Release</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>353</Id>
+    <Code>RepSec</Code>
+    <Name>Sales Analysis Report Security</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>35</Id>
+    <Code>Ret Rep</Code>
+    <Name>Retail Replenishment Method</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>34</Id>
+    <Code>Ret Tran</Code>
+    <Name>Retail Transaction Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>273</Id>
+    <Code>RetCash</Code>
+    <Name>Retail cash codes</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>271</Id>
+    <Code>RetDisc</Code>
+    <Name>Retail discount reasons</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>39</Id>
+    <Code>RetPayTy</Code>
+    <Name>Retail Payment Types</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>272</Id>
+    <Code>RetRetrn</Code>
+    <Name>Retail Return reasons</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>405</Id>
+    <Code>RetSpOrd</Code>
+    <Name>Retail Customer Special Order Terms</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1401</Id>
+    <Code>RetType</Code>
+    <Name>Retail Sale Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>368</Id>
+    <Code>RetVouch</Code>
+    <Name>Retail Voucher Types</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>414</Id>
+    <Code>RetWeb</Code>
+    <Name>Retail Webserver</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>415</Id>
+    <Code>RetWebG</Code>
+    <Name>Retail Webserver Group</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1301</Id>
+    <Code>Ret_Mth</Code>
+    <Name>Retail Planning Months</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>402</Id>
+    <Code>Ret_Per</Code>
+    <Name>Retail Planning Periods</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>274</Id>
+    <Code>Ret_Trnf</Code>
+    <Name>Retail transfer reason codes</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1581</Id>
+    <Code>Ret_Yr</Code>
+    <Name>Retail Year</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>338</Id>
+    <Code>Roster</Code>
+    <Name>Operator Roster Types</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>256</Id>
+    <Code>S.Class.</Code>
+    <Name>Supplier Class</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>438</Id>
+    <Code>SNetPay</Code>
+    <Name>Salesnet Payment Provider</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>316</Id>
+    <Code>SO PTyp</Code>
+    <Name>Sales Order Payment Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>201</Id>
+    <Code>SO Type</Code>
+    <Name>Sales Order Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>208</Id>
+    <Code>SOStatus</Code>
+    <Name>Sales Order Status</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>431</Id>
+    <Code>SPayGate</Code>
+    <Name>Sales Payment Gateway</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1321</Id>
+    <Code>SRepReg</Code>
+    <Name>Sales Rep Region</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>419</Id>
+    <Code>SaleType</Code>
+    <Name>Sales Transaction Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>6</Id>
+    <Code>SalesPr</Code>
+    <Name>Sales Price Scheme</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>27</Id>
+    <Code>SalesRep</Code>
+    <Name>Sales Rep</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1223</Id>
+    <Code>Season</Code>
+    <Name>Season</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>259</Id>
+    <Code>ServTyp</Code>
+    <Name>Service Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>386</Id>
+    <Code>Set Part</Code>
+    <Name>Set Part</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>385</Id>
+    <Code>Set Type</Code>
+    <Name>Set Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>377</Id>
+    <Code>ShCont</Code>
+    <Name>Ship container</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>207</Id>
+    <Code>ShStatus</Code>
+    <Name>Shipment Status</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>400</Id>
+    <Code>ShipFrom</Code>
+    <Name>Ship From</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>408</Id>
+    <Code>ShipStat</Code>
+    <Name>Shipment status</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>391</Id>
+    <Code>ShipSubT</Code>
+    <Name>Shipment Costing User Field Sub Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1281</Id>
+    <Code>ShipTerm</Code>
+    <Name>Shipment Terms</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>263</Id>
+    <Code>ShipTyp</Code>
+    <Name>Shipment Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>322</Id>
+    <Code>SoAlloSt</Code>
+    <Name>SO Allocation status</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>332</Id>
+    <Code>Stage</Code>
+    <Name>Job Stage</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>361</Id>
+    <Code>State</Code>
+    <Name>State</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>350</Id>
+    <Code>Status</Code>
+    <Name>Status</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>349</Id>
+    <Code>Stg Grp</Code>
+    <Name>Stage Group</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>333</Id>
+    <Code>StkLabel</Code>
+    <Name>Stock Label Format</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1041</Id>
+    <Code>StkType</Code>
+    <Name>Stock type for Purchasing</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1241</Id>
+    <Code>StoreTyp</Code>
+    <Name>Store Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>43</Id>
+    <Code>StyUsage</Code>
+    <Name>Style Usage</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>19</Id>
+    <Code>SubCat</Code>
+    <Name>Sub Category</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1141</Id>
+    <Code>Sup Grp</Code>
+    <Name>Supplier Group</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>4</Id>
+    <Code>Super CC</Code>
+    <Name>Super Cost Centre</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>3</Id>
+    <Code>Super CG</Code>
+    <Name>Super Component Group</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>1421</Id>
+    <Code>SuperGrp</Code>
+    <Name>Product Super Group</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>10</Id>
+    <Code>Supplier</Code>
+    <Name>Supplier</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>46</Id>
+    <Code>TaskSchd</Code>
+    <Name>Task Scheduler</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>265</Id>
+    <Code>TaxLevel</Code>
+    <Name>Customer Tax Level</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>343</Id>
+    <Code>TaxType</Code>
+    <Name>Supplier Tax Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>251</Id>
+    <Code>Terr.</Code>
+    <Name>Territory</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>13</Id>
+    <Code>Text/Con</Code>
+    <Name>Textile/Construction</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>375</Id>
+    <Code>Trace Co</Code>
+    <Name>Trace Company</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>380</Id>
+    <Code>Track</Code>
+    <Name>Track</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>351</Id>
+    <Code>TransCo</Code>
+    <Name>Transport Code</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>354</Id>
+    <Code>URL Type</Code>
+    <Name>Internet Links</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>266</Id>
+    <Code>UnitType</Code>
+    <Name>Unit Type</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>267</Id>
+    <Code>Units</Code>
+    <Name>Units</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>407</Id>
+    <Code>UnlockR</Code>
+    <Name>Unlock Reason</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>432</Id>
+    <Code>WAPIWeb</Code>
+    <Name>Wholesale API Pages</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>425</Id>
+    <Code>WBSTCTRY</Code>
+    <Name>Website Country</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>441</Id>
+    <Code>WMSStat</Code>
+    <Name>WMS Pick Status</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>423</Id>
+    <Code>WP_Per</Code>
+    <Name>Wholesale planning periods</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>424</Id>
+    <Code>WP_Prof</Code>
+    <Name>Wholesale Planning Periods Profile</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>23</Id>
+    <Code>WarZone</Code>
+    <Name>Warehouse Zone</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>7</Id>
+    <Code>Whouse</Code>
+    <Name>Warehouse</Name>
+  </ReferenceType>
+  <ReferenceType>
+    <Id>40</Id>
+    <Code>Zone</Code>
+    <Name>Cost Zone</Name>
+  </ReferenceType>
+</ReferenceTypes>

@@ -6,7 +6,6 @@ use GuzzleHttp;
 use Arkade\Apparel21\Parsers;
 use Arkade\Apparel21\Entities;
 use Arkade\Apparel21\Contracts;
-use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
