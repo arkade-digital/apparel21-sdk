@@ -1,0 +1,45 @@
+AWSConfigurationTemplateVersion: 1.1.0.0
+EnvironmentConfigurationMetadata:
+  DateCreated: '1504490832000'
+  DateModified: '1504492990914'
+  Description: Configuration created from the EB CLI using "eb config save".
+EnvironmentTier:
+  Name: WebServer
+  Type: Standard
+OptionSettings:
+  aws:autoscaling:launchconfiguration:
+    IamInstanceProfile: aws-elasticbeanstalk-ec2-role
+  aws:elasticbeanstalk:application:environment:
+    APP_DEBUG: false
+    APP_ENV: staging
+    APP_KEY: base64:qqlP6YUpqbR7VoectJorRs8Pz3M5JYSpd6ZS0jFY61I=
+    APP_LOG_LEVEL: debug
+    APP_NAME: Shopify Apparel21 Connector
+    DB_CONNECTION: mysql
+    DB_DATABASE: shopifyapparel21syncer_staging
+    DB_HOST: shopify-apparel21-syncer.cluster-c0bnmdqlhypl.ap-southeast-2.rds.amazonaws.com
+    DB_PASSWORD: OpJhxemkivCYRB5fQBta
+    DB_PORT: '3306'
+    DB_USERNAME: shopifyapparel21
+  aws:elasticbeanstalk:container:php:phpini:
+    document_root: /public
+  aws:elasticbeanstalk:environment:
+    EnvironmentType: SingleInstance
+    ServiceRole: aws-elasticbeanstalk-service-role
+  aws:elasticbeanstalk:healthreporting:system:
+    SystemType: enhanced
+Platform:
+  PlatformArn: arn:aws:elasticbeanstalk:ap-southeast-2::platform/PHP 7.0 running on
+    64bit Amazon Linux/2.4.4
+Resources:
+  sslSecurityGroupIngress:
+    Properties:
+      CidrIp: 0.0.0.0/0
+      FromPort: 443
+      GroupId:
+        Fn::GetAtt:
+        - AWSEBSecurityGroup
+        - awseb-e-9izkpiw2qp-stack-AWSEBSecurityGroup-V9JTH8CIFM6T
+      IpProtocol: tcp
+      ToPort: 443
+    Type: AWS::EC2::SecurityGroupIngress
