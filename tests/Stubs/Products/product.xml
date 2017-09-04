@@ -1,0 +1,97 @@
+<Product>
+    <Id>31321</Id>
+    <RowNumber>1</RowNumber>
+    <Code>10005KNDE</Code>
+    <Name>IMOGEN CF CABLE KNIT</Name>
+    <Description>TEST DESCRIPTION</Description>
+    <SizeRange>S-L</SizeRange>
+    <RrpText />
+    <UpdateTimeStamp>2017-06-07T15:06:26</UpdateTimeStamp>
+    <References Type="Array">
+        <Reference>
+            <ReferenceTypeId>258</ReferenceTypeId>
+            <Id>3957</Id>
+        </Reference>
+        <Reference>
+            <ReferenceTypeId>1</ReferenceTypeId>
+            <Id>36182</Id>
+        </Reference>
+        <Reference>
+            <ReferenceTypeId>1223</ReferenceTypeId>
+            <Id>30142</Id>
+        </Reference>
+        <Reference>
+            <ReferenceTypeId>1221</ReferenceTypeId>
+            <Id>32144</Id>
+        </Reference>
+        <Reference>
+            <ReferenceTypeId>19</ReferenceTypeId>
+            <Id>36152</Id>
+        </Reference>
+        <Reference>
+            <ReferenceTypeId>10</ReferenceTypeId>
+            <Id>33808</Id>
+        </Reference>
+        <Reference>
+            <ReferenceTypeId>1222</ReferenceTypeId>
+            <Id>4285</Id>
+        </Reference>
+        <Reference>
+            <ReferenceTypeId>1041</ReferenceTypeId>
+            <Id>1321</Id>
+        </Reference>
+    </References>
+    <Clrs Type="Array">
+        <Clr>
+            <Id>63090</Id>
+            <ProductId>31321</ProductId>
+            <Sequence>1</Sequence>
+            <Code>MIDGRYMRL</Code>
+            <Name>Mid Grey Marle</Name>
+            <TypeCode>MIDGRYMRL</TypeCode>
+            <TypeName>Mid Grey Marle</TypeName>
+            <MarkdownStatus>None</MarkdownStatus>
+            <SKUs Type="Array">
+                <SKU>
+                    <Id>150077</Id>
+                    <ClrId>63090</ClrId>
+                    <Sequence>1</Sequence>
+                    <SizeCode>S</SizeCode>
+                    <OriginalPrice>109.95</OriginalPrice>
+                    <Price>50</Price>
+                    <RetailPrice>0</RetailPrice>
+                    <FreeStock>20</FreeStock>
+                    <NextAvailable />
+                    <Barcode>9342033270762</Barcode>
+                    <GlobalSequence>1</GlobalSequence>
+                </SKU>
+                <SKU>
+                    <Id>150078</Id>
+                    <ClrId>63090</ClrId>
+                    <Sequence>2</Sequence>
+                    <SizeCode>M</SizeCode>
+                    <OriginalPrice>109.95</OriginalPrice>
+                    <Price>50</Price>
+                    <RetailPrice>0</RetailPrice>
+                    <FreeStock>0</FreeStock>
+                    <NextAvailable />
+                    <Barcode>9342033270779</Barcode>
+                    <GlobalSequence>2</GlobalSequence>
+                </SKU>
+                <SKU>
+                    <Id>150079</Id>
+                    <ClrId>63090</ClrId>
+                    <Sequence>3</Sequence>
+                    <SizeCode>L</SizeCode>
+                    <OriginalPrice>109.95</OriginalPrice>
+                    <Price>50</Price>
+                    <RetailPrice>0</RetailPrice>
+                    <FreeStock>0</FreeStock>
+                    <NextAvailable />
+                    <Barcode>9342033270786</Barcode>
+                    <GlobalSequence>3</GlobalSequence>
+                </SKU>
+            </SKUs>
+        </Clr>
+    </Clrs>
+</Product>
