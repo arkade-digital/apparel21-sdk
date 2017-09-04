@@ -6,9 +6,17 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "guzzlehttp/guzzle": "^6.3",
+        "laracasts/utilities": "^2.1",
         "bugsnag/bugsnag-laravel": "^2.0",
         "laravel/framework": "5.4.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "lcobucci/jwt": "^3.2",
+        "nesbot/carbon": "^1.22",
+        "ramsey/uuid": "^3.7",
+        "symfony/psr-http-message-bridge": "^1.0",
+        "zendframework/zend-diactoros": "^1.5",
+        "zfr/zfr-shopify": "^3.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -48,6 +56,7 @@
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "platform": {"php": "7.0"}
     }
 }
