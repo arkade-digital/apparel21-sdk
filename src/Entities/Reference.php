@@ -2,9 +2,7 @@
 
 namespace Arkade\Apparel21\Entities;
 
-use Illuminate\Support\Collection;
-
-class ReferenceType
+class Reference
 {
     /**
      * Unique ID.
@@ -28,11 +26,11 @@ class ReferenceType
     protected $name;
 
     /**
-     * Collection of references.
+     * Reference type.
      *
-     * @var Collection
+     * @var ReferenceType
      */
-    protected $references;
+    protected $type;
 
     /**
      * Return unique ID.
@@ -104,24 +102,24 @@ class ReferenceType
     }
 
     /**
-     * Return collection of references.
+     * Return reference type.
      *
-     * @return Collection
+     * @return ReferenceType
      */
-    public function getReferences()
+    public function getType()
     {
-        return $this->references ?: $this->references = new Collection;
+        return $this->type;
     }
 
     /**
-     * Set collection of references.
+     * Set reference type.
      *
-     * @param  Collection|null $references
+     * @param  ReferenceType|null $type
      * @return static
      */
-    public function setReferences(Collection $references = null)
+    public function setType(ReferenceType $type = null)
     {
-        $this->references = $references;
+        $this->type = $type;
 
         return $this;
     }

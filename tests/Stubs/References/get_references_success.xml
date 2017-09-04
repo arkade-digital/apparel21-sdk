@@ -1,0 +1,967 @@
+<ReferencesbyType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ReferenceTypeId>123</ReferenceTypeId>
+  <ReferenceTypeCode>Category</ReferenceTypeCode>
+  <ReferenceTypeName>Category</ReferenceTypeName>
+  <References Type="Array">
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36167</Id>
+      <Code>ACTIVEWEAR</Code>
+      <Name>Activewear</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>3041</Id>
+      <Code>Admin</Code>
+      <Name>Administration</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36168</Id>
+      <Code>BAGS/WALLETS</Code>
+      <Name>Bags &amp; Wallets</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36504</Id>
+      <Code>BASICS</Code>
+      <Name>Basics</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36169</Id>
+      <Code>BELTS</Code>
+      <Name>Belts</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36170</Id>
+      <Code>DENIM</Code>
+      <Name>Denim</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36171</Id>
+      <Code>DL-ACCESSORIES</Code>
+      <Name>D-Luxe Accessories</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36172</Id>
+      <Code>DL-BOTTOMS</Code>
+      <Name>D-Luxe Bottoms</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36173</Id>
+      <Code>DL-DRESSES</Code>
+      <Name>D-Luxe Dresses</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36174</Id>
+      <Code>DL-KNIT</Code>
+      <Name>D-Luxe Knitwear</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36175</Id>
+      <Code>DL-OUTER</Code>
+      <Name>D-Luxe Outerwear</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36176</Id>
+      <Code>DL-TOPS</Code>
+      <Name>D-Luxe Tops</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36177</Id>
+      <Code>DRESSES</Code>
+      <Name>Dresses</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36178</Id>
+      <Code>FOOTWEAR</Code>
+      <Name>Footwear</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>2501</Id>
+      <Code>Freight</Code>
+      <Name>Freight Charge on Sales Orders</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36531</Id>
+      <Code>HAIR</Code>
+      <Name>Hair</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36179</Id>
+      <Code>HEADWEAR</Code>
+      <Name>Headwear</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36180</Id>
+      <Code>JACKETS</Code>
+      <Name>Jackets</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36181</Id>
+      <Code>JEWELLERY</Code>
+      <Name>Jewellery</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36182</Id>
+      <Code>KNITWEAR</Code>
+      <Name>Knitwear</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>5293</Id>
+      <Code>Misc</Code>
+      <Name>Miscellaneous</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36183</Id>
+      <Code>PANTS</Code>
+      <Name>Pants</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>5292</Id>
+      <Code>PO - POSTAGE</Code>
+      <Name>Postage Charge</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>5974</Id>
+      <Code>PROMO</Code>
+      <Name>Promotional </Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>25240</Id>
+      <Code>Promo Voucher</Code>
+      <Name />
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36505</Id>
+      <Code>SAMPLE</Code>
+      <Name>Samples</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36184</Id>
+      <Code>SCARVES</Code>
+      <Name>Scarves</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36185</Id>
+      <Code>SHORTS</Code>
+      <Name>Shorts</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36186</Id>
+      <Code>SKIRTS</Code>
+      <Name>Skirts</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36528</Id>
+      <Code>SLEEPWEAR</Code>
+      <Name>Sleepwear</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36187</Id>
+      <Code>SUNGLASSES</Code>
+      <Name>Sunglasses</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>6331</Id>
+      <Code>TillVar</Code>
+      <Name>Till Varience</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>36188</Id>
+      <Code>WOVEN TOPS</Code>
+      <Name>Woven Tops</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>11742</Id>
+      <Code>z1BB-SEAMLESS</Code>
+      <Name>BB-Seamless</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4257</Id>
+      <Code>z1DK-DRESS</Code>
+      <Name>Dress Knit - Dress</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4255</Id>
+      <Code>z1DK-MAXI</Code>
+      <Name>Dress Knit - Maxi</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4254</Id>
+      <Code>z1DK-STRPLS</Code>
+      <Name>Dress Knit - Strapless</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4256</Id>
+      <Code>z1DW-DRESS</Code>
+      <Name>Dress Woven - Dress</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4253</Id>
+      <Code>z1DW-MAXI</Code>
+      <Name>Dress Woven - Maxi</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4250</Id>
+      <Code>z1DW-STRPLS</Code>
+      <Name>Dress Woven - Strapless</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4233</Id>
+      <Code>z1JK-COAT</Code>
+      <Name>Jacket Knit - Coat</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4232</Id>
+      <Code>z1JK-KNIT</Code>
+      <Name>Jacket Knit - Knit</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4235</Id>
+      <Code>z1JK-VEST</Code>
+      <Name>Jacket Knit - Vest</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4238</Id>
+      <Code>z1JW-COAT</Code>
+      <Name>Jacket Woven - Coat</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4236</Id>
+      <Code>z1JW-TAILORED</Code>
+      <Name>Jacket Woven - Tailored</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4239</Id>
+      <Code>z1JW-VEST</Code>
+      <Name>Jacket Woven - Vest</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4242</Id>
+      <Code>z1KN-CARDI</Code>
+      <Name>Knitwear - Cardigan</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4245</Id>
+      <Code>z1KN-SWEAT</Code>
+      <Name>Knitwear - Sweater</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4247</Id>
+      <Code>z1KN-VEST</Code>
+      <Name>Knitwear - Vest</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4241</Id>
+      <Code>z1PK-LEGGING</Code>
+      <Name>Pant Knit - Legging</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4244</Id>
+      <Code>z1PK-SHORT</Code>
+      <Name>Pant Knit - Short</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4243</Id>
+      <Code>z1PK-SLIM</Code>
+      <Name>Pant Knit - Slim</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4249</Id>
+      <Code>z1PW-JEAN</Code>
+      <Name>Pant Woven - Jean</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4248</Id>
+      <Code>z1PW-SHORT</Code>
+      <Name>Pant Woven - Short</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4246</Id>
+      <Code>z1PW-TAILORED</Code>
+      <Name>Pant Woven - Tailored</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4252</Id>
+      <Code>z1SK-SKIRT</Code>
+      <Name>Skirt Knit - Skirt</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4251</Id>
+      <Code>z1SW-SKIRT</Code>
+      <Name>Skirt Woven - Skirt</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4230</Id>
+      <Code>z1TK-CAMI</Code>
+      <Name>Top Knit - Cami</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4240</Id>
+      <Code>z1TK-CARDI</Code>
+      <Name>Top Knit - Cardigan</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4237</Id>
+      <Code>z1TK-STRAPLESS</Code>
+      <Name>Top Knit - Strapless</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4234</Id>
+      <Code>z1TK-TANK</Code>
+      <Name>Top Knit - Tank</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4225</Id>
+      <Code>z1TK-TEE</Code>
+      <Name>Top Knit - Tee</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4216</Id>
+      <Code>z1TW-BLOUSE</Code>
+      <Name>Top Woven - Blouse</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4188</Id>
+      <Code>z1TW-CAMI</Code>
+      <Name>Top Woven - Cami</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4211</Id>
+      <Code>z1TW-SHIRT</Code>
+      <Name>Top Woven - Shirt</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4221</Id>
+      <Code>z1TW-STRAPLESS</Code>
+      <Name>Top Woven - Strapless</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4740</Id>
+      <Code>z1TW-TANK</Code>
+      <Name>Top Woven - Tank</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>6122</Id>
+      <Code>z4PK - PANT</Code>
+      <Name>Pant Knit</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4327</Id>
+      <Code>zAB-LEGGINGS</Code>
+      <Name>PANTS - LEGGINGS</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4332</Id>
+      <Code>zAB-LOUNGE PANT</Code>
+      <Name>Activewear Bottoms - Lounge Pants</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4353</Id>
+      <Code>zAC-BAGS/WALLET</Code>
+      <Name>ACCESSORIES - BAGS AND WALLETS GENERAL</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4355</Id>
+      <Code>zAC-BELTS</Code>
+      <Name>ACCESSORIES - BELTS</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4349</Id>
+      <Code>zAC-BRACELET</Code>
+      <Name>ACCESSORIES - BRACELET</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4352</Id>
+      <Code>zAC-EARRINGS</Code>
+      <Name>Accessories - Earrings</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4359</Id>
+      <Code>zAC-GLOVES</Code>
+      <Name>Accessories - Gloves</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4356</Id>
+      <Code>zAC-HATS</Code>
+      <Name>Accessories - Hats</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4358</Id>
+      <Code>zAC-HEADWEAR/HA</Code>
+      <Name>ACCESSORIES - HEADWEAR/HATS GENERAL</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4357</Id>
+      <Code>zAC-KEYRING</Code>
+      <Name>ACCESSORIES - KEYRINGS</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>6268</Id>
+      <Code>zAC-MISC</Code>
+      <Name>ACCESSORIES - MISC</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4350</Id>
+      <Code>zAC-NECKLACE</Code>
+      <Name>ACCESSORIES - NECKLACE</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4351</Id>
+      <Code>zAC-RING</Code>
+      <Name>Accessories - Ring</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4360</Id>
+      <Code>zAC-SUNGLASSES</Code>
+      <Name>ACCESSORIES - SUNGLASSES</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4354</Id>
+      <Code>zAC-WALLETS</Code>
+      <Name>Accessories - Wallets</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>18134</Id>
+      <Code>zAW - LONG SLV</Code>
+      <Name>TOPS -  LONG SLEEVED</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>18135</Id>
+      <Code>zAW - TANK</Code>
+      <Name>TOPS - TANK </Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4325</Id>
+      <Code>zAW-CARDIGAN</Code>
+      <Name>Activewear Tops - Cardigan</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4324</Id>
+      <Code>zAW-FITTED</Code>
+      <Name>Activewear Tops - Fitted</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4322</Id>
+      <Code>zAW-LOOSE</Code>
+      <Name>Activewear Tops - Loose</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4321</Id>
+      <Code>zAW-SHORT SLEEV</Code>
+      <Name>TOPS - SHORT SLEEVED</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4314</Id>
+      <Code>zAW-SLEEVED</Code>
+      <Name>Activewear Tops - Sleeved</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4317</Id>
+      <Code>zAW-SLEEVELESS</Code>
+      <Name>Activewear Tops - Sleeveless</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>20118</Id>
+      <Code>zBASICS</Code>
+      <Name>BASICS </Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>18122</Id>
+      <Code>zBW - BABYWOOL</Code>
+      <Name>BABYWOOL </Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4338</Id>
+      <Code>zBW-CARDI</Code>
+      <Name>Babywool - Cardigan</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4341</Id>
+      <Code>zBW-CREW NECK</Code>
+      <Name>Babywool - Crew Neck Sweater</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4342</Id>
+      <Code>zBW-HENLEY</Code>
+      <Name>Babywool - Henley Sweater</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4339</Id>
+      <Code>zBW-LONG CARDI</Code>
+      <Name>Babywool - Longline Cardigan</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4343</Id>
+      <Code>zBW-SCOOP</Code>
+      <Name>Babywool - Scoop Neck Sweater</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4344</Id>
+      <Code>zBW-SLEEVELESS</Code>
+      <Name>Babywool - Sleeveless</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4340</Id>
+      <Code>zBW-VNECK</Code>
+      <Name>Babywool - V-Neck Sweater</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>23480</Id>
+      <Code>zDEVELOPMENT</Code>
+      <Name>DEVELOPMENT</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4608</Id>
+      <Code>zDK-CASUAL</Code>
+      <Name>Dress Knit - Casual</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4605</Id>
+      <Code>zDK-DRESSY</Code>
+      <Name>Dress Knit - Dressy</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>34707</Id>
+      <Code>zDLUXE ACCESS</Code>
+      <Name>DLUXE ACCESSORIES</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>34706</Id>
+      <Code>zDLUXE BOTTOMS</Code>
+      <Name>DLUXE BOTTOMS</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>34710</Id>
+      <Code>zDLUXE DRESSES</Code>
+      <Name>DLUXE DRESSES</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>34709</Id>
+      <Code>zDLUXE KNITWEAR</Code>
+      <Name>DLUXE KNITWEAR</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>34708</Id>
+      <Code>zDLUXE OUTWEAR</Code>
+      <Name>DLUXE OUTWEAR</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>33541</Id>
+      <Code>zDLUXE TOPS</Code>
+      <Name>DLUXE TOPS</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>18125</Id>
+      <Code>zDR - CASUAL</Code>
+      <Name>DRESSES - CASUAL</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>20103</Id>
+      <Code>zDR - DAY DRESS</Code>
+      <Name>DRESSES - DAY DRESS</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>18124</Id>
+      <Code>zDR - DRESSY</Code>
+      <Name>DRESSES - DRESSY</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>20102</Id>
+      <Code>zDR - JERSEY</Code>
+      <Name>DRESSES - JERSEY</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>20104</Id>
+      <Code>zDR - OCCASION</Code>
+      <Name>DRESSES - OCCASION</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>20101</Id>
+      <Code>zDR - WEEKENDER</Code>
+      <Name>DRESSES - WEEKENDER</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4346</Id>
+      <Code>zDW-CASUAL</Code>
+      <Name>Dress Woven - Casual</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4345</Id>
+      <Code>zDW-DRESSY</Code>
+      <Name>Dress Woven - Dressy</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4361</Id>
+      <Code>zFT-BOOTS</Code>
+      <Name>SHOES - BOOTS</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4363</Id>
+      <Code>zFT-FLATS</Code>
+      <Name>SHOES - FLATS</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4365</Id>
+      <Code>zFT-HEELS</Code>
+      <Name>SHOES - HEELS</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4364</Id>
+      <Code>zFT-SANDALS</Code>
+      <Name>SHOES - SANDALS</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4362</Id>
+      <Code>zFT-THONGS</Code>
+      <Name>SHOES - THONGS</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>20418</Id>
+      <Code>zJA - JKTS LTHR</Code>
+      <Name>JACKETS - LEATHER</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>18126</Id>
+      <Code>zJA - JKTS RELA</Code>
+      <Name>JACKETS - RELAXED</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>18127</Id>
+      <Code>zJA -JKTS OUTER</Code>
+      <Name>JACKETS - OUTERWEAR</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4348</Id>
+      <Code>zJK-RELAXED</Code>
+      <Name>Jacket - Knit Relaxed/Slouch</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4609</Id>
+      <Code>zJK-TAILORED</Code>
+      <Name>Jacket Knit - Tailored</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4755</Id>
+      <Code>zJK-VEST</Code>
+      <Name>Jacket Knit - Vest</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4610</Id>
+      <Code>zJW-RELAXED</Code>
+      <Name>Jacket Woven - Relaxed/Slouch</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4758</Id>
+      <Code>zJW-TAILORED</Code>
+      <Name>Jacket Woven - Tailored</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4760</Id>
+      <Code>zJW-VEST</Code>
+      <Name>Jacket Woven - Vest</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>18130</Id>
+      <Code>zKN -KNTWEAR CA</Code>
+      <Name>KNITWEAR - CARDIGAN</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>18129</Id>
+      <Code>zKN -KNTWEAR LS</Code>
+      <Name>KNITWEAR - LONG SLEEVE</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>18128</Id>
+      <Code>zKN -KNTWEAR SS</Code>
+      <Name>KNITWEAR - SHORT SLEEVE</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4761</Id>
+      <Code>zKN-CARDI</Code>
+      <Name>Knitwear - Cardigan</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4335</Id>
+      <Code>zKN-CREW NECK</Code>
+      <Name>Knitwear - Crew Neck Sweater</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4336</Id>
+      <Code>zKN-HENLEY</Code>
+      <Name>Knitwear - Henley Sweater</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4333</Id>
+      <Code>zKN-LONG CARDI</Code>
+      <Name>Knitwear - Longline Cardigan</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4337</Id>
+      <Code>zKN-SCOOP NECK</Code>
+      <Name>Knitwear - Scoop Neck Sweater</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4762</Id>
+      <Code>zKN-VEST</Code>
+      <Name>Knitwear - Vest</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4334</Id>
+      <Code>zKN-VNECK</Code>
+      <Name>Knitwear - V-Neck Sweater</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>6332</Id>
+      <Code>zLBCanFee</Code>
+      <Name>Layby Cancel Fee</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>18131</Id>
+      <Code>zPA - PANTS CAS</Code>
+      <Name>PANTS - CASUAL</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>18132</Id>
+      <Code>zPA -PANTS TAIL</Code>
+      <Name>PANTS - TAILORED</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>6361</Id>
+      <Code>zPK - PANT</Code>
+      <Name>Pant Knit - Pant</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4347</Id>
+      <Code>zPW-CASUAL</Code>
+      <Name>Pant Woven - Casual</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4763</Id>
+      <Code>zPW-SHORT</Code>
+      <Name>Pant Woven - Short</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4764</Id>
+      <Code>zPW-TAILORED</Code>
+      <Name>Pant Woven - Tailored</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4367</Id>
+      <Code>zSC-KNIT</Code>
+      <Name>SCARVES - KNITTED</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4366</Id>
+      <Code>zSC-WOVEN</Code>
+      <Name>SCARVES - WOVEN</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>18133</Id>
+      <Code>zSK -SKTS/SHORT</Code>
+      <Name>SKIRTS AND SHORTS </Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4747</Id>
+      <Code>zSK-SKIRT</Code>
+      <Name>Skirt Knit - Skirt</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4748</Id>
+      <Code>zSW-SKIRT</Code>
+      <Name>Skirt Woven - Skirt</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>5220</Id>
+      <Code>zTBC</Code>
+      <Name>To Be Confirmed</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>18136</Id>
+      <Code>zTW -WOVEN TOPS</Code>
+      <Name>TOPS - WOVEN TOPS</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4304</Id>
+      <Code>zTW-EMBELLISHED</Code>
+      <Name>Tops Woven - Embellished</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4307</Id>
+      <Code>zTW-PLAIN</Code>
+      <Name>Tops Woven - Plain</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4765</Id>
+      <Code>zTW-SHIRT</Code>
+      <Name>Top Woven - Shirt</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4309</Id>
+      <Code>zTW-SLEEVED</Code>
+      <Name>Tops Woven - Sleeved</Name>
+    </Reference>
+    <Reference>
+      <ReferenceTypeId>1</ReferenceTypeId>
+      <Id>4308</Id>
+      <Code>zTW-SLEEVELESS</Code>
+      <Name>Tops Woven - Sleeveless</Name>
+    </Reference>
+  </References>
+</ReferencesbyType>
