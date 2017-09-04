@@ -2,10 +2,10 @@
 
 namespace Arkade\Apparel21\Entities;
 
-use Arkade\Apparel21\Contracts;
-use Arkade\Apparel21\Contracts\Commerce;
+use Arkade\Support\Traits;
+use Arkade\Support\Contracts;
 
-class Product implements Commerce\Product, Commerce\HasVariants, Commerce\Identifiable, Commerce\Dated, Contracts\Entity
+class Product implements Contracts\Product, Contracts\HasVariants, Contracts\Identifiable, Contracts\HasDates
 {
-    use Traits\Product, Traits\HasVariants, Traits\Identifiable, Traits\Dated;
+    use Traits\Product, Traits\HasVariants, Traits\Identifiable, Traits\HasDates;
 }

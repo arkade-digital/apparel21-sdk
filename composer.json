@@ -17,9 +17,17 @@
         "guzzlehttp/guzzle": "^6.3",
         "nesbot/carbon": "^1.22",
         "illuminate/support": "^5.2",
-        "psr/http-message": "^1.0"
+        "psr/http-message": "^1.0",
+        "arkade/support": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.1"
-    }
+    },
+    "repositories": {
+        "support": {
+            "type": "git",
+            "url": "git@github.com:arkade-digital/support.git"
+        }
+    },
+    "minimum-stability": "dev"
 }

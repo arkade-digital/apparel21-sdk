@@ -3,8 +3,8 @@
 namespace Arkade\Apparel21\Parsers;
 
 use Carbon\Carbon;
+use Arkade\Support\Contracts;
 use Arkade\Apparel21\Entities;
-use Arkade\Apparel21\Contracts;
 use PHPUnit\Framework\TestCase;
 use Illuminate\Support\Collection;
 
@@ -20,7 +20,7 @@ class ProductParserTest extends TestCase
         );
 
         $this->assertInstanceOf(Entities\Product::class, $product);
-        $this->assertInstanceOf(Contracts\Commerce\Product::class, $product);
+        $this->assertInstanceOf(Contracts\Product::class, $product);
 
         $this->assertEquals('31321', $product->getIdentifiers()->get('ap21_id'));
         $this->assertEquals('10005KNDE', $product->getIdentifiers()->get('ap21_code'));
@@ -33,7 +33,7 @@ class ProductParserTest extends TestCase
         $this->assertCount(3, $product->getVariants());
 
         $this->assertInstanceOf(Entities\Variant::class, $product->getVariants()->first());
-        $this->assertInstanceOf(Contracts\Commerce\Sellable::class, $product->getVariants()->first());
+        $this->assertInstanceOf(Contracts\Sellable::class, $product->getVariants()->first());
 
         $this->assertEquals('150077', $product->getVariants()->first()->getIdentifiers()->get('ap21_id'));
         $this->assertEquals('63090', $product->getVariants()->first()->getIdentifiers()->get('ap21_colour_id'));

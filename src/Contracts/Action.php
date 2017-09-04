@@ -6,6 +6,8 @@ use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
+use Arkade\Support\Contracts;
+
 interface Action
 {
     /**
@@ -19,7 +21,7 @@ interface Action
      * Transform a PSR-7 response.
      *
      * @param  ResponseInterface $response
-     * @return Entity|Collection
+     * @return Contracts\Identifiable|Collection
      */
     public function response(ResponseInterface $response);
 }

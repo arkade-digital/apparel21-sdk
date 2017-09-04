@@ -2,10 +2,10 @@
 
 namespace Arkade\Apparel21\Entities;
 
-use Arkade\Apparel21\Contracts;
-use Arkade\Apparel21\Contracts\Commerce;
+use Arkade\Support\Traits;
+use Arkade\Support\Contracts;
 
-class Variant implements Commerce\Variant, Commerce\Sellable, Commerce\Identifiable, Commerce\Dated, Contracts\Entity
+class Variant implements Contracts\Variant, Contracts\Sellable, Contracts\Identifiable, Contracts\HasDates
 {
-    use Traits\Variant, Traits\Sellable, Traits\Identifiable, Traits\Dated;
+    use Traits\Variant, Traits\Sellable, Traits\Identifiable, Traits\HasDates;
 }
