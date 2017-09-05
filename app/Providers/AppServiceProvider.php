@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
+use Monolog\Handler\LogEntriesHandler;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,5 +26,18 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    /**
+     * Configure remote logging services.
+     *
+     * @return void
+     */
+    protected function configureRemoteLogging()
+    {
+        // Configure LogEntries.
+        if (config('services.logentries.token')) {
+            Log::getMonolog()->pushHandler(new LogEntriesHandler(config('services.logentries.token')));
+        }
     }
 }
