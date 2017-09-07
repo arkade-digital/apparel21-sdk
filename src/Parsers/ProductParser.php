@@ -44,7 +44,7 @@ class ProductParser
                 'ap21_code' => (string) $payload->Code
             ]))
             ->setOptions(new Collection(['colour' => 'Colour', 'size'   => 'Size']))
-            ->setName((string) $payload->Name)
+            ->setTitle((string) $payload->Name)
             ->setDescription((string) $payload->Description)
             ->setUpdatedAt(Carbon::parse((string) $payload->UpdateTimeStamp));
 
@@ -95,7 +95,10 @@ class ProductParser
             );
 
             if ($reference) {
-                $product->getAttributes()->offsetSet('ap21_'.$reference->getType()->getCode(), $reference->getCode());
+                $product->getAttributes()->offsetSet(
+                    'ap21_'.strtolower($reference->getType()->getCode()),
+                    $reference->getCode()
+                );
             }
 
         }

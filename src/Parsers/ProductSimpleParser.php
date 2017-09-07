@@ -22,7 +22,7 @@ class ProductSimpleParser
                 'ap21_id'   => (string) $payload->Id,
                 'ap21_code' => (string) $payload->Code
             ]))
-            ->setName((string) $payload->Name)
+            ->setTitle((string) $payload->Name)
             ->setDescription((string) $payload->Description)
             ->setUpdatedAt(Carbon::parse((string) $payload->UpdateTimeStamp));
     }
