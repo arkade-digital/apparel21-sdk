@@ -15,6 +15,7 @@ class PersonParser
      */
     public function parse(SimpleXMLElement $payload)
     {
+        //TODO:CARLOS it can be a collection.
         $person = (new Entities\Person)
             ->setEmail((string) $payload->Email)
             ->setFirstName((string) $payload->FirstName)
