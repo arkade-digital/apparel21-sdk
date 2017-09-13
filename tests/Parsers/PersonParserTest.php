@@ -59,4 +59,30 @@ class PersonParserTest extends TestCase
             return 'mobile_phone' == $contact->getType();
         }));
     }
+
+    /**
+     * @test
+     */
+    public function returns_populated_person_with_address()
+    {
+        $person = (new PersonParser)->parse(
+            (new PayloadParser)->parse(file_get_contents(__DIR__ . '/../Stubs/Persons/person.xml'))
+        );
+
+        $this->assertInstanceOf(Collection::class, $person->getAddresses());
+        $this->assertCount(1, $person->getAddresses());
+
+        $this->assertInstanceOf(Entities\Address::class, $person->getAddresses()->first());
+        $this->assertInstanceOf(Contracts\Address::class, $person->getAddresses()->first());
+
+        $this->assertEquals('billing', $person->getAddresses()->first()->getType());
+        $this->assertEquals('Dan Ahwa', $person->getAddresses()->first()->getContactName());
+        $this->assertEquals('ACME Corp', $person->getAddresses()->first()->getCompanyName());
+        $this->assertEquals('123 Springfield Lane', $person->getAddresses()->first()->getLine1());
+        $this->assertEquals('', $person->getAddresses()->first()->getLine2());
+        $this->assertEquals('Melbourne', $person->getAddresses()->first()->getCity());
+        $this->assertEquals('VIC', $person->getAddresses()->first()->getState());
+        $this->assertEquals('3000', $person->getAddresses()->first()->getPostalCode());
+        $this->assertEquals('Australia', $person->getAddresses()->first()->getCountry());
+    }
 }

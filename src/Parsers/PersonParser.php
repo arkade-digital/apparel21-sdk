@@ -44,6 +44,21 @@ class PersonParser
                 })
         );
 
+        foreach ($payload->Addresses as $address) {
+            foreach ($address->Billing as $item) {
+                $person->pushAddress((new Entities\Address)
+                    ->setType('billing')
+                    ->setContactName((string) $item->ContactName)
+                    ->setCompanyName((string) $item->CompanyName)
+                    ->setLine1((string) $item->AddressLine1)
+                    ->setLine2((string) $item->AddressLine2)
+                    ->setCity((string) $item->City)
+                    ->setState((string) $item->State)
+                    ->setPostalCode((string) $item->Postcode)
+                    ->setCountry((string) $item->Country)
+                );
+            }
+        }
         return $person;
     }
 
