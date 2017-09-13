@@ -10,13 +10,14 @@ use Illuminate\Support\Collection;
 
 class PersonParserTest extends TestCase
 {
+
     /**
      * @test
      */
     public function returns_populated_person_entity()
     {
         $person = (new PersonParser)->parse(
-            (new PayloadParser)->parse(file_get_contents(__DIR__.'/../Stubs/Persons/person.xml'))
+            (new PayloadParser)->parse(file_get_contents(__DIR__ . '/../Stubs/Persons/person.xml'))
         );
 
         $this->assertInstanceOf(Entities\Person::class, $person);
@@ -35,7 +36,7 @@ class PersonParserTest extends TestCase
     public function returns_populated_person_with_contacts()
     {
         $person = (new PersonParser)->parse(
-            (new PayloadParser)->parse(file_get_contents(__DIR__.'/../Stubs/Persons/person.xml'))
+            (new PayloadParser)->parse(file_get_contents(__DIR__ . '/../Stubs/Persons/person.xml'))
         );
 
         $this->assertInstanceOf(Collection::class, $person->getContacts());
@@ -85,4 +86,44 @@ class PersonParserTest extends TestCase
         $this->assertEquals('3000', $person->getAddresses()->first()->getPostalCode());
         $this->assertEquals('Australia', $person->getAddresses()->first()->getCountry());
     }
+
+    /**
+     * @test
+     */
+    public function returns_populated_person_with_attributes()
+    {
+        $person = (new PersonParser)->parse(
+            (new PayloadParser)->parse(file_get_contents(__DIR__ . '/../Stubs/Persons/person.xml'))
+        );
+
+        $this->assertNull($person->getAttributes()->first(function ($attribute) {
+            return 'tittle' == $attribute;
+        }));
+        $this->assertNull($person->getAttributes()->first(function ($attribute) {
+            return 'initials' == $attribute;
+        }));
+        $this->assertNull($person->getAttributes()->first(function ($attribute) {
+            return 'sex' == $attribute;
+        }));
+        $this->assertNull($person->getAttributes()->first(function ($attribute) {
+            return 'date_of_birth' == $attribute;
+        }));
+        $this->assertNull($person->getAttributes()->first(function ($attribute) {
+            return 'start_date' == $attribute;
+        }));
+
+        $this->assertEquals('Stylist', $person->getAttributes()->first(function ($attribute, $value) {
+            return 'job_title' == $value;
+        }));
+        $this->assertEquals('false', $person->getAttributes()->first(function ($attribute, $value) {
+            return 'privacy' == $value;
+        }));
+        $this->assertEquals('20/03/2012 10:39:55 AM', $person->getAttributes()->first(function ($attribute, $value) {
+            return 'updated_at' == $value;
+        }));
+        $this->assertEquals('false', $person->getAttributes()->first(function ($attribute, $value) {
+            return 'is_agent' == $value;
+        }));
+    }
+
 }

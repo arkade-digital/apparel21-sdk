@@ -3,6 +3,7 @@
 namespace Arkade\Apparel21\Parsers;
 
 use Arkade\Apparel21\Entities;
+use function foo\func;
 use Illuminate\Support\Collection;
 use SimpleXMLElement;
 
@@ -23,6 +24,21 @@ class PersonParser
             ]))
             ->setFirstName((string) $payload->Firstname)
             ->setLastName((string) $payload->Surname);
+
+        $personAttributes = (new Collection([
+            'title' => (string) $payload->Title,
+            'initials' => (string) $payload->Sex,
+            'date_of_birth' => (string) $payload->DateOfBirth,
+            'job_title' => (string) $payload->JobTitle,
+            'start_date' => (string) $payload->StartDate,
+            'privacy' => (string) $payload->Privacy,
+            'updated_at' => (string) $payload->UpdateTimeStamp,
+            'is_agent' => (string) $payload->IsAgent
+        ]))->filter(function ($attribute) {
+            return $attribute !== '';
+        });
+
+        $person->setAttributes($personAttributes);
 
         foreach ($payload->Contacts as $contact)
         {

@@ -9,7 +9,7 @@
     <DateOfBirth />
     <StartDate />
     <JobTitle>Stylist</JobTitle>
-    <Privacy>False</Privacy>
+    <Privacy>false</Privacy>
     <UpdateTimeStamp>20/03/2012 10:39:55 AM</UpdateTimeStamp>
     <References Type="Array" />
     <IsAgent>false</IsAgent>
