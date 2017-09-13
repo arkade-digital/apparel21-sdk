@@ -18,20 +18,31 @@ class PersonParser
     {
         $person = (new Entities\Person)
             ->setIdentifiers(new Collection([
-                'ap21_id'   => (string) $payload->Id,
-                'ap21_code' => (string) $payload->Code
+                'ap21.id'   => (string) $payload->Id,
+                'ap21.code' => (string) $payload->Code
             ]))
             ->setFirstName((string) $payload->Firstname)
             ->setLastName((string) $payload->Surname);
 
-        foreach ($payload->Contacts as $contact) {
+        foreach ($payload->Contacts as $contact)
+        {
             $person->pushContact((new Entities\Contact)->setType('email')->setValue((string) $contact->Email));
 
             foreach ($contact->Phones as $phone) {
                 $person->pushContact((new Entities\Contact)->setType('mobile_phone')->setValue((string) $phone->Mobile));
                 $person->pushContact((new Entities\Contact)->setType('home_phone')->setValue((string) $phone->Home));
+                $person->pushContact((new Entities\Contact)->setType('work_phone')->setValue((string) $phone->Work));
             }
         }
+
+        // Filter out empty contacts
+        $person->setContacts(
+            $person
+                ->getContacts()
+                ->reject(function (Entities\Contact $contact) {
+                    return empty($contact->getValue());
+                })
+        );
 
         return $person;
     }
