@@ -2,13 +2,17 @@
 
 namespace Arkade\Apparel21\Actions;
 
+use Mockery as m;
 use GuzzleHttp\Psr7\Response;
+use Arkade\Apparel21\Contracts;
 use Arkade\Apparel21\Entities;
 use PHPUnit\Framework\TestCase;
 use Illuminate\Support\Collection;
+use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 
 class GetPersonsTest extends TestCase
 {
+    use MockeryPHPUnitIntegration;
     /**
      * Test if email appears on the request query
      * @test
@@ -99,5 +103,12 @@ class GetPersonsTest extends TestCase
         $this->assertInstanceOf(Collection::class, $collection);
         $this->assertInstanceOf(Entities\Person::class, $collection->first());
         $this->assertEquals(4, $collection->count());
+    }
+
+    public function response_found_person_by_email()
+    {
+        $request = (new GetPersons)->email('danahwa@example.com')->request();
+        $person = m::mock();
+
     }
 }

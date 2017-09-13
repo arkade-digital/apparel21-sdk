@@ -70,9 +70,9 @@ class GetPersons extends BaseAction implements Contracts\Action
      * @param  string $email
      * @return static
      */
-    public function emails($email)
+    public function email($email)
     {
-        $this->email = (new Collection($this->email))->push($email);
+        $this->email = $email;
 
         return $this;
     }
