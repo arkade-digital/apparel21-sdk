@@ -5,8 +5,7 @@ namespace Arkade\Apparel21\Entities;
 use Arkade\Support\Traits;
 use Arkade\Support\Contracts;
 
-class Person implements Contracts\Person
+class Contact implements Contracts\Contact
 {
-    use Traits\Person,
-        Traits\Identifiable;
+    use Traits\Contact;
 }

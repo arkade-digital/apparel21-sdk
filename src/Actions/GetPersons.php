@@ -33,15 +33,14 @@ class GetPersons extends BaseAction implements Contracts\Action
     protected $surname;
 
     /**
-     * @var
+     * @var string
      */
     protected $phone;
 
     /**
-     * @var
+     * @var string
      */
     protected $code;
-
 
     /**
      * @param string $phone
@@ -71,9 +70,9 @@ class GetPersons extends BaseAction implements Contracts\Action
      * @param  string $email
      * @return static
      */
-    public function email($email)
+    public function emails($email)
     {
-        $this->email = $email;
+        $this->email = (new Collection($this->email))->push($email);
 
         return $this;
     }
@@ -119,7 +118,6 @@ class GetPersons extends BaseAction implements Contracts\Action
             'surname'   => $this->surname,
             'phone'   => $this->phone,
             'code'   => $this->code,
-
         ])));
     }
 
@@ -133,9 +131,13 @@ class GetPersons extends BaseAction implements Contracts\Action
     {
         $xml = (new Parsers\PayloadParser)->parse((string) $response->getBody());
 
-        // SimpleXML object - make this into a Person!
-        dd($xml);
+        $collection = new Collection;
+
+        foreach ($xml as $item) {
+            $collection->push(
+                (new Parsers\PersonParser)->parse($item)
+            );
+        }
+        return $collection;
     }
-
-
 }

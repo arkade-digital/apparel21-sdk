@@ -94,7 +94,7 @@
         </Currency>
     </Person>
     <Person>
-        <Id>588227</Id>
+        <Id>5882272</Id>
         <Code>BRENDA02</Code>
         <Title />
         <Initials />
@@ -122,6 +122,54 @@
         </Addresses>
         <Contacts>
             <Email>danielbren@example.com</Email>
+            <Phones>
+                <Home>0123456789</Home>
+                <Mobile />
+                <Work />
+            </Phones>
+        </Contacts>
+        <Currency>
+            <Code />
+            <Format />
+        </Currency>
+    </Person>
+    <Person>
+        <Id>5882271</Id>
+        <Code>BRENDA03</Code>
+        <Title />
+        <Initials />
+        <Firstname>Daniel3</Firstname>
+        <Surname>Brennan3</Surname>
+        <Sex />
+        <DateOfBirth />
+        <StartDate />
+        <JobTitle />
+        <Privacy>False</Privacy>
+        <UpdateTimeStamp>15/10/2016 12:15:07 PM</UpdateTimeStamp>
+        <References Type="Array" />
+        <IsAgent>false</IsAgent>
+        <Addresses>
+            <Billing>
+                <ContactName />
+                <CompanyName />
+                <AddressLine1 />
+                <AddressLine2 />
+                <City />
+                <State />
+                <Postcode />
+                <Country />
+            </Billing>
+        </Addresses>
+        <Contacts>
+            <Email>danielbren0@example.com</Email>
+            <Phones>
+                <Home>0000000</Home>
+                <Mobile />
+                <Work />
+            </Phones>
+        </Contacts>
+        <Contacts>
+            <Email>danielbren3@example.com</Email>
             <Phones>
                 <Home>0123456789</Home>
                 <Mobile />
