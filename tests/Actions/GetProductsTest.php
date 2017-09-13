@@ -7,6 +7,7 @@ use GuzzleHttp\Psr7\Response;
 use Arkade\Apparel21\Entities;
 use PHPUnit\Framework\TestCase;
 use Illuminate\Support\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class GetProductsTest extends TestCase
 {
@@ -48,5 +49,56 @@ class GetProductsTest extends TestCase
 
         $this->assertInstanceOf(Collection::class, $collection);
         $this->assertInstanceOf(Entities\Product::class, $collection->first());
+    }
+
+    /**
+     * @test
+     */
+    public function response_is_a_length_aware_paginator_when_paginated()
+    {
+        $paginator = (new GetProducts)->take(20)->response(
+            new Response(200, [], file_get_contents(__DIR__.'/../Stubs/Products/get_products_simple_success.xml'))
+        );
+
+        $this->assertInstanceOf(LengthAwarePaginator::class, $paginator);
+        $this->assertEquals(2931, $paginator->total());
+
+        $this->assertInstanceOf(Entities\Product::class, $paginator->getCollection()->first());
+    }
+
+    /**
+     * @test
+     */
+    public function response_paginator_has_correct_first_page()
+    {
+        $paginator = (new GetProducts)->take(20)->response(
+            new Response(200, [], file_get_contents(__DIR__.'/../Stubs/Products/get_products_simple_success.xml'))
+        );
+
+        $this->assertEquals(1, $paginator->currentPage());
+    }
+
+    /**
+     * @test
+     */
+    public function response_paginator_has_correct_offset_page()
+    {
+        $paginator = (new GetProducts)->skip(10)->take(20)->response(
+            new Response(200, [], file_get_contents(__DIR__.'/../Stubs/Products/get_products_simple_success.xml'))
+        );
+
+        $this->assertEquals(2, $paginator->currentPage());
+    }
+
+    /**
+     * @test
+     */
+    public function response_paginator_has_correct_offset_page_for_mid_skip()
+    {
+        $paginator = (new GetProducts)->skip(21)->take(20)->response(
+            new Response(200, [], file_get_contents(__DIR__.'/../Stubs/Products/get_products_simple_success.xml'))
+        );
+
+        $this->assertEquals(3, $paginator->currentPage());
     }
 }

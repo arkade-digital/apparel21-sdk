@@ -9,6 +9,7 @@ use Arkade\Apparel21\Contracts;
 use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class GetProducts extends BaseAction implements Contracts\Action
 {
@@ -92,7 +93,7 @@ class GetProducts extends BaseAction implements Contracts\Action
      * Transform a PSR-7 response.
      *
      * @param  ResponseInterface $response
-     * @return Collection
+     * @return LengthAwarePaginator|Collection
      */
     public function response(ResponseInterface $response)
     {
@@ -102,6 +103,15 @@ class GetProducts extends BaseAction implements Contracts\Action
 
         foreach ($data->ProductSimple as $product) {
             $collection->push((new Parsers\ProductSimpleParser)->parse($product));
+        }
+
+        if ($this->take) {
+            return new LengthAwarePaginator(
+                $collection,
+                (int) $data->attributes()->TotalRows,
+                $this->take,
+                ceil(($this->skip / $this->take) + 1)
+            );
         }
 
         return $collection;

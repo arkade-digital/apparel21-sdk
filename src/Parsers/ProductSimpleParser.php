@@ -19,8 +19,8 @@ class ProductSimpleParser
     {
         return (new Entities\Product)
             ->setIdentifiers(new Collection([
-                'ap21_id'   => (string) $payload->Id,
-                'ap21_code' => (string) $payload->Code
+                'ap21.id'   => (string) $payload->Id,
+                'ap21.code' => (string) $payload->Code
             ]))
             ->setTitle((string) $payload->Name)
             ->setDescription((string) $payload->Description)

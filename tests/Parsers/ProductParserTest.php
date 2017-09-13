@@ -27,8 +27,8 @@ class ProductParserTest extends TestCase
         $this->assertInstanceOf(Entities\Product::class, $product);
         $this->assertInstanceOf(Contracts\Product::class, $product);
 
-        $this->assertEquals('31321', $product->getIdentifiers()->get('ap21_id'));
-        $this->assertEquals('10005KNDE', $product->getIdentifiers()->get('ap21_code'));
+        $this->assertEquals('31321', $product->getIdentifiers()->get('ap21.id'));
+        $this->assertEquals('10005KNDE', $product->getIdentifiers()->get('ap21.code'));
         $this->assertEquals('IMOGEN CF CABLE KNIT', $product->getTitle());
         $this->assertEquals('TEST DESCRIPTION', $product->getDescription());
         $this->assertEquals(['colour' => 'Colour', 'size' => 'Size'], $product->getOptions()->toArray());
@@ -40,10 +40,10 @@ class ProductParserTest extends TestCase
         $this->assertInstanceOf(Entities\Variant::class, $product->getVariants()->first());
         $this->assertInstanceOf(Contracts\Sellable::class, $product->getVariants()->first());
 
-        $this->assertEquals('150077', $product->getVariants()->first()->getIdentifiers()->get('ap21_id'));
-        $this->assertEquals('63090', $product->getVariants()->first()->getIdentifiers()->get('ap21_colour_id'));
-        $this->assertEquals('MIDGRYMRL', $product->getVariants()->first()->getIdentifiers()->get('ap21_colour_code'));
-        $this->assertEquals('S', $product->getVariants()->first()->getIdentifiers()->get('ap21_size_code'));
+        $this->assertEquals('150077', $product->getVariants()->first()->getIdentifiers()->get('ap21.id'));
+        $this->assertEquals('63090', $product->getVariants()->first()->getIdentifiers()->get('ap21.colour_id'));
+        $this->assertEquals('MIDGRYMRL', $product->getVariants()->first()->getIdentifiers()->get('ap21.colour_code'));
+        $this->assertEquals('S', $product->getVariants()->first()->getIdentifiers()->get('ap21.size_code'));
 
         $this->assertEquals('Mid Grey Marle - S', $product->getVariants()->first()->getTitle());
         $this->assertEquals('9342033270762', $product->getVariants()->first()->getSKU());
@@ -103,8 +103,8 @@ class ProductParserTest extends TestCase
         $this->assertCount(2, $product->getAttributes());
 
         $this->assertEquals([
-            'ap21_CATEGORY' => 'SPORTS',
-            'ap21_TYPE'     => 'APPAREL'
+            'category' => 'SPORTS',
+            'type'     => 'APPAREL'
         ], $product->getAttributes()->toArray());
     }
 }
