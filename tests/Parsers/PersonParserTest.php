@@ -83,7 +83,7 @@ class PersonParserTest extends TestCase
         $this->assertEquals('', $person->getAddresses()->first()->getLine2());
         $this->assertEquals('Melbourne', $person->getAddresses()->first()->getCity());
         $this->assertEquals('VIC', $person->getAddresses()->first()->getState());
-        $this->assertEquals('3000', $person->getAddresses()->first()->getPostalCode());
+        $this->assertEquals('3000', $person->getAddresses()->first()->getPostcode());
         $this->assertEquals('Australia', $person->getAddresses()->first()->getCountry());
     }
 
@@ -96,34 +96,14 @@ class PersonParserTest extends TestCase
             (new PayloadParser)->parse(file_get_contents(__DIR__ . '/../Stubs/Persons/person.xml'))
         );
 
-        $this->assertNull($person->getAttributes()->first(function ($attribute) {
-            return 'tittle' == $attribute;
-        }));
-        $this->assertNull($person->getAttributes()->first(function ($attribute) {
-            return 'initials' == $attribute;
-        }));
-        $this->assertNull($person->getAttributes()->first(function ($attribute) {
-            return 'sex' == $attribute;
-        }));
-        $this->assertNull($person->getAttributes()->first(function ($attribute) {
-            return 'date_of_birth' == $attribute;
-        }));
-        $this->assertNull($person->getAttributes()->first(function ($attribute) {
-            return 'start_date' == $attribute;
-        }));
-
-        $this->assertEquals('Stylist', $person->getAttributes()->first(function ($attribute, $value) {
-            return 'job_title' == $value;
-        }));
-        $this->assertEquals('false', $person->getAttributes()->first(function ($attribute, $value) {
-            return 'privacy' == $value;
-        }));
-        $this->assertEquals('20/03/2012 10:39:55 AM', $person->getAttributes()->first(function ($attribute, $value) {
-            return 'updated_at' == $value;
-        }));
-        $this->assertEquals('false', $person->getAttributes()->first(function ($attribute, $value) {
-            return 'is_agent' == $value;
-        }));
+        $this->assertEquals('Mr', $person->getAttributes()->get('title'));
+        $this->assertEquals('DA', $person->getAttributes()->get('initials'));
+        $this->assertNull($person->getAttributes()->get('sex'));
+        $this->assertNull($person->getAttributes()->get('date_of_birth'));
+        $this->assertNull($person->getAttributes()->get('start_date'));
+        $this->assertEquals('Stylist', $person->getAttributes()->get('job_title'));
+        $this->assertEquals('false', $person->getAttributes()->get('privacy'));
+        $this->assertEquals('20/03/2012 10:39:55 AM', $person->getAttributes()->get('updated_at'));
+        $this->assertEquals('false', $person->getAttributes()->get('is_agent'));
     }
-
 }

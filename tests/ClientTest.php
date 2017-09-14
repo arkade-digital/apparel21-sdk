@@ -110,7 +110,7 @@ class ClientTest extends TestCase
 //    {
 //        $response = (new Client('http://api.decjuba.com.au/RetailAPITest/'))
 //            ->setCountryCode('AU')
-//            ->action(new Actions\GetCustomersByEmail('foo@example.com'));
+//            ->action((new Actions\GetPersons)->email('foo@example.com'));
 //
 //        var_dump($response, (string) $response->getBody());
 //    }

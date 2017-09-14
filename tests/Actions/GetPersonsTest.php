@@ -2,18 +2,15 @@
 
 namespace Arkade\Apparel21\Actions;
 
-use Mockery as m;
-use GuzzleHttp\Psr7\Response;
-use Arkade\Apparel21\Contracts;
+use GuzzleHttp;
+use Arkade\Apparel21\Client;
 use Arkade\Apparel21\Entities;
 use PHPUnit\Framework\TestCase;
 use Illuminate\Support\Collection;
-use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 
 class GetPersonsTest extends TestCase
 {
     /**
-     * Test if email appears on the request query
      * @test
      */
     public function builds_request_with_email()
@@ -27,7 +24,6 @@ class GetPersonsTest extends TestCase
     }
 
     /**
-     * Test if firstname appears on the request query
      * @test
      */
     public function builds_request_with_firstname()
@@ -41,7 +37,6 @@ class GetPersonsTest extends TestCase
     }
 
     /**
-     * Test if surname appears on the request query
      * @test
      */
     public function builds_request_with_surname()
@@ -55,8 +50,6 @@ class GetPersonsTest extends TestCase
     }
 
     /**
-     * Test if phone appears on the request query
-     *
      * @test
      */
     public function builds_request_with_phone()
@@ -70,8 +63,6 @@ class GetPersonsTest extends TestCase
     }
 
     /**
-     * Test if code appears on the request query
-     *
      * @test
      */
     public function builds_request_with_code()
@@ -85,14 +76,12 @@ class GetPersonsTest extends TestCase
     }
 
     /**
-     * Test if the response is a collection of persons
-     *
      * @test
      */
     public function response_is_a_collection_of_persons()
     {
         $collection = (new GetPersons)->response(
-            new Response(
+            new GuzzleHttp\Psr7\Response(
                 200,
                 [],
                 file_get_contents(__DIR__.'/../Stubs/Persons/get_persons_success.xml')
@@ -102,5 +91,25 @@ class GetPersonsTest extends TestCase
         $this->assertInstanceOf(Collection::class, $collection);
         $this->assertInstanceOf(Entities\Person::class, $collection->first());
         $this->assertEquals(4, $collection->count());
+    }
+
+    /**
+     * @test
+     * @expectedException \Arkade\Apparel21\Exceptions\NotFoundException
+     */
+    public function throws_not_found_exception_when_missing()
+    {
+        $stack = GuzzleHttp\HandlerStack::create(new GuzzleHttp\Handler\MockHandler([
+            new GuzzleHttp\Psr7\Response(
+                404,
+                [],
+                file_get_contents(__DIR__.'/../Stubs/Persons/get_persons_not_found.xml')
+            )
+        ]));
+
+        (new Client('https://api.example.com'))
+            ->setupClient($stack)
+            ->setCountryCode('AU')
+            ->action((new GetPersons)->email('missing@example.com'));
     }
 }
