@@ -19,6 +19,20 @@ class GetProduct extends BaseAction implements Contracts\Action
     protected $id;
 
     /**
+     * Implicitly fetch references for product.
+     *
+     * @var bool
+     */
+    protected $withReferences = true;
+
+    /**
+     * Implicitly fetch notes for product.
+     *
+     * @var bool
+     */
+    protected $withNotes = false;
+
+    /**
      * GetProduct constructor.
      *
      * @param string $id
@@ -26,6 +40,54 @@ class GetProduct extends BaseAction implements Contracts\Action
     public function __construct($id)
     {
         $this->id = $id;
+    }
+
+    /**
+     * Implicitly fetch references for product.
+     *
+     * @return static
+     */
+    public function withReferences()
+    {
+        $this->withReferences = true;
+
+        return $this;
+    }
+
+    /**
+     * Do not implicitly fetch references for product.
+     *
+     * @return static
+     */
+    public function withoutReferences()
+    {
+        $this->withReferences = false;
+
+        return $this;
+    }
+
+    /**
+     * Implicitly fetch notes for product.
+     *
+     * @return static
+     */
+    public function withNotes()
+    {
+        $this->withNotes = true;
+
+        return $this;
+    }
+
+    /**
+     * Do not implicitly fetch notes for product.
+     *
+     * @return static
+     */
+    public function withoutNotes()
+    {
+        $this->withNotes = false;
+
+        return $this;
     }
 
     /**
@@ -46,8 +108,26 @@ class GetProduct extends BaseAction implements Contracts\Action
      */
     public function response(ResponseInterface $response)
     {
-        return (new Parsers\ProductParser)
-            ->setReferenceResolver($this->getClient() ? $this->getClient()->getReferenceResolver() : null)
-            ->parse((new Parsers\PayloadParser)->parse((string) $response->getBody()));
+        $parser = new Parsers\ProductParser;
+
+        // Implicitly fetch references
+        if ($this->client && $this->withReferences) {
+            $parser->setReferenceResolver(
+                $this->client->getReferenceResolver()
+            );
+        }
+
+        $product = $parser->parse(
+            (new Parsers\PayloadParser)->parse((string) $response->getBody())
+        );
+
+        // Implicitly fetch notes
+        if ($this->client && $this->withNotes) {
+            $product->setNotes(
+                $this->client->action(new GetProductNotes($this->id))
+            );
+        }
+
+        return $product;
     }
 }

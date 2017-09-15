@@ -8,6 +8,7 @@ use GuzzleHttp\Psr7\Response;
 use Arkade\Apparel21\Entities;
 use Arkade\Apparel21\Contracts;
 use PHPUnit\Framework\TestCase;
+use Illuminate\Support\Collection;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 
 class GetProductTest extends TestCase
@@ -50,5 +51,43 @@ class GetProductTest extends TestCase
         (new GetProduct('31321'))->setClient($client)->response(
             new Response(200, [], file_get_contents(__DIR__.'/../Stubs/Products/product.xml'))
         );
+    }
+
+    /**
+     * @test
+     */
+    public function action_fetches_notes_via_client()
+    {
+        $client = m::mock(Client::class);
+
+        $client
+            ->shouldReceive('action')
+            ->with(m::on(function (GetProductNotes $action) {
+                return '31321' == $action->getId();
+            }))
+            ->andReturn(new Collection([
+                (new Entities\ProductNote)
+                    ->setCode('CODE123')
+                    ->setName('Test Note')
+                    ->setNote('Test note contents')
+            ]));
+
+        $product = (new GetProduct('31321'))
+            ->setClient($client)
+            ->withNotes()
+            ->withoutReferences()
+            ->response(
+                new Response(
+                    200, [],
+                    file_get_contents(__DIR__.'/../Stubs/Products/product.xml')
+                )
+            );
+
+        $this->assertInstanceOf(Collection::class, $product->getNotes());
+        $this->assertInstanceOf(Entities\ProductNote::class, $product->getNotes()->first());
+
+        $this->assertEquals('CODE123', $product->getNotes()->first()->getCode());
+        $this->assertEquals('Test Note', $product->getNotes()->first()->getName());
+        $this->assertEquals('Test note contents', $product->getNotes()->first()->getNote());
     }
 }

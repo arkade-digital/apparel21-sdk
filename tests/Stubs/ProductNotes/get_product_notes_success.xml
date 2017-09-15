@@ -1,0 +1,92 @@
+<ProductNoteTypes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProductNoteType>
+    <Code>ONLINE 3</Code>
+    <Name>CARE AND WASHING DETAILS</Name>
+    <Note>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+	&lt;head&gt;
+		&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;&lt;title&gt;
+		&lt;/title&gt;
+		&lt;style type="text/css"&gt;
+			.cs95E872D0{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}
+			.cs1B16EEB5{color:#000000;background-color:transparent;font-family:Calibri;font-size:11pt;font-weight:normal;font-style:normal;}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;p class="cs95E872D0"&gt;&lt;span class="cs1B16EEB5"&gt;CARE AND WASHING DETAILS&lt;/span&gt;&lt;/p&gt;&lt;p class="cs95E872D0"&gt;&lt;span class="cs1B16EEB5"&gt;TEST&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;
+&lt;/html&gt;
+</Note>
+  </ProductNoteType>
+  <ProductNoteType>
+    <Code>ONLINE 4</Code>
+    <Name>FABRIC INFORMATION</Name>
+    <Note>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+	&lt;head&gt;
+		&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;&lt;title&gt;
+		&lt;/title&gt;
+		&lt;style type="text/css"&gt;
+			.cs95E872D0{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}
+			.cs1B16EEB5{color:#000000;background-color:transparent;font-family:Calibri;font-size:11pt;font-weight:normal;font-style:normal;}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;p class="cs95E872D0"&gt;&lt;span class="cs1B16EEB5"&gt;FABRIC INFORMATION&lt;/span&gt;&lt;/p&gt;&lt;p class="cs95E872D0"&gt;&lt;span class="cs1B16EEB5"&gt;TEST&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;
+&lt;/html&gt;
+</Note>
+  </ProductNoteType>
+  <ProductNoteType>
+    <Code>ONLINE 2</Code>
+    <Name>FIT DETAILS AND SIZE MEASUREMENTS</Name>
+    <Note>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+	&lt;head&gt;
+		&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;&lt;title&gt;
+		&lt;/title&gt;
+		&lt;style type="text/css"&gt;
+			.cs95E872D0{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}
+			.cs1B16EEB5{color:#000000;background-color:transparent;font-family:Calibri;font-size:11pt;font-weight:normal;font-style:normal;}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;p class="cs95E872D0"&gt;&lt;span class="cs1B16EEB5"&gt;FIT DETAILS AND SIZE MEASUREMENTS&lt;/span&gt;&lt;/p&gt;&lt;p class="cs95E872D0"&gt;&lt;span class="cs1B16EEB5"&gt;TEST&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;
+&lt;/html&gt;
+</Note>
+  </ProductNoteType>
+  <ProductNoteType>
+    <Code>ONLINE</Code>
+    <Name>Long Description</Name>
+    <Note>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+	&lt;head&gt;
+		&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;&lt;title&gt;
+		&lt;/title&gt;
+		&lt;style type="text/css"&gt;
+			.cs95E872D0{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}
+			.cs1B16EEB5{color:#000000;background-color:transparent;font-family:Calibri;font-size:11pt;font-weight:normal;font-style:normal;}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;p class="cs95E872D0"&gt;&lt;span class="cs1B16EEB5"&gt;Made from a cosy, textured knit yarn, the Imogen Cable Knit features a simply shaped body with a flattering rounded neckline, full length sleeves, exposed seams and a contrasting plait stitch to the front for a unique look. Layer over a seamless basic with high rise jeans for an edgy update. Main: Acrylic/Wool. Care: Cool gentle hand wash as per care label. Designed in Australia.&lt;/span&gt;&lt;/p&gt;&lt;p class="cs95E872D0"&gt;&lt;span class="cs1B16EEB5"&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;
+&lt;/html&gt;
+</Note>
+  </ProductNoteType>
+  <ProductNoteType>
+    <Code>ONLINE 1</Code>
+    <Name>PRODUCT DESCRIPTION</Name>
+    <Note>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+	&lt;head&gt;
+		&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;&lt;title&gt;
+		&lt;/title&gt;
+		&lt;style type="text/css"&gt;
+			.cs95E872D0{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}
+			.cs1B16EEB5{color:#000000;background-color:transparent;font-family:Calibri;font-size:11pt;font-weight:normal;font-style:normal;}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;p class="cs95E872D0"&gt;&lt;span class="cs1B16EEB5"&gt;PRODUCT DESCRIPTION&lt;/span&gt;&lt;/p&gt;&lt;p class="cs95E872D0"&gt;&lt;span class="cs1B16EEB5"&gt;TEST&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;
+&lt;/html&gt;
+</Note>
+  </ProductNoteType>
+</ProductNoteTypes>
