@@ -14,7 +14,24 @@ class PersonSerializerTest extends TestCase
     {
         $xml = (new PersonSerializer)->serialize($this->build_person());
 
-        $this->assertEquals();
+
+
+        $expectedXml = new \SimpleXMLElement(
+            file_get_contents(__DIR__.'/../Stubs/Persons/create_person_request.xml')
+        );
+
+        dd(str_replace(
+            ["\r", "\n"],
+            '',
+            file_get_contents(__DIR__.'/../Stubs/Persons/create_person_request.xml')
+        ));
+
+        dd($expectedXml->asXML());
+
+        $this->assertEquals(
+            file_get_contents(__DIR__.'/../Stubs/Persons/create_person_request.xml'),
+            $xml
+        );
     }
 
     /**
