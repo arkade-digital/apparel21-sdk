@@ -2,25 +2,24 @@
 
 namespace Arkade\Apparel21\Parsers;
 
-use Arkade\Apparel21\Entities;
-use function foo\func;
-use Illuminate\Support\Collection;
 use SimpleXMLElement;
+use Arkade\Apparel21\Entities;
+use Illuminate\Support\Collection;
 
 class PersonParser
 {
     /**
      * Parse the given SimpleXmlElement to a Person entity.
      *
-     * @param SimpleXMLElement $payload
+     * @param  SimpleXMLElement $payload
      * @return Entities\Person
      */
     public function parse(SimpleXMLElement $payload)
     {
         $person = (new Entities\Person)
             ->setIdentifiers(new Collection([
-                'ap21.id'   => (string) $payload->Id,
-                'ap21.code' => (string) $payload->Code
+                'ap21_id'   => (string) $payload->Id,
+                'ap21_code' => (string) $payload->Code
             ]))
             ->setFirstName((string) $payload->Firstname)
             ->setLastName((string) $payload->Surname)
@@ -71,16 +70,13 @@ class PersonParser
         foreach ($payload->Addresses as $address) {
             foreach ($address->Billing as $item) {
                 $person->getAddresses()->push(
-                    (new Entities\Address)
-                        ->setType('billing')
-                        ->setContactName((string) $item->ContactName)
-                        ->setCompanyName((string) $item->CompanyName)
-                        ->setLine1((string) $item->AddressLine1)
-                        ->setLine2((string) $item->AddressLine2)
-                        ->setCity((string) $item->City)
-                        ->setState((string) $item->State)
-                        ->setPostcode((string) $item->Postcode)
-                        ->setCountry((string) $item->Country)
+                    $this->parseAddress($item, 'billing')
+                );
+            }
+
+            foreach ($address->Delivery as $item) {
+                $person->getAddresses()->push(
+                    $this->parseAddress($item, 'delivery')
                 );
             }
         }
@@ -88,4 +84,24 @@ class PersonParser
         return $person;
     }
 
+    /**
+     * Parse the given address XML.
+     *
+     * @param  SimpleXMLElement $xml
+     * @param  string           $type
+     * @return Entities\Address
+     */
+    protected function parseAddress(SimpleXMLElement $xml, $type = null)
+    {
+        return (new Entities\Address)
+            ->setType($type)
+            ->setContactName((string) $xml->ContactName)
+            ->setCompanyName((string) $xml->CompanyName)
+            ->setLine1((string) $xml->AddressLine1)
+            ->setLine2((string) $xml->AddressLine2)
+            ->setCity((string) $xml->City)
+            ->setState((string) $xml->State)
+            ->setPostcode((string) $xml->Postcode)
+            ->setCountry((string) $xml->Country);
+    }
 }
