@@ -23,8 +23,8 @@ class PersonParserTest extends TestCase
         $this->assertInstanceOf(Entities\Person::class, $person);
         $this->assertInstanceOf(Contracts\Person::class, $person);
 
-        $this->assertEquals('77284', $person->getIdentifiers()->get('ap21.id'));
-        $this->assertEquals('AHWADA00', $person->getIdentifiers()->get('ap21.code'));
+        $this->assertEquals('77284', $person->getIdentifiers()->get('ap21_id'));
+        $this->assertEquals('AHWADA00', $person->getIdentifiers()->get('ap21_code'));
 
         $this->assertEquals('Dan', $person->getFirstName());
         $this->assertEquals('Ahwa', $person->getLastName());

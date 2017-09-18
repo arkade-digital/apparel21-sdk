@@ -2,7 +2,6 @@
 
 namespace Arkade\Apparel21\Serializers;
 
-use Arkade\Apparel21\Entities\Person;
 use Arkade\Support;
 
 class PersonSerializer
@@ -22,7 +21,7 @@ class PersonSerializer
             $payload
         );
 
-        return $payload->asXML();
+        return (new XMLHelper)->stripHeader($payload->asXML());
     }
 
     /**
@@ -35,7 +34,7 @@ class PersonSerializer
     {
         $payload = [
             'Firstname' => $person->getFirstName(),
-            'Surname' => $person->getLastName()
+            'Surname'   => $person->getLastName()
         ];
 
         $payload = $this->mapContacts($payload, $person);
@@ -44,13 +43,20 @@ class PersonSerializer
         return $payload;
     }
 
+    /**
+     * Map contacts to given payload array.
+     *
+     * @param  array $payload
+     * @param  Support\Contracts\Person $person
+     * @return array
+     */
     protected function mapContacts(array $payload, Support\Contracts\Person $person)
     {
         collect([
             'email'        => 'Contacts.Email',
-            'work_phone'   => 'Contacts.Work',
-            'home_phone'   => 'Contacts.Home',
-            'mobile_phone' => 'Contacts.Mobile',
+            'work_phone'   => 'Contacts.Phones.Work',
+            'home_phone'   => 'Contacts.Phones.Home',
+            'mobile_phone' => 'Contacts.Phones.Mobile',
         ])->each(function ($payloadKey, $contactType) use ($person, &$payload) {
 
             if ($contact = $person->getContacts()->first(function (Support\Contracts\Contact $contact) use ($contactType) {
@@ -64,6 +70,13 @@ class PersonSerializer
         return $payload;
     }
 
+    /**
+     * Map addresses to given payload array.
+     *
+     * @param  array $payload
+     * @param  Support\Contracts\Person $person
+     * @return array
+     */
     protected function mapAddresses(array $payload, Support\Contracts\Person $person)
     {
         collect([
@@ -74,7 +87,7 @@ class PersonSerializer
             if ($address = $person->getAddresses()->first(function (Support\Contracts\Address $address) use ($addressType) {
                 return $addressType === $address->getType();
             })) {
-                array_set($payload, $payloadKey, $this->mapAddress($address));
+                array_set($payload, $payloadKey, $this->serializeAddress($address));
             }
 
         });
@@ -82,15 +95,21 @@ class PersonSerializer
         return $payload;
     }
 
-    protected function mapAddress(Support\Contracts\Address $address)
+    /**
+     * Serialize given address.
+     *
+     * @param  Support\Contracts\Address $address
+     * @return array
+     */
+    protected function serializeAddress(Support\Contracts\Address $address)
     {
         return [
             'AddressLine1' => $address->getLine1(),
             'AddressLine2' => $address->getLine2(),
-            'City' => $address->getCity(),
-            'State' => $address->getState(),
-            'PostCode' => $address->getPostcode(),
-            'Country' => $address->getCountry()
+            'City'         => $address->getCity(),
+            'State'        => $address->getState(),
+            'PostCode'     => $address->getPostcode(),
+            'Country'      => $address->getCountry()
         ];
     }
 }

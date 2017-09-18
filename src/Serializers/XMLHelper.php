@@ -31,4 +31,38 @@ class XMLHelper
             $element->addChild($key, htmlspecialchars($value));
         }
     }
+
+    /**
+     * Compare two XML strings.
+     *
+     * @param  string $expected
+     * @param  string $actual
+     * @return bool
+     */
+    public function compare($expected, $actual)
+    {
+        return $this->normalize($expected) === $this->normalize($actual);
+    }
+
+    /**
+     * Normalize XML string for comparison.
+     *
+     * @param  string $xml
+     * @return string
+     */
+    public function normalize($xml)
+    {
+        return str_replace(["\r", "\n", " "], '', $xml);
+    }
+
+    /**
+     * Strip header from given XML string.
+     *
+     * @param  string $xml
+     * @return string
+     */
+    public function stripHeader($xml)
+    {
+        return str_replace('<?xml version="1.0"?>', '', $xml);
+    }
 }
