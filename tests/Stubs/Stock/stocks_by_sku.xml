@@ -1,0 +1,26 @@
+<Skus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Sku>
+        <Name>Jeans Sizes AVOCADO 1</Name>
+        <SkuIdx>13224</SkuIdx>
+        <Stores>
+            <Store>
+                <Name>Pitt St Store</Name>
+                <StoreId>109864</StoreId>
+                <StoreNumber>100</StoreNumber>
+                <FreeStock>4</FreeStock>
+            </Store>
+            <Store>
+                <Name>George St Store</Name>
+                <StoreId>108864</StoreId>
+                <StoreNumber>212</StoreNumber>
+                <FreeStock>996</FreeStock>
+            </Store>
+            <Store>
+                <Name>Swanston St Shop</Name>
+                <StoreId>7501</StoreId>
+                <StoreNumber>234</StoreNumber>
+                <FreeStock>996</FreeStock>
+            </Store>
+        </Stores>
+    </Sku>
+</Skus>

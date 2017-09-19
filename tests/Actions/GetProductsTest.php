@@ -21,7 +21,7 @@ class GetProductsTest extends TestCase
         parse_str($request->getUri()->getQuery(), $query);
 
         $this->assertEquals('ProductsSimple', $request->getUri()->getPath());
-        $this->assertEquals(0, $query['startRow']);
+        $this->assertEquals(1, $query['startRow']);
         $this->assertEquals(10, $query['pageRows']);
     }
 
