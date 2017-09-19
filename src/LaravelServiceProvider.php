@@ -32,25 +32,21 @@ class LaravelServiceProvider extends ServiceProvider
     }
 
     /**
-     * Setup recorder middleware if the HttpRecorder plugin is bound.
+     * Setup recorder middleware if the HttpRecorder package is bound.
      *
      * @param  Client $client
      * @return Client
      */
     protected function setupRecorder(Client $client)
     {
-        if (! $this->app->bound('Omneo\Plugins\HttpRecorder\Recorder')) {
+        if (! $factory = $this->app->make('Arkade\HttpRecorder\Integrations\Guzzle\MiddlewareFactory')) {
             return $client;
         }
 
-        $integration = $this->app->make('Omneo\Plugins\HttpRecorder\GuzzleIntegration');
-
         $stack = GuzzleHttp\HandlerStack::create();
 
-        $stack->push($integration->getMiddleware(['apparel21', 'outgoing']));
+        $stack->push($factory->make(['apparel21', 'outgoing']));
 
-        $client->setupClient($stack);
-
-        return $client;
+        return $client->setupClient($stack);
     }
 }
