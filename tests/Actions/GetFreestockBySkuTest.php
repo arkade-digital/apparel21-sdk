@@ -22,7 +22,7 @@ class GetFreestockBySkuTest extends TestCase
     /**
      * @test
      */
-    public function response_is_has_store_collection()
+    public function response_has_store_collection()
     {
         $freestock = (new GetFreestockBySku('13224'))->response(
             new Response(

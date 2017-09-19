@@ -34,16 +34,8 @@ class GetFreestockBySku extends BaseAction
     public function response(ResponseInterface $response)
     {
         $xml = (new Parsers\PayloadParser)->parse((string) $response->getBody());
-        return (new Parsers\FreestockBySkuParser)->parse($xml);
 
-//        $collection = new Collection;
-//
-//        foreach ($xml as $item) {
-//            $collection->push(
-//                (new Parsers\FreestockBySkuParser)->parse($item)
-//            );
-//        }
-//        return $collection;
+        return (new Parsers\FreestockBySkuParser)->parse($xml);
     }
 
     /**
