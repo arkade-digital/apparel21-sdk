@@ -4,11 +4,11 @@ namespace Arkade\Apparel21\Actions;
 
 use Arkade\Apparel21\Parsers;
 use GuzzleHttp\Psr7\Request;
-use Arkade\Apparel21\Entities;
+use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-class GetFreestockBySku extends BaseAction
+class GetStoresBySku extends BaseAction
 {
     /**
      * @var string $sku
@@ -29,13 +29,20 @@ class GetFreestockBySku extends BaseAction
      * Transform a PSR-7 response.
      *
      * @param  ResponseInterface $response
-     * @return Entities\FreestockBySku
+     * @return Collection $collection
      */
     public function response(ResponseInterface $response)
     {
         $xml = (new Parsers\PayloadParser)->parse((string) $response->getBody());
 
-        return (new Parsers\FreestockBySkuParser)->parse($xml);
+        $collection = new Collection;
+
+        foreach ($xml as $item) {
+            $collection->push(
+                (new Parsers\StoreParser)->parse($item)
+            );
+        }
+        return $collection;
     }
 
     /**
