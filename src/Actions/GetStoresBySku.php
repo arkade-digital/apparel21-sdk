@@ -2,13 +2,14 @@
 
 namespace Arkade\Apparel21\Actions;
 
+use Arkade\Apparel21\Contracts;
 use Arkade\Apparel21\Parsers;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-class GetStoresBySku extends BaseAction
+class GetStoresBySku extends BaseAction implements Contracts\Action
 {
     /**
      * @var string $sku
