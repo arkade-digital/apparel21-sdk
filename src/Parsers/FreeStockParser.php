@@ -93,16 +93,16 @@ class FreeStockParser
     protected function parseSku(\SimpleXMLElement $payload, Collection $collection)
     {
         $variant = tap(new Entities\Variant, function ($variant) use ($payload) {
-            $variant->getIdentifiers()->put('ap21_id', $payload['SkuIdx']);
+            $variant->getIdentifiers()->put('ap21_id', (string) $payload['SkuIdx']);
         });
 
         foreach ($payload->Store as $node) {
 
-            $store = (new Entities\Store)->setName($node['Name']);
+            $store = (new Entities\Store)->setName(trim((string) $node['Name']));
 
             $store->getIdentifiers()
-                ->put('ap21_id', $node['StoreId'])
-                ->put('ap21_number', $node['StoreNumber']);
+                ->put('ap21_id', (string) $node['StoreId'])
+                ->put('ap21_number', (string) $node['StoreNumber']);
 
             $collection->push(new Entities\FreeStock($variant, $store, (int) $node['FreeStock']));
 
