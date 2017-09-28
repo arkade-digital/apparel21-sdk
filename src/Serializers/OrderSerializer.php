@@ -1,6 +1,6 @@
 <?php
 
-namespace Arkade\Apparel21\Parsers;
+namespace Arkade\Apparel21\Serializers;
 
 use Arkade\Support\Contracts\Order;
 

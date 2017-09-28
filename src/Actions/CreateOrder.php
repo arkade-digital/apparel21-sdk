@@ -2,9 +2,10 @@
 
 namespace Arkade\Apparel21\Actions;
 
+use Arkade\Support;
 use Arkade\Apparel21\Contracts;
-use Arkade\Apparel21\Parsers\OrderSerializer;
 use Arkade\Support\Contracts\Order;
+use Arkade\Apparel21\Serializers\OrderSerializer;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Psr7\Request;
 
@@ -47,12 +48,36 @@ class CreateOrder extends BaseAction implements Contracts\Action
 
     /**
      * @param ResponseInterface $response
+     *
+     * @return Order
      */
     public function response(ResponseInterface $response)
     {
+        if ($this->order instanceof Support\Contracts\Identifiable) {
+            $this->order->getIdentifiers()->put(
+                'ap21_order_id',
+                $this->parseLocationHeader($response)
+            );
+        }
         return $this->order;
-
     }
 
-
+    /**
+     * Get person ID from Location header.
+     *
+     * @param  ResponseInterface $response
+     * @return string
+     */
+    protected function parseLocationHeader(ResponseInterface $response)
+    {
+        return array_last(
+            explode(
+                '/',
+                parse_url(
+                    $response->getHeaderLine('Location'),
+                    PHP_URL_PATH
+                )
+            )
+        );
+    }
 }

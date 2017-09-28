@@ -1,6 +1,6 @@
 <?php
 
-namespace Arkade\Apparel21\Parsers;
+namespace Arkade\Apparel21\Serializers;
 
 use Arkade\Apparel21\Serializers\XMLHelper;
 use Arkade\Support\Contracts\Address;

@@ -3,7 +3,6 @@
 namespace Arkade\Apparel21\Serializers;
 
 use Arkade\Support\Contracts\Person;
-use Arkade\Apparel21\Parsers\BaseSerializer;
 
 class PersonSerializer extends BaseSerializer
 {

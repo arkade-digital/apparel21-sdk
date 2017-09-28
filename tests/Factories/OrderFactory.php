@@ -6,6 +6,7 @@ use Arkade\Apparel21\Entities\Address;
 use Arkade\Apparel21\Entities\Contact;
 use Arkade\Apparel21\Entities\Order;
 use Arkade\Apparel21\Entities\Payment;
+use Arkade\Apparel21\Entities\Variant;
 use Illuminate\Support\Collection;
 
 class OrderFactory
@@ -20,7 +21,8 @@ class OrderFactory
     public function make()
     {
         $order = (new Order)->setIdentifiers(new Collection([
-            'order_id' => 7894567
+            'ap21_order_id' => 7894567,
+            'ap21_person_id' => 101451
         ]));
 
         $order->getContacts()->push(
@@ -60,15 +62,18 @@ class OrderFactory
                 ->setMessage('payment_statusCURRENTbank_')
         );
 
-        $order->setVariants(new Collection([
-            'Items' => new Collection([
-                'sku_id'      => '21503',
-                'quantity'    => 1,
-                'price'       => 59.90,
-                'value'       => 59.90,
-                'tax_percent' => 10.00
-            ])
-        ]));
+        $order->getVariants()->push((new Variant)
+            ->setTitle('Item')
+            ->setOptions(
+                new Collection([
+                    'quantity'    => 1,
+                    'value'       => 59.90,
+                    'tax_percent' => 10
+                ])
+            )
+            ->setSKU('21503')
+            ->setPrice(59.90)
+        );
 
         return $order;
     }
