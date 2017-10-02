@@ -1,38 +1,45 @@
 <Order>
     <OrderNumber>7894567</OrderNumber>
     <PersonId>101451</PersonId>
-    <Addresses>
-        <Billing>
-            <AddressLine1>101 Cremorne St</AddressLine1>
-        </Billing>
-        <Delivery>
-            <AddressLine1>37 Swan Street</AddressLine1>
-        </Delivery>
-    </Addresses>
-    <Contacts>
-        <Email>john.smith@test.com.au</Email>
-    </Contacts>
-    <OrderDetails>
-        <OrderDetail>
-            <SkuId>21503</SkuId>
-            <Quantity>1</Quantity>
-            <Price>59.90</Price>
-            <Value>59.90</Value>
-            <TaxPercent>10.00</TaxPercent>
-        </OrderDetail>
-    </OrderDetails>
     <Payments>
         <PaymentDetail>
             <Id>7781</Id>
             <Origin>CreditCard</Origin>
             <CardType>TEST</CardType>
             <Stan>986516</Stan>
-            <AuthCode/>
-            <AccountType/>
-            <Settlement>20111129</Settlement>
             <Reference>Ref1</Reference>
-            <Amount>59.90</Amount>
+            <Amount>59.9</Amount>
             <Message>payment_statusCURRENTbank_</Message>
         </PaymentDetail>
     </Payments>
+    <OrderDetails>
+        <OrderDetail>
+            <SkuId>21503</SkuId>
+            <Quantity>1</Quantity>
+            <Price>59.9</Price>
+            <Value>59.9</Value>
+            <TaxPercent>10</TaxPercent>
+        </OrderDetail>
+    </OrderDetails>
+    <Contacts>
+        <Email>john.smith@test.com.au</Email>
+    </Contacts>
+    <Addresses>
+        <Billing>
+            <AddressLine1>101 Cremorne St</AddressLine1>
+            <AddressLine2/>
+            <City/>
+            <State/>
+            <PostCode/>
+            <Country/>
+        </Billing>
+        <Delivery>
+            <AddressLine1>37 Swan Street</AddressLine1>
+            <AddressLine2/>
+            <City/>
+            <State/>
+            <PostCode/>
+            <Country/>
+        </Delivery>
+    </Addresses>
 </Order>

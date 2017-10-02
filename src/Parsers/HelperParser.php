@@ -78,7 +78,7 @@ class HelperParser
      * Parse the given address XML.
      *
      * @param  SimpleXMLElement $xml
-     * @param  string           $type
+     * @param  string $type
      * @return Address
      */
     protected function parseAddress(SimpleXMLElement $xml, $type = null)

@@ -88,7 +88,35 @@ class OrderParserTest extends TestCase
         $this->assertInstanceOf(Entities\Payment::class, $order->getPayments()->first());
         $this->assertInstanceOf(Contracts\Payment::class, $order->getPayments()->first());
 
-        $this->assertEquals(7781, $order->getIdentifiers()->get('payment_id'));
+        $this->assertEquals('7781', $order->getPayments()->first()->getIdentifiers()->get('payment_id'));
+        $this->assertEquals('CreditCard', $order->getPayments()->first()->getOrigin());
+        $this->assertEquals('TEST', $order->getPayments()->first()->getCardType());
+        $this->assertEquals('986516', $order->getPayments()->first()->getStan());
+        $this->assertEquals(59.90, $order->getPayments()->first()->getAmount());
+        $this->assertEquals('Ref1', $order->getPayments()->first()->getReference());
+        $this->assertEquals('payment_statusCURRENTbank_', $order->getPayments()->first()->getMessage());
     }
 
+    /**
+     * @test
+     */
+    public function returns_populated_order_with_variants()
+    {
+        $order = (new OrderParser)->parse(
+            (new PayloadParser)->parse(
+                file_get_contents(__DIR__.'/../Stubs/Orders/order.xml')
+            )
+        );
+
+        $this->assertInstanceOf(Collection::class, $order->getVariants());
+        $this->assertCount(1, $order->getVariants());
+        $this->assertInstanceOf(Entities\Variant::class, $order->getVariants()->first());
+        $this->assertInstanceOf(Contracts\Variant::class, $order->getVariants()->first());
+
+        $this->assertEquals('21503', $order->getVariants()->first()->getSku());
+        $this->assertEquals('59.9', $order->getVariants()->first()->getPrice());
+        $this->assertEquals('1', $order->getVariants()->first()->getOptions()->get('quantity'));
+        $this->assertEquals('59.9', $order->getVariants()->first()->getOptions()->get('value'));
+        $this->assertEquals('10', $order->getVariants()->first()->getOptions()->get('tax_percent'));
+    }
 }
