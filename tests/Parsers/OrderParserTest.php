@@ -92,7 +92,7 @@ class OrderParserTest extends TestCase
         $this->assertEquals('CreditCard', $order->getPayments()->first()->getOrigin());
         $this->assertEquals('TEST', $order->getPayments()->first()->getCardType());
         $this->assertEquals('986516', $order->getPayments()->first()->getStan());
-        $this->assertEquals(59.90, $order->getPayments()->first()->getAmount());
+        $this->assertEquals('59.90', $order->getPayments()->first()->getAmount());
         $this->assertEquals('Ref1', $order->getPayments()->first()->getReference());
         $this->assertEquals('payment_statusCURRENTbank_', $order->getPayments()->first()->getMessage());
     }

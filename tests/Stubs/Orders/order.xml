@@ -8,7 +8,7 @@
             <CardType>TEST</CardType>
             <Stan>986516</Stan>
             <Reference>Ref1</Reference>
-            <Amount>59.9</Amount>
+            <Amount>59.90</Amount>
             <Message>payment_statusCURRENTbank_</Message>
         </PaymentDetail>
     </Payments>
@@ -16,9 +16,9 @@
         <OrderDetail>
             <SkuId>21503</SkuId>
             <Quantity>1</Quantity>
-            <Price>59.9</Price>
-            <Value>59.9</Value>
-            <TaxPercent>10</TaxPercent>
+            <Price>59.90</Price>
+            <Value>59.90</Value>
+            <TaxPercent>10.00</TaxPercent>
         </OrderDetail>
     </OrderDetails>
     <Contacts>
