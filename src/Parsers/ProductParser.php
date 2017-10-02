@@ -40,8 +40,8 @@ class ProductParser
     {
         $product = (new Entities\Product)
             ->setIdentifiers(new Collection([
-                'ap21.id'   => (string) $payload->Id,
-                'ap21.code' => (string) $payload->Code
+                'ap21_id'   => (string) $payload->Id,
+                'ap21_code' => (string) $payload->Code
             ]))
             ->setOptions(new Collection(['colour' => 'Colour', 'size'   => 'Size']))
             ->setTitle((string) $payload->Name)
@@ -56,10 +56,10 @@ class ProductParser
                 $product->getVariants()->push(
                     (new Entities\Variant)
                         ->setIdentifiers(new Collection([
-                            'ap21.colour_id'   => (string) $colour->Id,
-                            'ap21.colour_code' => (string) $colour->Code,
-                            'ap21.id'          => (string) $sku->Id,
-                            'ap21.size_code'   => (string) $sku->SizeCode
+                            'ap21_colour_id'   => (string) $colour->Id,
+                            'ap21_colour_code' => (string) $colour->Code,
+                            'ap21_id'          => (string) $sku->Id,
+                            'ap21_size_code'   => (string) $sku->SizeCode
                         ]))
                         ->setOptions(new Collection([
                             'colour' => (string) $colour->Name,
