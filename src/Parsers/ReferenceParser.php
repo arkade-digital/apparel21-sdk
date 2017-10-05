@@ -16,7 +16,7 @@ class ReferenceParser
     public function parse(SimpleXMLElement $payload)
     {
         return (new Entities\Reference)
-            ->setId((string) $payload->Id)
+            ->setId((integer) $payload->Id)
             ->setCode((string) $payload->Code)
             ->setName((string) $payload->Name);
     }

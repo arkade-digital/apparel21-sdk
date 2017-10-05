@@ -89,9 +89,9 @@ class ProductParser
 
         foreach ($payload->Reference as $r) {
 
-            $reference = $this->referenceResolver->resolveFromIds(
-                (string) $r->ReferenceTypeId,
-                (string) $r->Id
+            $reference = $this->referenceResolver->resolve(
+                (integer) $r->Id,
+                (integer) $r->ReferenceTypeId
             );
 
             if ($reference) {
