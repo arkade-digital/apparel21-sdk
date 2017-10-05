@@ -23,7 +23,9 @@ class OrderParserTest extends TestCase
         $this->assertInstanceOf(Entities\Order::class, $order);
         $this->assertInstanceOf(Contracts\Order::class, $order);
 
-        $this->assertEquals('7894567', $order->getIdentifiers()->get('ap21_order_id'));
+        $this->assertEquals('123456', $order->getIdentifiers()->get('ap21_order_id'));
+        $this->assertEquals('7894567', $order->getIdentifiers()->get('ap21_order_number'));
+        $this->assertEquals('101451', $order->getIdentifiers()->get('ap21_person_id'));
 
     }
 

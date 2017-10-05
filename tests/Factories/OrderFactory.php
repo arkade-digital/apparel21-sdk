@@ -21,7 +21,8 @@ class OrderFactory
     public function make()
     {
         $order = (new Order)->setIdentifiers(new Collection([
-            'ap21_order_id' => 7894567,
+            'ap21_order_id' => 123456,
+            'ap21_order_number' => 7894567,
             'ap21_person_id' => 101451
         ]));
 

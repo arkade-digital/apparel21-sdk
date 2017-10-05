@@ -19,7 +19,8 @@ class OrderSerializer extends BaseSerializer
         $payload = new \SimpleXMLElement("<Order></Order>");
 
         $payloadArray = [
-            'OrderNumber' => $order->getIdentifiers()->get('ap21_order_id'),
+            'Id' => $order->getIdentifiers()->get('ap21_order_id'),
+            'OrderNumber' => $order->getIdentifiers()->get('ap21_order_number'),
             'PersonId' => $order->getIdentifiers()->get('ap21_person_id'),
         ];
 
