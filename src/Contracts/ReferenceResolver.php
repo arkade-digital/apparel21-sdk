@@ -7,11 +7,11 @@ use Arkade\Apparel21\Entities;
 interface ReferenceResolver
 {
     /**
-     * Attempt to resolve a reference from the provided IDs.
+     * Resolve reference by ID.
      *
-     * @param  string $typeId
-     * @param  string $referenceId
+     * @param  integer $referenceId
+     * @param  integer $referenceTypeId
      * @return Entities\Reference|null
      */
-    public function resolveFromIds($typeId, $referenceId);
+    public function resolve($referenceId, $referenceTypeId);
 }

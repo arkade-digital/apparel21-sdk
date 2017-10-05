@@ -38,74 +38,70 @@ class ReferenceResolver implements Contracts\ReferenceResolver
     }
 
     /**
-     * Attempt to resolve a reference from the provided IDs.
+     * Resolve reference by ID.
      *
-     * @param  string $typeId
-     * @param  string $referenceId
+     * @param  integer $referenceId
+     * @param  integer $referenceTypeId
      * @return Entities\Reference|null
      */
-    public function resolveFromIds($typeId, $referenceId)
+    public function resolve($referenceId, $referenceTypeId)
     {
-        if (! $type = $this->resolveType($typeId)) return null;
+        if ($reference = $this->resolveFromCache($referenceId, $referenceTypeId)) {
+            return $reference;
+        }
 
-        if (! $reference = $type->getReferences()->get($referenceId)) return null;
+        if (! $referenceType = $this->fetchReferenceType($referenceTypeId)) {
+            return null;
+        }
 
-        // Avoid mutating cached items
-        $reference = clone $reference;
-        $type      = clone $type;
+        $this->writeToCache($referenceType);
 
-        $reference->setType($type->setReferences(null));
-
-        return $reference;
+        return optional($referenceType->getReferences()->get($referenceId))->setType($referenceType);
     }
 
     /**
-     * Resolve type and references from SDK.
+     * Fetch reference type from API.
      *
-     * @param  string $typeId
+     * @param  integer $referenceTypeId
      * @return Entities\ReferenceType|null
      */
-    protected function resolveType($typeId)
+    protected function fetchReferenceType($referenceTypeId)
     {
-        // Already in cache
-        if ($type = $this->resolveTypeFromCache($typeId)) {
-            return $type;
-        }
-
-        // Fetch type from API
         try {
-            $type = $this->client->action(
+            return $this->client->action(
                 new Actions\GetReferences(
-                    (new Entities\ReferenceType)->setId($typeId)
+                    (new Entities\ReferenceType)->setId($referenceTypeId)
                 )
             );
         } catch (Exceptions\NotFoundException $e) {
             return null;
         }
-
-        // Save to cache
-        $this->persistTypeToCache($type);
-
-        return $type;
     }
 
     /**
-     * Resolve provided type ID from cache.
+     * Resolve type from cache.
      *
-     * @return Entities\ReferenceType|null
+     * @param  integer $referenceId
+     * @param  integer $referenceTypeId
+     * @return Entities\Reference|null
      */
-    protected function resolveTypeFromCache($typeId)
+    protected function resolveFromCache($referenceId, $referenceTypeId)
     {
-        return $this->types->get($typeId);
+        if (! $type = $this->types->get($referenceTypeId)) {
+            return null;
+        }
+
+        return optional($type->getReferences()->get($referenceId))->setType($type);
     }
 
     /**
-     * Persist provided type into the cache.
+     * Write type to cache.
      *
-     * @param Entities\ReferenceType $type
+     * @param  Entities\ReferenceType $referenceType
+     * @return void
      */
-    protected function persistTypeToCache(Entities\ReferenceType $type)
+    protected function writeToCache(Entities\ReferenceType $referenceType)
     {
-        $this->types->offsetSet($type->getId(), $type);
+        $this->types->put($referenceType->getId(), $referenceType);
     }
 }

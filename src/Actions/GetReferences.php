@@ -50,7 +50,7 @@ class GetReferences extends BaseAction implements Contracts\Action
         $data = (new Parsers\PayloadParser)->parse((string) $response->getBody());
 
         $referenceType = (new Entities\ReferenceType)
-            ->setId((string) $data->ReferenceTypeId)
+            ->setId((integer) $data->ReferenceTypeId)
             ->setCode((string) $data->ReferenceTypeCode)
             ->setName((string) $data->ReferenceTypeName);
 

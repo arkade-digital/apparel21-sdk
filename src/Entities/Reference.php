@@ -7,7 +7,7 @@ class Reference
     /**
      * Unique ID.
      *
-     * @var string
+     * @var integer
      */
     protected $id;
 
@@ -35,7 +35,7 @@ class Reference
     /**
      * Return unique ID.
      *
-     * @return string
+     * @return integer
      */
     public function getId()
     {
@@ -45,7 +45,7 @@ class Reference
     /**
      * Set unique ID.
      *
-     * @param  string $id
+     * @param  integer $id
      * @return static
      */
     public function setId($id = null)
