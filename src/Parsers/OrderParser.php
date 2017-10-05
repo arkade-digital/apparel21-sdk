@@ -17,7 +17,8 @@ class OrderParser
     public function parse(SimpleXMLElement $payload)
     {
         $order = (new Order)->setIdentifiers(new Collection([
-            'ap21_order_id' => (string) $payload->OrderNumber,
+            'ap21_order_id' => (string) $payload->Id,
+            'ap21_order_number' => (string) $payload->OrderNumber,
             'ap21_person_id' => (string) $payload->PersonId
         ]));
 
