@@ -171,6 +171,8 @@ class Client
         $this->client = new GuzzleHttp\Client([
             'handler'  => $stack,
             'base_uri' => $this->base_url,
+            'timeout'  => 900, // 15 minutes
+            'debug'    => fopen('/dev/null', 'w') // https://github.com/arkade-digital/apparel21-sdk/pull/14
         ]);
 
         return $this;
