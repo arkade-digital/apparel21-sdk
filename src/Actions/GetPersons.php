@@ -138,6 +138,7 @@ class GetPersons extends BaseAction implements Contracts\Action
                 (new Parsers\PersonParser)->parse($item)
             );
         }
+
         return $collection;
     }
 }

@@ -43,7 +43,7 @@ class GetProductTest extends TestCase
     public function action_calls_resolver_from_client()
     {
         $resolver = m::mock(Contracts\ReferenceResolver::class);
-        $resolver->shouldReceive('resolveFromIds')->times(8)->andReturn(null);
+        $resolver->shouldReceive('resolve')->times(8)->andReturn(null);
 
         $client = m::mock(Client::class);
         $client->shouldReceive('getReferenceResolver')->andReturn($resolver);
