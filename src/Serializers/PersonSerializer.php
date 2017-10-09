@@ -2,25 +2,46 @@
 
 namespace Arkade\Apparel21\Serializers;
 
-use Arkade\Support\Contracts\Person;
+use Arkade\Apparel21\Entities;
 
-class PersonSerializer extends BaseSerializer
+class PersonSerializer
 {
+    use Concerns\MapContacts, Concerns\MapAddresses;
+
     /**
      * Serialize.
      *
-     * @param  Person $person
+     * @param  Entities\Person $person
      * @return string
      */
-    public function serialize(Person $person)
+    public function serialize(Entities\Person $person)
     {
         $payload = new \SimpleXMLElement("<Person></Person>");
 
-        $payloadArray = [
+        (new XMLHelper)->appendXML(
+            $this->buildXMLArray($person),
+            $payload
+        );
+
+        return (new XMLHelper)->stripHeader($payload->asXML());
+    }
+
+    /**
+     * Build an array of data to be converted to XML.
+     *
+     * @param  Entities\Person $person
+     * @return array
+     */
+    protected function buildXMLArray(Entities\Person $person)
+    {
+        $payload = [
             'Firstname' => $person->getFirstName(),
             'Surname'   => $person->getLastName()
         ];
 
-        return $this->convert($person, $payload, $payloadArray);
+        $payload = $this->mapContacts($payload, $person->getContacts());
+        $payload = $this->mapAddresses($payload, $person->getAddresses());
+
+        return $payload;
     }
 }

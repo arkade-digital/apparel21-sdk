@@ -36,8 +36,13 @@ class PersonParser
                 ]))->filter()
             );
 
-        $person = (new HelperParser)->parseContactsToEntity($payload->Contacts, $person);
-        $person = (new HelperParser)->parseAddressesToEntity($payload->Addresses, $person);
+        $person->setContacts(
+            (new ContactParser)->parseCollection($payload->Contacts)
+        );
+
+        $person->setAddresses(
+            (new AddressParser)->parseCollection($payload->Addresses)
+        );
 
         return $person;
     }

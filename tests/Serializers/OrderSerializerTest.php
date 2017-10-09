@@ -13,15 +13,14 @@ class OrderSerializerTest extends TestCase
     public function returns_populated_xml()
     {
         $xml = (new OrderSerializer)->serialize(
-            (new Factories\OrderFactory())->make()
+            (new Factories\OrderFactory)->make()
         );
 
         $this->assertTrue(
             (new XMLHelper)->compare(
-                file_get_contents(__DIR__.'/../Stubs/Orders/order.xml'),
+                file_get_contents(__DIR__.'/../Stubs/Orders/create_order_request.xml'),
                 $xml
             )
         );
     }
-
 }

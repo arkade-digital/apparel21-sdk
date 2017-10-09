@@ -3,74 +3,72 @@
 namespace Arkade\Apparel21\Actions;
 
 use Arkade\Support;
-use Arkade\Apparel21\Contracts;
-use Arkade\Support\Contracts\Order;
-use Arkade\Apparel21\Serializers\OrderSerializer;
-use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Psr7\Request;
+use Arkade\Apparel21\Entities;
+use Arkade\Apparel21\Contracts;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use Arkade\Apparel21\Serializers\OrderSerializer;
 
 class CreateOrder extends BaseAction implements Contracts\Action
 {
-
     /**
-     * @var integer $person
-     */
-    protected $personId;
-    /**
-     * @var $order
+     * Order.
+     *
+     * @var Entities\Order
      */
     protected $order;
 
     /**
      * CreateOrder constructor.
      *
-     * @param string $personId
-     * @param Order $order
+     * @param Entities\Order $order
      */
-    public function __construct($personId, Order $order)
+    public function __construct(Entities\Order $order)
     {
-        $this->personId = $personId;
         $this->order = $order;
     }
 
     /**
-     * @return Request
+     * Build a PSR-7 request.
+     *
+     * @return RequestInterface
      */
     public function request()
     {
         return new Request(
             'POST',
-            'Persons/'.$this->personId.'/Orders',
-            ['Content-Type' => 'text/xml', 'Accept' => 'version_2.0'],
+            'Persons/'.$this->order->getCustomer()->getIdentifiers()->get('ap21_id').'/Orders',
+            [],
             (new OrderSerializer)->serialize($this->order)
         );
     }
 
     /**
-     * @param ResponseInterface $response
+     * Transform a PSR-7 response.
      *
-     * @return Order
+     * @param  ResponseInterface $response
+     * @return Entities\Order
      */
     public function response(ResponseInterface $response)
     {
-        if ($this->order instanceof Support\Contracts\Identifiable) {
-            $this->order->getIdentifiers()->put(
-                'ap21_order_id',
-                $this->parseLocationHeader($response)
-            );
-        }
+        $this->order->getIdentifiers()->put(
+            'ap21_id',
+            $this->parseLocationHeader($response)
+        );
+
         return $this->order;
     }
 
     /**
-     * Get person ID from Location header.
+     * Extract person ID from Location header.
      *
      * @param  ResponseInterface $response
-     * @return string
+     * @return integer
      */
     protected function parseLocationHeader(ResponseInterface $response)
     {
-        return array_last(
+        return (int) array_last(
             explode(
                 '/',
                 parse_url(

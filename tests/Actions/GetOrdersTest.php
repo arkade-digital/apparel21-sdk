@@ -2,10 +2,10 @@
 
 namespace Arkade\Apparel21\Actions;
 
-use GuzzleHttp;
+use GuzzleHttp\Psr7\Response;
 use Arkade\Apparel21\Entities;
-use Illuminate\Support\Collection;
 use PHPUnit\Framework\TestCase;
+use Illuminate\Support\Collection;
 
 class GetOrdersTest extends TestCase
 {
@@ -16,8 +16,6 @@ class GetOrdersTest extends TestCase
     {
         $request = (new GetOrders(101451))->request();
 
-        parse_str($request->getUri()->getQuery(), $query);
-
         $this->assertEquals('Persons/101451/Orders', $request->getUri()->getPath());
     }
 
@@ -27,11 +25,7 @@ class GetOrdersTest extends TestCase
     public function response_is_a_collection_of_orders()
     {
         $collection = (new GetOrders(101451))->response(
-            new GuzzleHttp\Psr7\Response(
-                200,
-                [],
-                file_get_contents(__DIR__.'/../Stubs/Orders/orders.xml')
-            )
+            new Response(200, [], file_get_contents(__DIR__.'/../Stubs/Orders/orders.xml'))
         );
 
         $this->assertInstanceOf(Collection::class, $collection);

@@ -1,0 +1,41 @@
+<Order>
+    <PersonId>745619</PersonId>
+    <Contacts>
+        <Email>bob@example.com</Email>
+    </Contacts>
+    <Addresses>
+        <Billing>
+            <AddressLine1>101 Cremorne St</AddressLine1>
+            <City>Melbourne</City>
+            <State>VIC</State>
+            <PostCode>3183</PostCode>
+            <Country>AU</Country>
+        </Billing>
+        <Delivery>
+            <AddressLine1>200 Swan St</AddressLine1>
+            <City>Melbourne</City>
+            <State>VIC</State>
+            <PostCode>3183</PostCode>
+            <Country>AU</Country>
+        </Delivery>
+    </Addresses>
+    <Payments>
+        <PaymentDetail>
+            <Settlement>20111129</Settlement>
+            <Reference>Ref1</Reference>
+            <CardType>Visa</CardType>
+            <AuthCode>1234</AuthCode>
+            <Message>payment_statusCURRENTbank_</Message>
+            <Origin>CreditCard</Origin>
+            <Amount>59.9</Amount>
+        </PaymentDetail>
+    </Payments>
+    <OrderDetails>
+        <OrderDetail>
+            <SkuId>9876</SkuId>
+            <Price>59.9</Price>
+            <Quantity>1</Quantity>
+            <Value>59.9</Value>
+        </OrderDetail>
+    </OrderDetails>
+</Order>

@@ -3,10 +3,8 @@
 namespace Arkade\Apparel21\Actions;
 
 use GuzzleHttp;
-use Arkade\Apparel21\Contracts;
 use Arkade\Apparel21\Parsers;
-use Arkade\Support\Contracts\Order;
-use GuzzleHttp\Psr7\Request;
+use Arkade\Apparel21\Contracts;
 use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -14,7 +12,9 @@ use Psr\Http\Message\ResponseInterface;
 class GetOrders extends BaseAction implements Contracts\Action
 {
     /**
-     * @var int $person
+     * Person ID.
+     *
+     * @var int
      */
     protected $personId;
 
@@ -37,8 +37,7 @@ class GetOrders extends BaseAction implements Contracts\Action
     {
        return new GuzzleHttp\Psr7\Request(
            'GET',
-           'Persons/'.$this->personId.'/Orders',
-           ['Content-Type' => 'text/xml', 'Accept' => 'version_2.0']
+           'Persons/'.$this->personId.'/Orders'
        );
     }
 
@@ -59,7 +58,7 @@ class GetOrders extends BaseAction implements Contracts\Action
                 (new Parsers\OrderParser)->parse($item)
             );
         }
+
         return $collection;
     }
-
 }

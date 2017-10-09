@@ -2,81 +2,78 @@
 
 namespace Arkade\Apparel21\Factories;
 
-use Arkade\Apparel21\Entities\Address;
-use Arkade\Apparel21\Entities\Contact;
-use Arkade\Apparel21\Entities\Order;
-use Arkade\Apparel21\Entities\Payment;
-use Arkade\Apparel21\Entities\Variant;
-use Illuminate\Support\Collection;
+use Arkade\Apparel21\Entities;
 
 class OrderFactory
 {
-
     /**
      * Make an order entity.
      *
-     * @return Order
-     *
+     * @return Entities\Order
      */
     public function make()
     {
-        $order = (new Order)->setIdentifiers(new Collection([
-            'ap21_order_id' => 123456,
-            'ap21_order_number' => 7894567,
-            'ap21_person_id' => 101451
-        ]));
+        $order = (new Entities\Order)
+            ->setCustomer(
+                (new Entities\Person)->setIdentifiers(collect([
+                    'ap21_id' => 745619
+                ]))
+            );
 
         $order->getContacts()->push(
-            (new Contact)
+            (new Entities\Contact)
                 ->setType('email')
-                ->setValue('john.smith@test.com.au')
+                ->setValue('bob@example.com')
         );
 
         $order->getAddresses()->push(
-            (new Address)->setType('billing')
+            (new Entities\Address)
+                ->setType('billing')
                 ->setLine1('101 Cremorne St')
-                ->setCity('')
-                ->setState('')
-                ->setCountry('')
-                ->setPostcode('')
+                ->setCity('Melbourne')
+                ->setState('VIC')
+                ->setPostcode('3183')
+                ->setCountry('AU')
         );
 
         $order->getAddresses()->push(
-            (new Address)->setType('delivery')
-                ->setLine1('37 Swan Street')
-                ->setCity('')
-                ->setState('')
-                ->setCountry('')
-                ->setPostcode('')
+            (new Entities\Address)
+                ->setType('delivery')
+                ->setLine1('200 Swan St')
+                ->setCity('Melbourne')
+                ->setState('VIC')
+                ->setPostcode('3183')
+                ->setCountry('AU')
         );
 
         $order->getPayments()->push(
-            (new Payment)
-                ->setIdentifiers(new Collection([
-                    'payment_id' => '7781'
+            (new Entities\Payment)
+                ->setIdentifiers(collect([
+                    'ap21_settlement' => '20111129',
+                    'ap21_reference'  => 'Ref1',
                 ]))
-                ->setOrigin('CreditCard')
-                ->setCardType('TEST')
-                ->setStan('986516')
-                ->setAmount('59.90')
-                ->setReference('Ref1')
-                ->setMessage('payment_statusCURRENTbank_')
+                ->setAttributes(collect([
+                    'card_type' => 'Visa',
+                    'auth_code' => '1234',
+                    'message'   => 'payment_statusCURRENTbank_'
+                ]))
+                ->setType('CreditCard')
+                ->setAmount(5990)
         );
 
-        $order->getVariants()->push((new Variant)
-            ->setTitle('Item')
-            ->setOptions(
-                new Collection([
-                    'quantity'    => '1',
-                    'value'       => '59.90',
-                    'tax_percent' => '10.00'
-                ])
-            )
-            ->setSKU('21503')
-            ->setPrice('59.90')
+        $order->getLineItems()->push(
+            (new Entities\LineItem)
+                ->setQuantity(1)
+                ->setTotal(5990)
+                ->setSellable(
+                    (new Entities\Variant)
+                        ->setIdentifiers(collect([
+                            'ap21_sku_id' => 9876
+                        ]))
+                        ->setPrice(5990)
+                )
         );
 
         return $order;
     }
-
 }

@@ -2,83 +2,53 @@
 
 namespace Arkade\Apparel21\Parsers;
 
-use Arkade\Apparel21\Entities\Order;
-use Arkade\Apparel21\Entities\Payment;
-use Arkade\Apparel21\Entities\Variant;
-use Illuminate\Support\Collection;
+use Carbon\Carbon;
 use SimpleXMLElement;
+use Arkade\Apparel21\Entities;
+use Illuminate\Support\Collection;
 
 class OrderParser
 {
     /**
-     * @param SimpleXMLElement $payload
-     * @return Order $order
+     * Parse the given SimpleXmlElement to a Order entity.
+     *
+     * @param  SimpleXMLElement $payload
+     * @return Entities\Order
      */
     public function parse(SimpleXMLElement $payload)
     {
-        $order = (new Order)->setIdentifiers(new Collection([
-            'ap21_order_id' => (string) $payload->Id,
-            'ap21_order_number' => (string) $payload->OrderNumber,
-            'ap21_person_id' => (string) $payload->PersonId
-        ]));
+        $order = (new Entities\Order)
+            ->setDateTime(Carbon::parse((string) $payload->OrderDateTime))
+            ->setTotal((int) ((float) $payload->TotalDue * 100))
+            ->setTotalTax((int) ((float) $payload->TotalTax * 100))
+            ->setIdentifiers(new Collection([
+                'ap21_id'     => (integer) $payload->Id,
+                'ap21_number' => (integer) $payload->OrderNumber
+            ]))
+            ->setCustomer(
+                (new Entities\Person)->setIdentifiers(collect([
+                    'ap21_id' => (integer) $payload->PersonId
+                ]))
+            )
+            ->setContacts(
+                (new ContactParser)->parseCollection($payload->Contacts)
+            )
+            ->setAddresses(
+                (new AddressParser)->parseCollection($payload->Addresses)
+            );
 
-        $order = (new HelperParser)->parseContactsToEntity($payload->Contacts, $order);
-        $order = (new HelperParser)->parseAddressesToEntity($payload->Addresses, $order);
-
-        $order = $this->parsePaymentToOrder($payload->Payments, $order);
-        $order = $this->parseVariantsToOrder($payload->OrderDetails, $order);
-        return $order;
-    }
-
-    /**
-     * @param $payments
-     * @param Order $order
-     *
-     * @return Order
-     */
-    protected function parsePaymentToOrder($payments, Order $order)
-    {
-        foreach ($payments as $payment) {
-            foreach ($payment->PaymentDetail as $item) {
-                $order->getPayments()->push((new Payment)
-                    ->setIdentifiers(new Collection([
-                        'payment_id' => (string)$item->Id
-                    ]))
-                    ->setOrigin((string)$item->Origin)
-                    ->setCardType((string)$item->CardType)
-                    ->setStan((string)$item->Stan)
-                    ->setAmount((string)$item->Amount)
-                    ->setReference((string)$item->Reference)
-                    ->setMessage((string)$item->Message)
-                );
-            }
+        foreach ($payload->Payments->PaymentDetail as $payment) {
+            $order->getPayments()->push(
+                (new PaymentParser)->parse($payment)
+            );
         }
 
-        return $order;
-    }
-
-    /**
-     * @param $orderDetails
-     * @param Order $order
-     *
-     * @return Order
-     */
-    protected function parseVariantsToOrder($orderDetails, Order $order)
-    {
-        foreach ($orderDetails as $orderDetail) {
-            foreach ($orderDetail->OrderDetail as $item) {
-                $order->getVariants()->push((new Variant)
-                    ->setTitle('Item')
-                    ->setSKU((string) $item->SkuId)
-                    ->setOptions(new Collection([
-                        'quantity'    => (string) $item->Quantity,
-                        'value'       => (string) $item->Value,
-                        'tax_percent' => (string) $item->TaxPercent
-                    ]))
-                    ->setPrice((string) $item->Price)
-                );
-            }
+        foreach ($payload->OrderDetails->OrderDetail as $lineItem) {
+            $order->getLineItems()->push(
+                (new LineItemParser)->parse($lineItem)
+            );
         }
+
         return $order;
     }
 }

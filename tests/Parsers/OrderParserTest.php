@@ -2,17 +2,17 @@
 
 namespace Arkade\Apparel21\Parsers;
 
+use Carbon\Carbon;
 use Arkade\Apparel21\Entities;
-use Arkade\Support\Contracts;
-use Illuminate\Support\Collection;
 use PHPUnit\Framework\TestCase;
+use Illuminate\Support\Collection;
 
 class OrderParserTest extends TestCase
 {
     /**
      * @test
      */
-    public function returns_populated_order_entity()
+    public function returns_populated_order()
     {
         $order = (new OrderParser)->parse(
             (new PayloadParser)->parse(
@@ -21,18 +21,34 @@ class OrderParserTest extends TestCase
         );
 
         $this->assertInstanceOf(Entities\Order::class, $order);
-        $this->assertInstanceOf(Contracts\Order::class, $order);
 
-        $this->assertEquals('123456', $order->getIdentifiers()->get('ap21_order_id'));
-        $this->assertEquals('7894567', $order->getIdentifiers()->get('ap21_order_number'));
-        $this->assertEquals('101451', $order->getIdentifiers()->get('ap21_person_id'));
-
+        $this->assertEquals('362812', $order->getIdentifiers()->get('ap21_id'));
+        $this->assertEquals('789456712', $order->getIdentifiers()->get('ap21_number'));
+        $this->assertEquals(Carbon::parse('2017-09-28 13:28:02'), $order->getDateTime());
+        $this->assertEquals(5990, $order->getTotal());
+        $this->assertEquals(545, $order->getTotalTax());
     }
 
     /**
      * @test
      */
-    public function returns_populated_order_with_contacts()
+    public function returns_populated_order_customer()
+    {
+        $order = (new OrderParser)->parse(
+            (new PayloadParser)->parse(
+                file_get_contents(__DIR__.'/../Stubs/Orders/order.xml')
+            )
+        );
+
+        $this->assertInstanceOf(Entities\Person::class, $order->getCustomer());
+
+        $this->assertEquals('101451', $order->getCustomer()->getIdentifiers()->get('ap21_id'));
+    }
+
+    /**
+     * @test
+     */
+    public function returns_populated_order_contacts()
     {
         $order = (new OrderParser)->parse(
             (new PayloadParser)->parse(
@@ -41,19 +57,17 @@ class OrderParserTest extends TestCase
         );
 
         $this->assertInstanceOf(Collection::class, $order->getContacts());
-        $this->assertCount(1, $order->getContacts());
-        $this->assertInstanceOf(Entities\Contact::class, $order->getContacts()->first());
-        $this->assertInstanceOf(Contracts\Contact::class, $order->getContacts()->first());
+        $this->assertEquals(1, $order->getContacts()->count());
 
-        $this->assertEquals('john.smith@test.com.au', $order->getContacts()->first(function (Entities\Contact $contact) {
-            return 'email' == $contact->getType();
-        })->getValue());
+        $this->assertInstanceOf(Entities\Contact::class, $order->getContacts()->first());
+        $this->assertEquals('email', $order->getContacts()->first()->getType());
+        $this->assertEquals('john.smith@test.com.au', $order->getContacts()->first()->getValue());
     }
 
     /**
      * @test
      */
-    public function returns_populated_order_with_address()
+    public function returns_populated_order_addresses()
     {
         $order = (new OrderParser)->parse(
             (new PayloadParser)->parse(
@@ -62,22 +76,24 @@ class OrderParserTest extends TestCase
         );
 
         $this->assertInstanceOf(Collection::class, $order->getAddresses());
-        $this->assertCount(2, $order->getAddresses());
+        $this->assertEquals(2, $order->getAddresses()->count());
 
-        $this->assertInstanceOf(Entities\Address::class, $order->getAddresses()->first());
-        $this->assertInstanceOf(Contracts\Address::class, $order->getAddresses()->first());
+        $address = $order->getAddresses()->get(1);
 
-        $this->assertEquals('billing', $order->getAddresses()->first()->getType());
-        $this->assertEquals('101 Cremorne St', $order->getAddresses()->first()->getLine1());
-
-        $this->assertEquals('delivery', $order->getAddresses()->get(1)->getType());
-        $this->assertEquals('37 Swan Street', $order->getAddresses()->get(1)->getLine1());
+        $this->assertInstanceOf(Entities\Address::class, $address);
+        $this->assertEquals('delivery', $address->getType());
+        $this->assertEquals('Michy Rosens', $address->getContactName());
+        $this->assertEquals('37 Swan Street', $address->getLine1());
+        $this->assertEquals('St Kilda East', $address->getCity());
+        $this->assertEquals('VIC', $address->getState());
+        $this->assertEquals('3183', $address->getPostcode());
+        $this->assertEquals('AU', $address->getCountry());
     }
 
     /**
      * @test
      */
-    public function returns_populated_order_with_payment()
+    public function returns_populated_order_line_items()
     {
         $order = (new OrderParser)->parse(
             (new PayloadParser)->parse(
@@ -85,40 +101,38 @@ class OrderParserTest extends TestCase
             )
         );
 
-        $this->assertInstanceOf(Collection::class, $order->getPayments());
-        $this->assertCount(1, $order->getContacts());
-        $this->assertInstanceOf(Entities\Payment::class, $order->getPayments()->first());
-        $this->assertInstanceOf(Contracts\Payment::class, $order->getPayments()->first());
+        $this->assertInstanceOf(Collection::class, $order->getLineItems());
+        $this->assertEquals(2, $order->getLineItems()->count());
 
-        $this->assertEquals('7781', $order->getPayments()->first()->getIdentifiers()->get('payment_id'));
-        $this->assertEquals('CreditCard', $order->getPayments()->first()->getOrigin());
-        $this->assertEquals('TEST', $order->getPayments()->first()->getCardType());
-        $this->assertEquals('986516', $order->getPayments()->first()->getStan());
-        $this->assertEquals('59.90', $order->getPayments()->first()->getAmount());
-        $this->assertEquals('Ref1', $order->getPayments()->first()->getReference());
-        $this->assertEquals('payment_statusCURRENTbank_', $order->getPayments()->first()->getMessage());
-    }
+        $lineItem = $order->getLineItems()->first();
 
-    /**
-     * @test
-     */
-    public function returns_populated_order_with_variants()
-    {
-        $order = (new OrderParser)->parse(
-            (new PayloadParser)->parse(
-                file_get_contents(__DIR__.'/../Stubs/Orders/order.xml')
-            )
-        );
+        $this->assertInstanceOf(Entities\LineItem::class, $lineItem);
 
-        $this->assertInstanceOf(Collection::class, $order->getVariants());
-        $this->assertCount(1, $order->getVariants());
-        $this->assertInstanceOf(Entities\Variant::class, $order->getVariants()->first());
-        $this->assertInstanceOf(Contracts\Variant::class, $order->getVariants()->first());
+        $this->assertEquals('Processing', $lineItem->getStatus());
+        $this->assertEquals(1, $lineItem->getQuantity());
+        $this->assertEquals(5990, $lineItem->getTotal());
 
-        $this->assertEquals('21503', $order->getVariants()->first()->getSku());
-        $this->assertEquals('59.9', $order->getVariants()->first()->getPrice());
-        $this->assertEquals('1', $order->getVariants()->first()->getOptions()->get('quantity'));
-        $this->assertEquals('59.9', $order->getVariants()->first()->getOptions()->get('value'));
-        $this->assertEquals('10', $order->getVariants()->first()->getOptions()->get('tax_percent'));
+        $this->assertEquals(1418618, $lineItem->getIdentifiers()->get('ap21_id'));
+
+        $this->assertEquals(false, $lineItem->getAttributes()->get('gift_wrap'));
+        $this->assertEquals('', $lineItem->getAttributes()->get('gift_wrap_message'));
+        $this->assertEquals('', $lineItem->getAttributes()->get('sender_name'));
+        $this->assertEquals('', $lineItem->getAttributes()->get('receiver_name'));
+        $this->assertEquals('Australia Post', $lineItem->getAttributes()->get('carrier'));
+        $this->assertEquals('', $lineItem->getAttributes()->get('carrier_url'));
+
+        $this->assertInstanceOf(Entities\ServiceType::class, $lineItem->getServiceType());
+        $this->assertEquals(19785, $lineItem->getServiceType()->getIdentifiers()->get('ap21_id'));
+        $this->assertEquals('02S1', $lineItem->getServiceType()->getIdentifiers()->get('ap21_code'));
+
+        $this->assertInstanceOf(Entities\Variant::class, $lineItem->getSellable());
+        $this->assertEquals('Rose Bow Dress', $lineItem->getSellable()->getTitle());
+        $this->assertEquals(5990, $lineItem->getSellable()->getPrice());
+        $this->assertEquals(3958, $lineItem->getSellable()->getIdentifiers()->get('ap21_product_id'));
+        $this->assertEquals('1298DWSS', $lineItem->getSellable()->getIdentifiers()->get('ap21_product_code'));
+        $this->assertEquals(7535, $lineItem->getSellable()->getIdentifiers()->get('ap21_colour_id'));
+        $this->assertEquals('-', $lineItem->getSellable()->getIdentifiers()->get('ap21_colour_code'));
+        $this->assertEquals(21503, $lineItem->getSellable()->getIdentifiers()->get('ap21_sku_id'));
+        $this->assertEquals('-', $lineItem->getSellable()->getIdentifiers()->get('ap21_size_code'));
     }
 }

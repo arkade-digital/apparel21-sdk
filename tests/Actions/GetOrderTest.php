@@ -2,8 +2,8 @@
 
 namespace Arkade\Apparel21\Actions;
 
-use Arkade\Apparel21\Entities;
 use GuzzleHttp\Psr7\Response;
+use Arkade\Apparel21\Entities;
 use PHPUnit\Framework\TestCase;
 
 class GetOrderTest extends TestCase

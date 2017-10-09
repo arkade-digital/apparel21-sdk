@@ -20,7 +20,6 @@ class CreatePersonTest extends TestCase
 
         $this->assertEquals('POST', $request->getMethod());
         $this->assertEquals('Persons', $request->getUri()->getPath());
-        $this->assertEquals('text/xml', $request->getHeaderLine('Content-Type'));
     }
 
     /**

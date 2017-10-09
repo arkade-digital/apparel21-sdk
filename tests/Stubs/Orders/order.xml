@@ -1,46 +1,148 @@
 <Order>
-    <Id>123456</Id>
-    <OrderNumber>7894567</OrderNumber>
+    <Id>362812</Id>
+    <RowNumber>1</RowNumber>
+    <OrderNumber>789456712</OrderNumber>
     <PersonId>101451</PersonId>
+    <WarehouseId>19763</WarehouseId>
+    <OrderDateTime>2017-09-28T13:28:02</OrderDateTime>
+    <TotalQuantity>2</TotalQuantity>
+    <TotalTax>5.45</TotalTax>
+    <TotalDiscount>0</TotalDiscount>
+    <TotalDue>59.9</TotalDue>
+    <TotalPayment>59.90</TotalPayment>
+    <PickupStoreId />
+    <DeliveryInstructions />
+    <DespatchType>DespatchFromWarehouse</DespatchType>
+    <Addresses>
+        <Billing>
+            <ContactName>Michy Rosens</ContactName>
+            <CompanyName />
+            <AddressLine1 />
+            <AddressLine2 />
+            <City />
+            <State />
+            <Postcode />
+            <Country />
+        </Billing>
+        <Delivery>
+            <ContactName>Michy Rosens</ContactName>
+            <CompanyName />
+            <AddressLine1>37 Swan Street</AddressLine1>
+            <AddressLine2 />
+            <City>St Kilda East</City>
+            <State>VIC</State>
+            <Postcode>3183</Postcode>
+            <Country>AU</Country>
+        </Delivery>
+    </Addresses>
+    <Contacts>
+        <Email>john.smith@test.com.au</Email>
+        <Phones>
+            <Home />
+            <Mobile />
+            <Work />
+        </Phones>
+    </Contacts>
+    <DeliveryContacts>
+        <Email>john.smith@test.com.au</Email>
+        <Phones>
+            <Home />
+            <Mobile />
+            <Work />
+        </Phones>
+    </DeliveryContacts>
+    <OrderDetails Type="Array" TotalRows="2">
+        <OrderDetail>
+            <Id>1418618</Id>
+            <Sequence>1</Sequence>
+            <ProductId>3958</ProductId>
+            <ColourId>7535</ColourId>
+            <SkuId>21503</SkuId>
+            <ProductCode>1298DWSS</ProductCode>
+            <ProductName>Rose Bow Dress</ProductName>
+            <ColourCode>-</ColourCode>
+            <ColourName>-</ColourName>
+            <SizeCode>-</SizeCode>
+            <Quantity>1</Quantity>
+            <Price>59.9</Price>
+            <Discount>0</Discount>
+            <Value>59.9</Value>
+            <TaxPercent>10</TaxPercent>
+            <QuantityTaken>0</QuantityTaken>
+            <QuantityPacked>0</QuantityPacked>
+            <ReturnReasonId />
+            <ReturnReasonNotes />
+            <GiftWrap>false</GiftWrap>
+            <GiftWrapMessage />
+            <SenderName />
+            <ReceiverName />
+            <Carrier>Australia Post</Carrier>
+            <CarrierUrl />
+            <Status>Processing</Status>
+            <ServiceType>
+                <Id>19785</Id>
+                <Code>02S1</Code>
+            </ServiceType>
+        </OrderDetail>
+        <OrderDetail>
+            <Id>1418619</Id>
+            <Sequence>2</Sequence>
+            <ProductId>1041</ProductId>
+            <ColourId>1041</ColourId>
+            <SkuId>1041</SkuId>
+            <ProductCode>FRGHT</ProductCode>
+            <ProductName>Freight Charge </ProductName>
+            <ColourCode>-</ColourCode>
+            <ColourName>-</ColourName>
+            <SizeCode>-</SizeCode>
+            <Quantity>1</Quantity>
+            <Price>0</Price>
+            <Discount>0</Discount>
+            <Value>0</Value>
+            <TaxPercent>10</TaxPercent>
+            <QuantityTaken>0</QuantityTaken>
+            <QuantityPacked>0</QuantityPacked>
+            <ReturnReasonId />
+            <ReturnReasonNotes />
+            <GiftWrap>false</GiftWrap>
+            <GiftWrapMessage />
+            <SenderName />
+            <ReceiverName />
+            <Carrier>Australia Post</Carrier>
+            <CarrierUrl />
+            <Status>Processing</Status>
+            <ServiceType>
+                <Id>19785</Id>
+                <Code>02S1</Code>
+            </ServiceType>
+        </OrderDetail>
+    </OrderDetails>
+    <SelectedFreightOption>
+        <Id />
+        <Name />
+        <Value>0</Value>
+        <TaxPercent />
+    </SelectedFreightOption>
     <Payments>
         <PaymentDetail>
-            <Id>7781</Id>
+            <Id>141896</Id>
+            <Sequence>0</Sequence>
             <Origin>CreditCard</Origin>
             <CardType>TEST</CardType>
             <Stan>986516</Stan>
+            <AuthCode />
+            <AccountType />
+            <Settlement>20111129</Settlement>
             <Reference>Ref1</Reference>
             <Amount>59.90</Amount>
             <Message>payment_statusCURRENTbank_</Message>
+            <MerchantId />
+            <AccountId />
         </PaymentDetail>
     </Payments>
-    <OrderDetails>
-        <OrderDetail>
-            <SkuId>21503</SkuId>
-            <Quantity>1</Quantity>
-            <Price>59.90</Price>
-            <Value>59.90</Value>
-            <TaxPercent>10.00</TaxPercent>
-        </OrderDetail>
-    </OrderDetails>
-    <Contacts>
-        <Email>john.smith@test.com.au</Email>
-    </Contacts>
-    <Addresses>
-        <Billing>
-            <AddressLine1>101 Cremorne St</AddressLine1>
-            <AddressLine2/>
-            <City/>
-            <State/>
-            <PostCode/>
-            <Country/>
-        </Billing>
-        <Delivery>
-            <AddressLine1>37 Swan Street</AddressLine1>
-            <AddressLine2/>
-            <City/>
-            <State/>
-            <PostCode/>
-            <Country/>
-        </Delivery>
-    </Addresses>
+    <Currency>
+        <Code>AUD</Code>
+        <Format>#,##0.00 'Aud'</Format>
+    </Currency>
+    <PricesIncludeTax>true</PricesIncludeTax>
 </Order>
