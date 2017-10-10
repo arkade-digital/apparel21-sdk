@@ -16,7 +16,7 @@ class CreatePerson extends BaseAction implements Contracts\Action
      *
      * @var Support\Contracts\Person
      */
-    protected $person;
+    public $person;
 
     /**
      * CreatePerson constructor.
