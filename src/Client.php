@@ -53,6 +53,13 @@ class Client
     protected $client;
 
     /**
+     * Stream resource for debug output.
+     *
+     * @var resource
+     */
+    protected $debug;
+
+    /**
      * Client constructor.
      *
      * @param string $base_url
@@ -153,6 +160,30 @@ class Client
         $this->referenceResolver = $referenceResolver;
 
         return $this;
+    }
+
+    /**
+     * Enable debug mode.
+     *
+     * @return void
+     */
+    public function debug()
+    {
+        $this->debug = fopen('php://temp', 'r+');
+    }
+
+    /**
+     * Return debug output.
+     *
+     * @return string|null
+     */
+    public function getDebugOutput()
+    {
+        if (! $this->debug) return null;
+
+        fseek($this->debug, 0);
+
+        return stream_get_contents($this->debug);
     }
 
     /**
