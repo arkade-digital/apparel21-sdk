@@ -159,21 +159,21 @@ class Client
      * Setup Guzzle client with optional provided handler stack.
      *
      * @param  GuzzleHttp\HandlerStack|null $stack
+     * @param  array                        $options
      * @return Client
      */
-    public function setupClient(GuzzleHttp\HandlerStack $stack = null)
+    public function setupClient(GuzzleHttp\HandlerStack $stack = null, $options = [])
     {
         $stack = $stack ?: GuzzleHttp\HandlerStack::create();
 
         $this->bindHeadersMiddleware($stack);
         $this->bindCountryCodeMiddleware($stack);
 
-        $this->client = new GuzzleHttp\Client([
+        $this->client = new GuzzleHttp\Client(array_merge([
             'handler'  => $stack,
             'base_uri' => $this->base_url,
             'timeout'  => 900, // 15 minutes
-            'debug'    => fopen('/dev/null', 'w') // https://github.com/arkade-digital/apparel21-sdk/pull/14
-        ]);
+        ], $options));
 
         return $this;
     }
