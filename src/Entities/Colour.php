@@ -87,6 +87,8 @@ class Colour
      */
     public function setRowNumber($rowNumber = null)
     {
-        return $this->rowNumber;
+        $this->rowNumber = $rowNumber;
+
+        return $this;
     }
 }

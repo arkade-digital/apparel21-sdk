@@ -9,7 +9,7 @@ use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-class GetReferenceTypes extends BaseAction implements Contracts\Action
+class GetColours extends BaseAction implements Contracts\Action
 {
     /**
      * Build a PSR-7 request.
@@ -33,8 +33,8 @@ class GetReferenceTypes extends BaseAction implements Contracts\Action
 
         $collection = new Collection;
 
-        foreach ($data->Colours as $colour) {
-            $collection->push((new Parsers\ReferenceTypeParser)->parse($colour));
+        foreach ($data->Colour as $colour) {
+            $collection->push((new Parsers\ColourParser)->parse($colour));
         }
 
         return $collection;

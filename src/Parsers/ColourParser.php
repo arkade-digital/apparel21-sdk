@@ -5,7 +5,7 @@ namespace Arkade\Apparel21\Parsers;
 use SimpleXMLElement;
 use Arkade\Apparel21\Entities;
 
-class ReferenceTypeParser
+class ColourParser
 {
     /**
      * Parse the given SimpleXmlElement to a Colour entity.
