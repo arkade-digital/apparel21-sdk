@@ -16,7 +16,7 @@ class GetOrders extends BaseAction implements Contracts\Action
      *
      * @var int
      */
-    protected $personId;
+    public $personId;
 
     /**
      * GetOrders constructor.

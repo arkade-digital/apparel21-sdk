@@ -16,31 +16,31 @@ class GetPersons extends BaseAction implements Contracts\Action
      *
      * @var string
      */
-    protected $email;
+    public $email;
 
     /**
      * First name.
      *
      * @var string
      */
-    protected $firstname;
+    public $firstname;
 
     /**
      * Surname.
      *
      * @var string
      */
-    protected $surname;
+    public $surname;
 
     /**
      * @var string
      */
-    protected $phone;
+    public $phone;
 
     /**
      * @var string
      */
-    protected $code;
+    public $code;
 
     /**
      * @param string $phone

@@ -16,7 +16,7 @@ class GetPerson extends BaseAction implements Contracts\Action
      *
      * @var string
      */
-    protected $id;
+    public $id;
 
     /**
      * GetPerson constructor.

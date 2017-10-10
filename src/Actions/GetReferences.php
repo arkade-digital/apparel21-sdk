@@ -6,7 +6,6 @@ use GuzzleHttp;
 use Arkade\Apparel21\Parsers;
 use Arkade\Apparel21\Entities;
 use Arkade\Apparel21\Contracts;
-use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -17,7 +16,7 @@ class GetReferences extends BaseAction implements Contracts\Action
      *
      * @var Entities\ReferenceType
      */
-    protected $type;
+    public $type;
 
     /**
      * GetReferences constructor.

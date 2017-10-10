@@ -12,25 +12,29 @@ use Psr\Http\Message\ResponseInterface;
 class GetOrder extends BaseAction implements Contracts\Action
 {
     /**
-     * @var int $person
+     * Person ID.
+     *
+     * @var integer
      */
-    protected $personId;
+    public $personId;
 
     /**
-     * @var int
+     * Order ID.
+     *
+     * @var integer
      */
-    private $orderId;
+    public $orderId;
 
     /**
      * GetOrders constructor.
      *
-     * @param int $personId
-     * @param int $orderId
+     * @param integer $personId
+     * @param integer $orderId
      */
     public function __construct($personId, $orderId)
     {
         $this->personId = $personId;
-        $this->orderId = $orderId;
+        $this->orderId  = $orderId;
     }
 
     /**

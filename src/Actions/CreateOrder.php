@@ -17,7 +17,7 @@ class CreateOrder extends BaseAction implements Contracts\Action
      *
      * @var Entities\Order
      */
-    protected $order;
+    public $order;
 
     /**
      * CreateOrder constructor.
