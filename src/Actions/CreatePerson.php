@@ -16,7 +16,7 @@ class CreatePerson extends BaseAction implements Contracts\Action
      *
      * @var Support\Contracts\Person
      */
-    protected $person;
+    public $person;
 
     /**
      * CreatePerson constructor.
@@ -38,7 +38,7 @@ class CreatePerson extends BaseAction implements Contracts\Action
         return new GuzzleHttp\Psr7\Request(
             'POST',
             'Persons',
-            ['Content-Type' => 'text/xml'],
+            [],
             (new Serializers\PersonSerializer)->serialize($this->person)
         );
     }

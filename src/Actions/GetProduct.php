@@ -16,21 +16,21 @@ class GetProduct extends BaseAction implements Contracts\Action
      *
      * @var string
      */
-    protected $id;
+    public $id;
 
     /**
      * Implicitly fetch references for product.
      *
      * @var bool
      */
-    protected $withReferences = true;
+    public $withReferences = true;
 
     /**
      * Implicitly fetch notes for product.
      *
      * @var bool
      */
-    protected $withNotes = false;
+    public $withNotes = false;
 
     /**
      * GetProduct constructor.

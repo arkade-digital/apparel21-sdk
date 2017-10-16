@@ -21,8 +21,8 @@ class ProductSimpleParserTest extends TestCase
         $this->assertInstanceOf(Entities\Product::class, $product);
         $this->assertInstanceOf(Contracts\Product::class, $product);
 
-        $this->assertEquals('31321', $product->getIdentifiers()->get('ap21.id'));
-        $this->assertEquals('10005KNDE', $product->getIdentifiers()->get('ap21.code'));
+        $this->assertEquals(31321, $product->getIdentifiers()->get('ap21_id'));
+        $this->assertEquals('10005KNDE', $product->getIdentifiers()->get('ap21_code'));
         $this->assertEquals('IMOGEN CF CABLE KNIT', $product->getTitle());
         $this->assertEquals('TEST DESCRIPTION', $product->getDescription());
         $this->assertEquals(Carbon::parse('2017-06-07 15:06:26'), $product->getUpdatedAt());

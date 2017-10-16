@@ -18,21 +18,21 @@ class GetProducts extends BaseAction implements Contracts\Action
      *
      * @var integer
      */
-    protected $skip;
+    public $skip;
 
     /**
      * How many records to take.
      *
      * @var integer
      */
-    protected $take;
+    public $take;
 
     /**
      * Timestamp to search updated after.
      *
      * @var Carbon
      */
-    protected $updatedAfter;
+    public $updatedAfter;
 
     /**
      * Set how many records to skip.
@@ -83,7 +83,7 @@ class GetProducts extends BaseAction implements Contracts\Action
         $request = new GuzzleHttp\Psr7\Request('GET', 'ProductsSimple');
 
         return $request->withUri($request->getUri()->withQuery(http_build_query([
-            'startRow'     => $this->skip + 1,
+            'startRow'     => $this->skip ? $this->skip + 1 : null,
             'pageRows'     => $this->take,
             'updatedAfter' => $this->updatedAfter ? $this->updatedAfter->format('Y-m-d\TH:i:s') : null
         ])));

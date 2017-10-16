@@ -9,33 +9,23 @@ use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-class GetProductNotes extends BaseAction implements Contracts\Action
+class GetOrders extends BaseAction implements Contracts\Action
 {
     /**
-     * Apparel21 product ID.
+     * Person ID.
      *
-     * @var string
+     * @var int
      */
-    public $id;
+    public $personId;
 
     /**
-     * GetProductNotes constructor.
+     * GetOrders constructor.
      *
-     * @param string $id
+     * @param int $personId
      */
-    public function __construct($id)
+    public function __construct($personId)
     {
-        $this->id = $id;
-    }
-
-    /**
-     * Get Apparel21 product ID.
-     *
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->id;
+        $this->personId = $personId;
     }
 
     /**
@@ -45,7 +35,10 @@ class GetProductNotes extends BaseAction implements Contracts\Action
      */
     public function request()
     {
-        return new GuzzleHttp\Psr7\Request('GET', 'ProductNotes/'.$this->id);
+       return new GuzzleHttp\Psr7\Request(
+           'GET',
+           'Persons/'.$this->personId.'/Orders'
+       );
     }
 
     /**
@@ -56,12 +49,14 @@ class GetProductNotes extends BaseAction implements Contracts\Action
      */
     public function response(ResponseInterface $response)
     {
-        $data = (new Parsers\PayloadParser)->parse((string) $response->getBody());
+        $xml = (new Parsers\PayloadParser)->parse((string) $response->getBody());
 
         $collection = new Collection;
 
-        foreach ($data->ProductNoteType as $note) {
-            $collection->push((new Parsers\ProductNoteParser)->parse($note));
+        foreach ($xml as $item) {
+            $collection->push(
+                (new Parsers\OrderParser)->parse($item)
+            );
         }
 
         return $collection;

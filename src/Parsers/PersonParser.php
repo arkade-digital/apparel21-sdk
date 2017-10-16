@@ -36,72 +36,14 @@ class PersonParser
                 ]))->filter()
             );
 
-        foreach ($payload->Contacts as $contact)
-        {
-            $person->getContacts()->push(
-                (new Entities\Contact)->setType('email')->setValue((string) $contact->Email)
-            );
-
-            foreach ($contact->Phones as $phone)
-            {
-                $person->getContacts()->push(
-                    (new Entities\Contact)->setType('mobile_phone')->setValue((string) $phone->Mobile)
-                );
-
-                $person->getContacts()->push(
-                    (new Entities\Contact)->setType('home_phone')->setValue((string) $phone->Home)
-                );
-
-                $person->getContacts()->push(
-                    (new Entities\Contact)->setType('work_phone')->setValue((string) $phone->Work)
-                );
-            }
-        }
-
-        // Filter out empty contacts
         $person->setContacts(
-            $person
-                ->getContacts()
-                ->reject(function (Entities\Contact $contact) {
-                    return empty($contact->getValue());
-                })
+            (new ContactParser)->parseCollection($payload->Contacts)
         );
 
-        foreach ($payload->Addresses as $address) {
-            foreach ($address->Billing as $item) {
-                $person->getAddresses()->push(
-                    $this->parseAddress($item, 'billing')
-                );
-            }
-
-            foreach ($address->Delivery as $item) {
-                $person->getAddresses()->push(
-                    $this->parseAddress($item, 'delivery')
-                );
-            }
-        }
+        $person->setAddresses(
+            (new AddressParser)->parseCollection($payload->Addresses)
+        );
 
         return $person;
-    }
-
-    /**
-     * Parse the given address XML.
-     *
-     * @param  SimpleXMLElement $xml
-     * @param  string           $type
-     * @return Entities\Address
-     */
-    protected function parseAddress(SimpleXMLElement $xml, $type = null)
-    {
-        return (new Entities\Address)
-            ->setType($type)
-            ->setContactName((string) $xml->ContactName)
-            ->setCompanyName((string) $xml->CompanyName)
-            ->setLine1((string) $xml->AddressLine1)
-            ->setLine2((string) $xml->AddressLine2)
-            ->setCity((string) $xml->City)
-            ->setState((string) $xml->State)
-            ->setPostcode((string) $xml->Postcode)
-            ->setCountry((string) $xml->Country);
     }
 }

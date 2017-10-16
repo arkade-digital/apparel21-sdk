@@ -53,6 +53,13 @@ class Client
     protected $client;
 
     /**
+     * Stream resource for debug output.
+     *
+     * @var resource
+     */
+    protected $debug;
+
+    /**
      * Client constructor.
      *
      * @param string $base_url
@@ -156,24 +163,48 @@ class Client
     }
 
     /**
+     * Enable debug mode.
+     *
+     * @return void
+     */
+    public function debug()
+    {
+        $this->debug = fopen('php://temp', 'r+');
+    }
+
+    /**
+     * Return debug output.
+     *
+     * @return string|null
+     */
+    public function getDebugOutput()
+    {
+        if (! $this->debug) return null;
+
+        fseek($this->debug, 0);
+
+        return stream_get_contents($this->debug);
+    }
+
+    /**
      * Setup Guzzle client with optional provided handler stack.
      *
      * @param  GuzzleHttp\HandlerStack|null $stack
+     * @param  array                        $options
      * @return Client
      */
-    public function setupClient(GuzzleHttp\HandlerStack $stack = null)
+    public function setupClient(GuzzleHttp\HandlerStack $stack = null, $options = [])
     {
         $stack = $stack ?: GuzzleHttp\HandlerStack::create();
 
         $this->bindHeadersMiddleware($stack);
         $this->bindCountryCodeMiddleware($stack);
 
-        $this->client = new GuzzleHttp\Client([
+        $this->client = new GuzzleHttp\Client(array_merge([
             'handler'  => $stack,
             'base_uri' => $this->base_url,
             'timeout'  => 900, // 15 minutes
-            'debug'    => fopen('/dev/null', 'w') // https://github.com/arkade-digital/apparel21-sdk/pull/14
-        ]);
+        ], $options));
 
         return $this;
     }

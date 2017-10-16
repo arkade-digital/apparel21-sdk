@@ -16,14 +16,14 @@ class GetFreeStock extends BaseAction implements Contracts\Action
      *
      * @var string
      */
-    protected $lookupType;
+    public $lookupType;
 
     /**
      * Lookup value.
      *
      * @var string
      */
-    protected $lookupValue;
+    public $lookupValue;
 
     /**
      * Set SKU for lookup.

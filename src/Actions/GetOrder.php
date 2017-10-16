@@ -9,23 +9,32 @@ use Arkade\Apparel21\Contracts;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-class GetPerson extends BaseAction implements Contracts\Action
+class GetOrder extends BaseAction implements Contracts\Action
 {
     /**
-     * Apparel21 person ID.
+     * Person ID.
      *
-     * @var string
+     * @var integer
      */
-    public $id;
+    public $personId;
 
     /**
-     * GetPerson constructor.
+     * Order ID.
      *
-     * @param string $id
+     * @var integer
      */
-    public function __construct($id)
+    public $orderId;
+
+    /**
+     * GetOrders constructor.
+     *
+     * @param integer $personId
+     * @param integer $orderId
+     */
+    public function __construct($personId, $orderId)
     {
-        $this->id = $id;
+        $this->personId = $personId;
+        $this->orderId  = $orderId;
     }
 
     /**
@@ -35,19 +44,23 @@ class GetPerson extends BaseAction implements Contracts\Action
      */
     public function request()
     {
-        return new GuzzleHttp\Psr7\Request('GET', 'Persons/'.$this->id);
+       return new GuzzleHttp\Psr7\Request(
+           'GET',
+           'Persons/'.$this->personId.'/Orders/'.$this->orderId
+       );
     }
 
     /**
      * Transform a PSR-7 response.
      *
      * @param  ResponseInterface $response
-     * @return Entities\Person
+     * @return Entities\Order
      */
     public function response(ResponseInterface $response)
     {
-        return (new Parsers\PersonParser)->parse(
+        return (new Parsers\OrderParser)->parse(
             (new Parsers\PayloadParser)->parse((string) $response->getBody())
         );
     }
+
 }
