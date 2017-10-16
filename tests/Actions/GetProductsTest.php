@@ -16,12 +16,12 @@ class GetProductsTest extends TestCase
      */
     public function builds_request_with_pagination()
     {
-        $request = (new GetProducts)->skip(0)->take(10)->request();
+        $request = (new GetProducts)->skip(10)->take(10)->request();
 
         parse_str($request->getUri()->getQuery(), $query);
 
         $this->assertEquals('ProductsSimple', $request->getUri()->getPath());
-        $this->assertEquals(1, $query['startRow']);
+        $this->assertEquals(11, $query['startRow']);
         $this->assertEquals(10, $query['pageRows']);
     }
 
