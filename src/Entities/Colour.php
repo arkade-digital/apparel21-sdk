@@ -74,6 +74,8 @@ class Colour
     }
 
     /**
+     * Return row number.
+     *
      * @return string
      */
     public function getRowNumber()
@@ -82,7 +84,9 @@ class Colour
     }
 
     /**
-     * @param integer $rowNumber
+     * Set row number.
+     *
+     * @param  integer $rowNumber
      * @return string
      */
     public function setRowNumber($rowNumber = null)
