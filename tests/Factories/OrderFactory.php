@@ -74,6 +74,13 @@ class OrderFactory
                 )
         );
 
+        $order->setFreightOption(
+            (new Entities\FreightOption)
+                ->setId(123)
+                ->setName('Express Australia Post')
+                ->setValue(1000)
+        );
+
         return $order;
     }
 }

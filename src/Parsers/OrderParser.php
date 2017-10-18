@@ -35,6 +35,12 @@ class OrderParser
             )
             ->setAddresses(
                 (new AddressParser)->parseCollection($payload->Addresses)
+            )
+            ->setFreightOption(
+                (new Entities\FreightOption)
+                    ->setId((integer) $payload->SelectedFreightOption->Id)
+                    ->setName((integer) $payload->SelectedFreightOption->Name)
+                    ->setValue((integer) ((float) $payload->SelectedFreightOption->Value * 100))
             );
 
         foreach ($payload->Payments->PaymentDetail as $payment) {

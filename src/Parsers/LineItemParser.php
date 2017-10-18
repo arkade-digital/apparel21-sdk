@@ -28,6 +28,7 @@ class LineItemParser
                 'receiver_name'     => (string) $xml->ReceiverName,
                 'carrier'           => (string) $xml->Carrier,
                 'carrier_url'       => (string) $xml->CarrierUrl,
+                'con_note'          => (string) $xml->ConNote,
             ]))
             ->setServiceType(
                 (new ServiceType)->setIdentifiers(collect([

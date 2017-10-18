@@ -48,6 +48,14 @@ class OrderSerializer
         $payload = $this->mapPayments($payload, $order->getPayments());
         $payload = $this->mapLineItems($payload, $order->getLineItems());
 
+        if ($freightOption = $order->getFreightOption()) {
+            $payload['SelectedFreightOption'] = array_filter([
+                'Id'    => $freightOption->getId(),
+                'Name'  => $freightOption->getName(),
+                'Value' => $freightOption->getValue() / 100
+            ]);
+        }
+
         return $payload;
     }
 }
