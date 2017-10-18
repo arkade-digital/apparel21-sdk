@@ -38,4 +38,9 @@
             <Value>59.9</Value>
         </OrderDetail>
     </OrderDetails>
+    <SelectedFreightOption>
+        <Id>123</Id>
+        <Name>Express Australia Post</Name>
+        <Value>10</Value>
+    </SelectedFreightOption>
 </Order>
