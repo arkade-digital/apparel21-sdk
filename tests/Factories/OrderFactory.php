@@ -14,6 +14,7 @@ class OrderFactory
     public function make()
     {
         $order = (new Entities\Order)
+	        ->setTotalDiscount(1000)
             ->setCustomer(
                 (new Entities\Person)->setIdentifiers(collect([
                     'ap21_id' => 745619
@@ -65,6 +66,7 @@ class OrderFactory
             (new Entities\LineItem)
                 ->setQuantity(1)
                 ->setTotal(5990)
+	            ->setDiscount(1000)
                 ->setSellable(
                     (new Entities\Variant)
                         ->setIdentifiers(collect([

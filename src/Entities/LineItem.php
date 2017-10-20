@@ -25,6 +25,12 @@ class LineItem implements Contracts\LineItem, Contracts\HasAttributes, Contracts
      */
     protected $status;
 
+	/**
+	 * Discount
+	 * @var
+	 */
+    protected $discount;
+
     /**
      * Return service type.
      *
@@ -70,4 +76,23 @@ class LineItem implements Contracts\LineItem, Contracts\HasAttributes, Contracts
 
         return $this;
     }
+
+	/**
+	 * @return integer
+	 */
+	public function getDiscount()
+	{
+		return $this->discount;
+	}
+
+	/**
+	 * @param integer $discount
+	 * @return static
+	 */
+	public function setDiscount($discount)
+	{
+		$this->discount = $discount;
+
+		return $this;
+	}
 }
