@@ -47,20 +47,21 @@ class Order implements Contracts\Order, Contracts\Identifiable
     /**
      * @return integer
      */
-    public function getTotalDiscount() {
+    public function getTotalDiscount()
+    {
         return $this->totalDiscount;
     }
 
     /**
-     * @param integer $totalDiscount
+     * Set the total discount for order
      *
+     * @param integer $totalDiscount
      * @return static
      */
-    public function setTotalDiscount($totalDiscount) {
+    public function setTotalDiscount($totalDiscount)
+    {
         $this->totalDiscount = $totalDiscount;
 
         return $this;
     }
-
-
 }
