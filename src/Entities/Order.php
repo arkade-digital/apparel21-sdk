@@ -17,6 +17,11 @@ class Order implements Contracts\Order, Contracts\Identifiable
     protected $freightOption;
 
     /**
+     * @var integer
+     */
+    protected $totalDiscount;
+
+    /**
      * Get freight option.
      *
      * @return FreightOption
@@ -35,6 +40,27 @@ class Order implements Contracts\Order, Contracts\Identifiable
     public function setFreightOption(FreightOption $freightOption)
     {
         $this->freightOption = $freightOption;
+
+        return $this;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getTotalDiscount()
+    {
+        return $this->totalDiscount;
+    }
+
+    /**
+     * Set the total discount for order
+     *
+     * @param integer $totalDiscount
+     * @return static
+     */
+    public function setTotalDiscount($totalDiscount)
+    {
+        $this->totalDiscount = $totalDiscount;
 
         return $this;
     }

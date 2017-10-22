@@ -21,6 +21,7 @@ class OrderParser
             ->setDateTime(Carbon::parse((string) $payload->OrderDateTime))
             ->setTotal((int) ((float) $payload->TotalDue * 100))
             ->setTotalTax((int) ((float) $payload->TotalTax * 100))
+            ->setTotalDiscount((int) ((float) $payload->TotalDiscount * 100))
             ->setIdentifiers(new Collection([
                 'ap21_id'     => (integer) $payload->Id,
                 'ap21_number' => (integer) $payload->OrderNumber

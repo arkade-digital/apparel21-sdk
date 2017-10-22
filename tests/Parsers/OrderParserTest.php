@@ -27,6 +27,7 @@ class OrderParserTest extends TestCase
         $this->assertEquals(Carbon::parse('2017-09-28 13:28:02'), $order->getDateTime());
         $this->assertEquals(5990, $order->getTotal());
         $this->assertEquals(545, $order->getTotalTax());
+        $this->assertEquals(1000, $order->getTotalDiscount());
     }
 
     /**
@@ -111,6 +112,7 @@ class OrderParserTest extends TestCase
         $this->assertEquals('Processing', $lineItem->getStatus());
         $this->assertEquals(1, $lineItem->getQuantity());
         $this->assertEquals(5990, $lineItem->getTotal());
+        $this->assertEquals(1000, $lineItem->getDiscount());
 
         $this->assertEquals(1418618, $lineItem->getIdentifiers()->get('ap21_id'));
 

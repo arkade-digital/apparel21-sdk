@@ -1,5 +1,6 @@
 <Order>
     <PersonId>745619</PersonId>
+    <TotalDiscount>10</TotalDiscount>
     <Contacts>
         <Email>bob@example.com</Email>
     </Contacts>
@@ -36,6 +37,7 @@
             <Price>59.9</Price>
             <Quantity>1</Quantity>
             <Value>59.9</Value>
+            <Discount>10</Discount>
         </OrderDetail>
     </OrderDetails>
     <SelectedFreightOption>

@@ -7,7 +7,7 @@
     <OrderDateTime>2017-09-28T13:28:02</OrderDateTime>
     <TotalQuantity>2</TotalQuantity>
     <TotalTax>5.45</TotalTax>
-    <TotalDiscount>0</TotalDiscount>
+    <TotalDiscount>10</TotalDiscount>
     <TotalDue>59.9</TotalDue>
     <TotalPayment>59.90</TotalPayment>
     <PickupStoreId />
@@ -65,7 +65,7 @@
             <SizeCode>-</SizeCode>
             <Quantity>1</Quantity>
             <Price>59.9</Price>
-            <Discount>0</Discount>
+            <Discount>10</Discount>
             <Value>59.9</Value>
             <TaxPercent>10</TaxPercent>
             <QuantityTaken>0</QuantityTaken>
