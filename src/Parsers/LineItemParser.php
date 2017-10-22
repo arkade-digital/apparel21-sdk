@@ -37,7 +37,7 @@ class LineItemParser
                 ]))
             )
             ->setQuantity((integer) $xml->Quantity)
-	        ->setDiscount((int) ((float) $xml->Discount * 100))
+            ->setDiscount((int) ((float) $xml->Discount * 100))
             ->setTotal((int) ((float) $xml->Value * 100))
             ->setStatus((string) $xml->Status)
             ->setSellable(

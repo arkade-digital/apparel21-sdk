@@ -25,10 +25,10 @@ class LineItem implements Contracts\LineItem, Contracts\HasAttributes, Contracts
      */
     protected $status;
 
-	/**
-	 * Discount
-	 * @var
-	 */
+    /**
+     * Discount
+     * @var
+     */
     protected $discount;
 
     /**
@@ -77,22 +77,22 @@ class LineItem implements Contracts\LineItem, Contracts\HasAttributes, Contracts
         return $this;
     }
 
-	/**
-	 * @return integer
-	 */
-	public function getDiscount()
-	{
-		return $this->discount;
-	}
+    /**
+     * @return integer
+     */
+    public function getDiscount()
+    {
+        return $this->discount;
+    }
 
-	/**
-	 * @param integer $discount
-	 * @return static
-	 */
-	public function setDiscount($discount)
-	{
-		$this->discount = $discount;
+    /**
+     * @param integer $discount
+     * @return static
+     */
+    public function setDiscount($discount)
+    {
+        $this->discount = $discount;
 
-		return $this;
-	}
+        return $this;
+    }
 }
