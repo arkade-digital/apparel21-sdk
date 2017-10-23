@@ -40,7 +40,14 @@ trait MapLineItems
             'Price'     => $lineItem->getSellable()->getPrice() / 100,
             'Quantity'  => $lineItem->getQuantity(),
             'Value'     => $lineItem->getTotal() / 100,
-            'Discount'  => $lineItem->getDiscount() / 100
+            'Discounts' => [
+                'Discount' => $lineItem->getDiscount()->map(function($item, $value) {
+                    if ($value === 'Value') {
+                        $item = $item /100;
+                    }
+                    return $item;
+                })->toArray()
+            ]
         ]);
     }
 }

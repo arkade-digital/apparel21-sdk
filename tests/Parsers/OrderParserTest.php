@@ -27,7 +27,7 @@ class OrderParserTest extends TestCase
         $this->assertEquals(Carbon::parse('2017-09-28 13:28:02'), $order->getDateTime());
         $this->assertEquals(5990, $order->getTotal());
         $this->assertEquals(545, $order->getTotalTax());
-        $this->assertEquals(1000, $order->getTotalDiscount());
+        $this->assertEquals(1050, $order->getTotalDiscount());
     }
 
     /**
@@ -112,7 +112,6 @@ class OrderParserTest extends TestCase
         $this->assertEquals('Processing', $lineItem->getStatus());
         $this->assertEquals(1, $lineItem->getQuantity());
         $this->assertEquals(5990, $lineItem->getTotal());
-        $this->assertEquals(1000, $lineItem->getDiscount());
 
         $this->assertEquals(1418618, $lineItem->getIdentifiers()->get('ap21_id'));
 
@@ -136,5 +135,29 @@ class OrderParserTest extends TestCase
         $this->assertEquals('-', $lineItem->getSellable()->getIdentifiers()->get('ap21_colour_code'));
         $this->assertEquals(21503, $lineItem->getSellable()->getIdentifiers()->get('ap21_sku_id'));
         $this->assertEquals('-', $lineItem->getSellable()->getIdentifiers()->get('ap21_size_code'));
+    }
+
+    /**
+     * @test
+     */
+    public function returns_populated_order_line_items_discounts()
+    {
+        $order = (new OrderParser)->parse(
+            (new PayloadParser)->parse(
+                file_get_contents(__DIR__ . '/../Stubs/Orders/order.xml')
+            )
+        );
+
+        $this->assertInstanceOf(Collection::class, $order->getLineItems());
+        $this->assertEquals(2, $order->getLineItems()->count());
+
+        $lineItem = $order->getLineItems()->first();
+
+        $this->assertInstanceOf(Entities\LineItem::class, $lineItem);
+
+        $discount = $lineItem->getDiscount()->first();
+
+        $this->assertEquals(1, $discount['ap21_discount_type']);
+        $this->assertEquals(1050, $discount['value']);
     }
 }

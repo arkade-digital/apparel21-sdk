@@ -4,6 +4,7 @@ namespace Arkade\Apparel21\Entities;
 
 use Arkade\Support\Traits;
 use Arkade\Support\Contracts;
+use Illuminate\Support\Collection;
 
 class LineItem implements Contracts\LineItem, Contracts\HasAttributes, Contracts\Identifiable
 {
@@ -78,18 +79,18 @@ class LineItem implements Contracts\LineItem, Contracts\HasAttributes, Contracts
     }
 
     /**
-     * @return integer
+     * @return Collection
      */
     public function getDiscount()
     {
-        return $this->discount;
+        return $this->discount ?: $this->discount = new Collection;
     }
 
     /**
-     * @param integer $discount
+     * @param Collection $discount
      * @return static
      */
-    public function setDiscount($discount)
+    public function setDiscount(Collection $discount)
     {
         $this->discount = $discount;
 

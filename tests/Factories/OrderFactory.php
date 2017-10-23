@@ -14,7 +14,7 @@ class OrderFactory
     public function make()
     {
         $order = (new Entities\Order)
-            ->setTotalDiscount(1000)
+            ->setTotalDiscount(1050)
             ->setCustomer(
                 (new Entities\Person)->setIdentifiers(collect([
                     'ap21_id' => 745619
@@ -59,14 +59,19 @@ class OrderFactory
                     'message'   => 'payment_statusCURRENTbank_'
                 ]))
                 ->setType('CreditCard')
-                ->setAmount(5990)
+                ->setAmount(6190)
         );
 
         $order->getLineItems()->push(
             (new Entities\LineItem)
                 ->setQuantity(1)
                 ->setTotal(5990)
-                ->setDiscount(1000)
+                ->setDiscount(
+                    collect([
+                        'DiscountTypeId' => 1,
+                        'Value' => 1050
+                    ])
+                )
                 ->setSellable(
                     (new Entities\Variant)
                         ->setIdentifiers(collect([
@@ -80,7 +85,7 @@ class OrderFactory
             (new Entities\FreightOption)
                 ->setId(123)
                 ->setName('Express Australia Post')
-                ->setValue(1000)
+                ->setValue(1250)
         );
 
         return $order;
