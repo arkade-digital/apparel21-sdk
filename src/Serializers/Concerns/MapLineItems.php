@@ -48,7 +48,9 @@ trait MapLineItems
             'ProductId' => $lineItem->getSellable()->getIdentifiers()->get('ap21_product_id'),
             'Price'     => $lineItem->getSellable()->getPrice() / 100,
             'Quantity'  => $lineItem->getQuantity(),
-            'Value'     => $lineItem->getDiscount()->isEmpty() ? $lineItem->getTotal() /100 : $discount['Discount']['Value'],
+            'Value'     => $lineItem->getDiscount()->isEmpty()
+                ? $lineItem->getTotal() /100
+                : (($lineItem->getTotal() /100) - $discount['Discount']['Value']),
             'Discounts' => $discount
         ]);
     }
