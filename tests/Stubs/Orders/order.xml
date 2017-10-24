@@ -7,9 +7,9 @@
     <OrderDateTime>2017-09-28T13:28:02</OrderDateTime>
     <TotalQuantity>2</TotalQuantity>
     <TotalTax>5.45</TotalTax>
-    <TotalDiscount>10</TotalDiscount>
+    <TotalDiscount>10.5</TotalDiscount>
     <TotalDue>59.9</TotalDue>
-    <TotalPayment>59.90</TotalPayment>
+    <TotalPayment>59.9</TotalPayment>
     <PickupStoreId />
     <DeliveryInstructions />
     <DespatchType>DespatchFromWarehouse</DespatchType>
@@ -68,6 +68,12 @@
             <Discount>10</Discount>
             <Value>59.9</Value>
             <TaxPercent>10</TaxPercent>
+            <Discounts>
+                <Discount>
+                    <DiscountTypeId>1</DiscountTypeId>
+                    <Value>10.5</Value>
+                </Discount>
+            </Discounts>
             <QuantityTaken>0</QuantityTaken>
             <QuantityPacked>0</QuantityPacked>
             <ReturnReasonId />

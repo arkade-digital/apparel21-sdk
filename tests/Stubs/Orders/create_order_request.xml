@@ -1,6 +1,6 @@
 <Order>
     <PersonId>745619</PersonId>
-    <TotalDiscount>10</TotalDiscount>
+    <TotalDiscount>10.5</TotalDiscount>
     <Contacts>
         <Email>bob@example.com</Email>
     </Contacts>
@@ -28,7 +28,7 @@
             <AuthCode>1234</AuthCode>
             <Message>payment_statusCURRENTbank_</Message>
             <Origin>CreditCard</Origin>
-            <Amount>59.9</Amount>
+            <Amount>61.9</Amount>
         </PaymentDetail>
     </Payments>
     <OrderDetails>
@@ -37,12 +37,17 @@
             <Price>59.9</Price>
             <Quantity>1</Quantity>
             <Value>59.9</Value>
-            <Discount>10</Discount>
+            <Discounts>
+                <Discount>
+                    <DiscountTypeId>1</DiscountTypeId>
+                    <Value>10.5</Value>
+                </Discount>
+            </Discounts>
         </OrderDetail>
     </OrderDetails>
     <SelectedFreightOption>
         <Id>123</Id>
         <Name>Express Australia Post</Name>
-        <Value>10</Value>
+        <Value>12.5</Value>
     </SelectedFreightOption>
 </Order>

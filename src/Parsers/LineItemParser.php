@@ -17,6 +17,17 @@ class LineItemParser
      */
     public function parse(SimpleXMLElement $xml)
     {
+        $discounts = collect([]);
+
+        foreach ($xml->Discounts as $discount) {
+            foreach ($discount as $d) {
+                $discounts->push([
+                    'ap21_discount_type' => (int) $d->DiscountTypeId,
+                    'value'              => (int) ((float) $d->Value * 100)
+                ]);
+            }
+        }
+
         return (new LineItem)
             ->setIdentifiers(collect([
                 'ap21_id' => (integer) $xml->Id
@@ -37,7 +48,7 @@ class LineItemParser
                 ]))
             )
             ->setQuantity((integer) $xml->Quantity)
-            ->setDiscount((int) ((float) $xml->Discount * 100))
+            ->setDiscount($discounts)
             ->setTotal((int) ((float) $xml->Value * 100))
             ->setStatus((string) $xml->Status)
             ->setSellable(
