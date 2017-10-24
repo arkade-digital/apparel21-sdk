@@ -33,21 +33,23 @@ trait MapLineItems
      */
     protected function serializeLineItem(Entities\LineItem $lineItem)
     {
+        $discount = [
+            'Discount' => $lineItem->getDiscount()->map(function($item, $value) {
+                if ($value === 'Value') {
+                    $item = $item /100;
+                }
+                return $item;
+            })->toArray()
+        ];
+
         return array_filter([
             '@node'     => 'OrderDetail',
             'SkuId'     => $lineItem->getSellable()->getIdentifiers()->get('ap21_sku_id'),
             'ProductId' => $lineItem->getSellable()->getIdentifiers()->get('ap21_product_id'),
             'Price'     => $lineItem->getSellable()->getPrice() / 100,
             'Quantity'  => $lineItem->getQuantity(),
-            'Value'     => $lineItem->getTotal() / 100,
-            'Discounts' => [
-                'Discount' => $lineItem->getDiscount()->map(function($item, $value) {
-                    if ($value === 'Value') {
-                        $item = $item /100;
-                    }
-                    return $item;
-                })->toArray()
-            ]
+            'Value'     => $lineItem->getDiscount()->isEmpty() ? $lineItem->getTotal() /100 : $discount['Discount']['Value'],
+            'Discounts' => $discount
         ]);
     }
 }
