@@ -48,6 +48,7 @@ class ProductParserTest extends TestCase
         $this->assertEquals('Mid Grey Marle - S', $product->getVariants()->first()->getTitle());
         $this->assertEquals('9342033270762', $product->getVariants()->first()->getSKU());
         $this->assertEquals(5000, $product->getVariants()->first()->getPrice());
+        $this->assertEquals(10995, $product->getVariants()->first()->getOriginalPrice());
         $this->assertEquals(20, $product->getVariants()->first()->getStock());
 
         $this->assertEquals('Mid Grey Marle', $product->getVariants()->first()->getOptions()->get('colour'));
