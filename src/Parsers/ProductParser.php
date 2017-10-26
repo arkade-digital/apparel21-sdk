@@ -69,6 +69,7 @@ class ProductParser
                         ->setSKU((string) $sku->Barcode)
                         ->setStock((int) $sku->FreeStock)
                         ->setPrice((int) ((float) $sku->Price * 100))
+                        ->setOriginalPrice((int) ((float) $sku->OriginalPrice * 100))
                 );
 
             }
