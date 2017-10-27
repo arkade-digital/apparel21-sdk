@@ -30,6 +30,6 @@ class PaymentParser
                 'message'   => (string) $xml->Message,
             ]))
             ->setType((string) $xml->Origin)
-            ->setAmount((int) ((float) $xml->Amount * 100));
+            ->setAmount((int) (string) ((float) $xml->Amount * 100));
     }
 }

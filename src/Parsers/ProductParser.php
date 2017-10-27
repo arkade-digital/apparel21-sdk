@@ -68,8 +68,8 @@ class ProductParser
                         ->setTitle(implode(' - ', [(string) $colour->Name, (string) $sku->SizeCode]))
                         ->setSKU((string) $sku->Barcode)
                         ->setStock((int) $sku->FreeStock)
-                        ->setPrice((int) ((float) $sku->Price * 100))
-                        ->setOriginalPrice((int) ((float) $sku->OriginalPrice * 100))
+                        ->setPrice((int) (string) ((float) $sku->Price * 100))
+                        ->setOriginalPrice((int) (string) ((float) $sku->OriginalPrice * 100))
                 );
 
             }
