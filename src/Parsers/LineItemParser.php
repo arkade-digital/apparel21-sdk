@@ -23,7 +23,7 @@ class LineItemParser
             foreach ($discount as $d) {
                 $discounts->push([
                     'ap21_discount_type' => (int) $d->DiscountTypeId,
-                    'value'              => (int) ((float) $d->Value * 100)
+                    'value'              => (int) (string) ((float) $d->Value * 100)
                 ]);
             }
         }
@@ -49,7 +49,7 @@ class LineItemParser
             )
             ->setQuantity((integer) $xml->Quantity)
             ->setDiscount($discounts)
-            ->setTotal((int) ((float) $xml->Value * 100))
+            ->setTotal((int) (string) ((float) $xml->Value * 100))
             ->setStatus((string) $xml->Status)
             ->setSellable(
                 (new Variant)
@@ -62,7 +62,7 @@ class LineItemParser
                         'ap21_size_code'    => (string)  $xml->SizeCode
                     ]))
                     ->setTitle((string) $xml->ProductName)
-                    ->setPrice((int) ((float) $xml->Price * 100))
+                    ->setPrice((int) (string) ((float) $xml->Price * 100))
             );
     }
 }

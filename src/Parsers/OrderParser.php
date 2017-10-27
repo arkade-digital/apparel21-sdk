@@ -19,9 +19,9 @@ class OrderParser
     {
         $order = (new Entities\Order)
             ->setDateTime(Carbon::parse((string) $payload->OrderDateTime))
-            ->setTotal((int) ((float) $payload->TotalDue * 100))
-            ->setTotalTax((int) ((float) $payload->TotalTax * 100))
-            ->setTotalDiscount((int) ((float) $payload->TotalDiscount * 100))
+            ->setTotal((int) (string) ((float) $payload->TotalDue * 100))
+            ->setTotalTax((int) (string) ((float) $payload->TotalTax * 100))
+            ->setTotalDiscount((int) (string) ((float) $payload->TotalDiscount * 100))
             ->setIdentifiers(new Collection([
                 'ap21_id'     => (integer) $payload->Id,
                 'ap21_number' => (integer) $payload->OrderNumber
@@ -41,7 +41,7 @@ class OrderParser
                 (new Entities\FreightOption)
                     ->setId((integer) $payload->SelectedFreightOption->Id)
                     ->setName((integer) $payload->SelectedFreightOption->Name)
-                    ->setValue((integer) ((float) $payload->SelectedFreightOption->Value * 100))
+                    ->setValue((integer) (string) ((float) $payload->SelectedFreightOption->Value * 100))
             );
 
         foreach ($payload->Payments->PaymentDetail as $payment) {

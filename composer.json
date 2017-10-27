@@ -14,7 +14,7 @@
         }
     },
     "require": {
-        "arkade/support": "^1.5",
+        "arkade/support": "^1.6",
         "guzzlehttp/guzzle": "^6.3",
         "illuminate/pagination": "^5.4",
         "illuminate/support": "^5.4",
