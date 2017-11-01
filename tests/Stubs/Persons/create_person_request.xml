@@ -12,14 +12,14 @@
             <AddressLine1>Chestnut Street 92</AddressLine1>
             <City>Louisville</City>
             <State>Kentucky</State>
-            <PostCode>40202</PostCode>
+            <Postcode>40202</Postcode>
             <Country>United States</Country>
         </Billing>
         <Delivery>
             <AddressLine1>Foo bar Street 123</AddressLine1>
             <City>Melbourne</City>
             <State>Victoria</State>
-            <PostCode>3000</PostCode>
+            <Postcode>3000</Postcode>
             <Country>Australia</Country>
         </Delivery>
     </Addresses>

@@ -41,11 +41,13 @@ trait MapAddresses
     protected function serializeAddress(Entities\Address $address)
     {
         return array_filter([
+            'ContactName'  => $address->getContactName(),
+            'CompanyName'  => $address->getCompanyName(),
             'AddressLine1' => $address->getLine1(),
             'AddressLine2' => $address->getLine2(),
             'City'         => $address->getCity(),
             'State'        => $address->getState(),
-            'PostCode'     => $address->getPostcode(),
+            'Postcode'     => $address->getPostcode(),
             'Country'      => $address->getCountry()
         ]);
     }

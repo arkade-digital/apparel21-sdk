@@ -9,14 +9,14 @@
             <AddressLine1>101 Cremorne St</AddressLine1>
             <City>Melbourne</City>
             <State>VIC</State>
-            <PostCode>3183</PostCode>
+            <Postcode>3183</Postcode>
             <Country>AU</Country>
         </Billing>
         <Delivery>
             <AddressLine1>200 Swan St</AddressLine1>
             <City>Melbourne</City>
             <State>VIC</State>
-            <PostCode>3183</PostCode>
+            <Postcode>3183</Postcode>
             <Country>AU</Country>
         </Delivery>
     </Addresses>
