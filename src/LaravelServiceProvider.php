@@ -39,7 +39,8 @@ class LaravelServiceProvider extends ServiceProvider
      */
     protected function setupRecorder(Client $client)
     {
-        if (! $factory = $this->app->make('Arkade\HttpRecorder\Integrations\Guzzle\MiddlewareFactory')) {
+        $httpRecorderClass = 'Arkade\HttpRecorder\Integrations\Guzzle\MiddlewareFactory';
+        if (! class_exists($httpRecorderClass) || ! $factory = $this->app->make($httpRecorderClass)) {
             return $client;
         }
 
