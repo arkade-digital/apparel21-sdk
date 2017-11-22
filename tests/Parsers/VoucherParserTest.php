@@ -10,7 +10,7 @@ class VoucherParserTest extends TestCase
     /**
      * @test
      */
-    public function returns_populated_voucher_entity()
+    public function returns_populated_voucher()
     {
         $voucher = (new VoucherParser())->parse(
             (new PayloadParser)->parse(file_get_contents(__DIR__.'/../Stubs/Voucher/voucher.xml'))
