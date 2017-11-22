@@ -9,7 +9,7 @@ use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-class ValidateVoucher extends BaseAction implements Contracts\Action
+class GetVoucher extends BaseAction implements Contracts\Action
 {
     /**
      * Apparel21 Voucher Number.
@@ -24,13 +24,6 @@ class ValidateVoucher extends BaseAction implements Contracts\Action
      * @var integer
      */
     public $pin;
-
-    /**
-     * Amount you want to valiate against
-     * 
-     * @var integer
-     */
-    public $amount;
     
     /**
      * ValidateVoucher constructor.
@@ -52,17 +45,6 @@ class ValidateVoucher extends BaseAction implements Contracts\Action
         
         return $this;
     }
-
-    /**
-     * @param $amount
-     * @return $this
-     */
-    public function amount($amount)
-    {
-        $this->amount = $amount;
-        
-        return $this;
-    }
     
     /**
      * Build a PSR-7 request.
@@ -71,11 +53,10 @@ class ValidateVoucher extends BaseAction implements Contracts\Action
      */
     public function request()
     {
-        $request = new GuzzleHttp\Psr7\Request('GET', '/Voucher/GVValid/'.$this->voucherNumber);
+        $request = new GuzzleHttp\Psr7\Request('GET', '/Voucher/'.$this->voucherNumber);
         
         return $request->withUri($request->getUri()->withQuery(http_build_query([
             'pin'     => $this->pin,
-            'amount' => $this->amount
         ])));
     }
 
