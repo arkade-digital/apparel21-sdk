@@ -39,18 +39,18 @@ class LaravelServiceProvider extends ServiceProvider
      */
     protected function setupRecorder(Client $client)
     {
-        if (! $this->app->has('Arkade\HttpRecorder\Integrations\Guzzle\MiddlewareFactory')) {
+        try {
+            $stack = GuzzleHttp\HandlerStack::create();
+
+            $stack->push(
+                $this->app
+                    ->make('Arkade\HttpRecorder\Integrations\Guzzle\MiddlewareFactory')
+                    ->make(['apparel21', 'outgoing'])
+            );
+
+            return $client->setupClient($stack);
+        } catch (\Exception $exception) {
             return $client;
         }
-
-        $stack = GuzzleHttp\HandlerStack::create();
-
-        $stack->push(
-            $this->app
-                ->make('Arkade\HttpRecorder\Integrations\Guzzle\MiddlewareFactory')
-                ->make(['apparel21', 'outgoing'])
-        );
-
-        return $client->setupClient($stack);
     }
 }
