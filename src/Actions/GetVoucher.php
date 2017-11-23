@@ -53,7 +53,7 @@ class GetVoucher extends BaseAction implements Contracts\Action
      */
     public function request()
     {
-        $request = new GuzzleHttp\Psr7\Request('GET', '/Voucher/'.$this->voucherNumber);
+        $request = new GuzzleHttp\Psr7\Request('GET', 'Voucher/'.$this->voucherNumber);
         
         return $request->withUri($request->getUri()->withQuery(http_build_query([
             'pin'     => $this->pin,
