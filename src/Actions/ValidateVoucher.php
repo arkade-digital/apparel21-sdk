@@ -71,7 +71,7 @@ class ValidateVoucher extends BaseAction implements Contracts\Action
      */
     public function request()
     {
-        $request = new GuzzleHttp\Psr7\Request('GET', '/Voucher/GVValid/'.$this->voucherNumber);
+        $request = new GuzzleHttp\Psr7\Request('GET', 'Voucher/GVValid/'.$this->voucherNumber);
         
         return $request->withUri($request->getUri()->withQuery(http_build_query([
             'pin'     => $this->pin,
