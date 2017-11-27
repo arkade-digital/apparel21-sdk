@@ -68,13 +68,11 @@ class OrderGiftCardFactory
                 )
                 ->setGiftCard(
                     collect([
-                        'ExtraVoucherInformation' => [
-                            'VoucherType'         => 'EmailVoucher',
-                            'EmailSubject'        => 'Decjuba GV Test Voucher 01',
-                            'Email'               => 'foo@bar.com.au',
-                            'PersonalisedMessage' => 'Decjuba GV Test Voucher for Capcom Team',
-                            'RecieverName'        => 'Arkade Capcom team'
-                        ]
+                        'VoucherType'         => 'EmailVoucher',
+                        'EmailSubject'        => 'Decjuba GV Test Voucher 01',
+                        'Email'               => 'foo@bar.com.au',
+                        'PersonalisedMessage' => 'Decjuba GV Test Voucher for Capcom Team',
+                        'RecieverName'        => 'Arkade Capcom team'
                     ])
                 )
         );

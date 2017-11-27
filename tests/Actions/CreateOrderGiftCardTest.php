@@ -4,6 +4,8 @@ namespace Arkade\Apparel21\Actions;
 
 use Arkade\Apparel21\Parsers\OrderParser;
 use Arkade\Apparel21\Parsers\PayloadParser;
+use Arkade\Apparel21\Serializers\OrderSerializer;
+use Arkade\Apparel21\Serializers\XMLHelper;
 use GuzzleHttp\Psr7\Response;
 use Arkade\Apparel21\Entities;
 use PHPUnit\Framework\TestCase;
@@ -39,21 +41,28 @@ class CreateOrderGiftCardTest extends TestCase
 
         $giftCard = $lineItem->getGiftCard()->toArray();
 
-        $this->assertArrayHasKey('ExtraVoucherInformation', $giftCard);
-        $this->assertArrayHasKey('VoucherType', $giftCard['ExtraVoucherInformation']);
-        $this->assertArrayHasKey('EmailSubject', $giftCard['ExtraVoucherInformation']);
-        $this->assertArrayHasKey('Email', $giftCard['ExtraVoucherInformation']);
-        $this->assertArrayHasKey('PersonalisedMessage', $giftCard['ExtraVoucherInformation']);
-        $this->assertArrayHasKey('RecieverName', $giftCard['ExtraVoucherInformation']);
+        $this->assertArrayHasKey('VoucherType', $giftCard);
+        $this->assertArrayHasKey('EmailSubject', $giftCard);
+        $this->assertArrayHasKey('Email', $giftCard);
+        $this->assertArrayHasKey('PersonalisedMessage', $giftCard);
+        $this->assertArrayHasKey('RecieverName', $giftCard);
     }
 
     /**
      * @test
      */
-    public function returns_populated_order_line_items_giftCard()
+    public function returns_populated_xml()
     {
-        $this->markTestSkipped();
-    }
+        $xml = (new OrderSerializer)->serialize(
+            (new Factories\OrderGiftCardFactory())->make()
+        );
 
+        $this->assertTrue(
+            (new XMLHelper)->compare(
+                file_get_contents(__DIR__.'/../Stubs/Orders/create_order_gift_card.xml'),
+                $xml
+            )
+        );
+    }
 
 }

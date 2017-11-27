@@ -51,7 +51,8 @@ trait MapLineItems
             'Value'     => $lineItem->getDiscount()->isEmpty()
                 ? $lineItem->getTotal() /100
                 : (($lineItem->getTotal() /100) - $discount['Discount']['Value']),
-            'Discounts' => $discount
+            'Discounts' => $discount,
+            'ExtraVoucherInformation' => $lineItem->getGiftCard()->toArray()
         ]);
     }
 }

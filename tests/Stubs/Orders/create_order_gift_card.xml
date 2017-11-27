@@ -1,6 +1,8 @@
 <Order>
-    <OrderNumber>DEC-GV0001-GV3</OrderNumber>
     <PersonId>1122</PersonId>
+    <Contacts>
+        <Email>foo@bar.com.au</Email>
+    </Contacts>
     <Addresses>
         <Billing>
             <AddressLine1>Adelaide</AddressLine1>
@@ -10,7 +12,6 @@
             <Country>AU</Country>
         </Billing>
         <Delivery>
-            <ContactName>Dhruv Desai</ContactName>
             <AddressLine1>Adelaide</AddressLine1>
             <City>ADELAIDE</City>
             <State>SA</State>
@@ -18,15 +19,22 @@
             <Country>AU</Country>
         </Delivery>
     </Addresses>
-    <Contacts>
-        <Email>foo@bar.com.au</Email>
-    </Contacts>
+    <Payments>
+        <PaymentDetail>
+            <CardType>CC</CardType>
+            <Origin>CreditCard</Origin>
+            <Amount>100</Amount>
+        </PaymentDetail>
+    </Payments>
     <OrderDetails>
         <OrderDetail>
             <SkuId>177464</SkuId>
-            <Quantity>1</Quantity>
             <Price>100</Price>
+            <Quantity>1</Quantity>
             <Value>100</Value>
+            <Discounts>
+                <Discount/>
+            </Discounts>
             <ExtraVoucherInformation>
                 <VoucherType>EmailVoucher</VoucherType>
                 <EmailSubject>Decjuba GV Test Voucher 01</EmailSubject>
@@ -36,11 +44,4 @@
             </ExtraVoucherInformation>
         </OrderDetail>
     </OrderDetails>
-    <Payments>
-        <PaymentDetail>
-            <Origin>CreditCard</Origin>
-            <CardType>CC</CardType>
-            <Amount>100</Amount>
-        </PaymentDetail>
-    </Payments>
 </Order>
