@@ -2,14 +2,12 @@
 
 namespace Arkade\Apparel21\Actions;
 
-use Arkade\Apparel21\Parsers\OrderParser;
-use Arkade\Apparel21\Parsers\PayloadParser;
-use Arkade\Apparel21\Serializers\OrderSerializer;
-use Arkade\Apparel21\Serializers\XMLHelper;
 use GuzzleHttp\Psr7\Response;
 use Arkade\Apparel21\Entities;
-use PHPUnit\Framework\TestCase;
 use Arkade\Apparel21\Factories;
+use PHPUnit\Framework\TestCase;
+use Arkade\Apparel21\Serializers\XMLHelper;
+use Arkade\Apparel21\Serializers\OrderSerializer;
 
 class CreateOrderGiftCardTest extends TestCase
 {
