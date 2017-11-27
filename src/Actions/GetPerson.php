@@ -2,6 +2,7 @@
 
 namespace Arkade\Apparel21\Actions;
 
+use Arkade\Apparel21;
 use GuzzleHttp;
 use Arkade\Apparel21\Parsers;
 use Arkade\Apparel21\Entities;
@@ -25,6 +26,11 @@ class GetPerson extends BaseAction implements Contracts\Action
      */
     public function __construct($id)
     {
+        // Throw exception if $id blank/ NULL to prevent full search timeout
+        if (empty($id)) {
+            throw new Apparel21\Exceptions\NotFoundException;
+        }
+
         $this->id = $id;
     }
 

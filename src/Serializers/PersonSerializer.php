@@ -3,6 +3,7 @@
 namespace Arkade\Apparel21\Serializers;
 
 use Arkade\Apparel21\Entities;
+use Illuminate\Support\Facades\Log;
 
 class PersonSerializer
 {
@@ -38,6 +39,12 @@ class PersonSerializer
             'Firstname' => $person->getFirstName(),
             'Surname'   => $person->getLastName()
         ];
+
+        // Add the ID & UpdateTimeStamp fields to payload, which are required when sending PUT request
+        if ($person->getIdentifiers()->has('ap21_id')) {
+            $payload['ID'] = $person->getIdentifiers()->get('ap21_id');
+            $payload['UpdateTimeStamp'] = $person->getAttributes()->get('updated_at');
+        }
 
         $payload = $this->mapContacts($payload, $person->getContacts());
         $payload = $this->mapAddresses($payload, $person->getAddresses());
