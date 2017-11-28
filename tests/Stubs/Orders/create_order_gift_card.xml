@@ -1,0 +1,47 @@
+<Order>
+    <PersonId>1122</PersonId>
+    <Contacts>
+        <Email>foo@bar.com.au</Email>
+    </Contacts>
+    <Addresses>
+        <Billing>
+            <AddressLine1>Adelaide</AddressLine1>
+            <City>ADELAIDE</City>
+            <State>SA</State>
+            <Postcode>5000</Postcode>
+            <Country>AU</Country>
+        </Billing>
+        <Delivery>
+            <AddressLine1>Adelaide</AddressLine1>
+            <City>ADELAIDE</City>
+            <State>SA</State>
+            <Postcode>5000</Postcode>
+            <Country>AU</Country>
+        </Delivery>
+    </Addresses>
+    <Payments>
+        <PaymentDetail>
+            <CardType>CC</CardType>
+            <Origin>CreditCard</Origin>
+            <Amount>100</Amount>
+        </PaymentDetail>
+    </Payments>
+    <OrderDetails>
+        <OrderDetail>
+            <SkuId>177464</SkuId>
+            <Price>100</Price>
+            <Quantity>1</Quantity>
+            <Value>100</Value>
+            <Discounts>
+                <Discount/>
+            </Discounts>
+            <ExtraVoucherInformation>
+                <VoucherType>EmailVoucher</VoucherType>
+                <EmailSubject>Decjuba GV Test Voucher 01</EmailSubject>
+                <Email>foo@bar.com.au</Email>
+                <PersonalisedMessage>Decjuba GV Test Voucher for Capcom Team</PersonalisedMessage>
+                <RecieverName>Arkade Capcom team</RecieverName>
+            </ExtraVoucherInformation>
+        </OrderDetail>
+    </OrderDetails>
+</Order>

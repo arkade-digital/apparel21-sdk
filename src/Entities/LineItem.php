@@ -33,6 +33,12 @@ class LineItem implements Contracts\LineItem, Contracts\HasAttributes, Contracts
     protected $discount;
 
     /**
+     * Gift card
+     * @var Collection
+     */
+    protected $giftCard;
+
+    /**
      * Return service type.
      *
      * @return ServiceType
@@ -93,6 +99,26 @@ class LineItem implements Contracts\LineItem, Contracts\HasAttributes, Contracts
     public function setDiscount(Collection $discount)
     {
         $this->discount = $discount;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getGiftCard()
+    {
+        return $this->giftCard ?: $this->giftCard = new Collection ;
+    }
+
+    /**
+     * @param Collection $giftCard
+     *
+     * @return static
+     */
+    public function setGiftCard(Collection $giftCard)
+    {
+        $this->giftCard = $giftCard;
 
         return $this;
     }
