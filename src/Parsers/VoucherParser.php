@@ -8,10 +8,10 @@ use Arkade\Apparel21\Entities;
 class VoucherParser
 {
     /**
-     * Parse the given SimpleXmlElement to a Colour entity.
+     * Parse the given SimpleXmlElement to a voucher entity.
      *
      * @param  SimpleXMLElement $payload
-     * @return Entities\Colour
+     * @return Entities\Voucher
      */
     public function parse(SimpleXMLElement $payload)
     {
