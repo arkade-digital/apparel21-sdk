@@ -54,7 +54,7 @@ trait MapLineItems
             'Discounts' => $discount,
             'ExtraVoucherInformation' => $lineItem->getGiftCard()->except('ReceiverName', 'SenderName')->toArray(),
             'ReceiverName' => $lineItem->getGiftCard()->get('ReceiverName'),
-            'SenderName' => $lineItem->getGiftCard()->isNotEmpty() ? $lineItem->getGiftCard()->get('SenderName', 'Sender') : null
+            'SenderName' => $lineItem->getGiftCard()->get('SenderName')
         ]);
     }
 }
