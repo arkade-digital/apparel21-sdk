@@ -12,17 +12,16 @@ class VoucherParserTest extends TestCase
      */
     public function returns_populated_voucher()
     {
-        $voucher = (new VoucherParser())->parse(
+        $voucher = (new VoucherParser)->parse(
             (new PayloadParser)->parse(file_get_contents(__DIR__.'/../Stubs/Voucher/voucher.xml'))
         );
 
         $this->assertInstanceOf(Entities\Voucher::class, $voucher);
 
-        $this->assertEquals(6000226, $voucher->getVoucherNumber());
-        $this->assertEquals('2017-02-17T00:00:00', $voucher->getExpiryDate());
-        $this->assertEquals(100, $voucher->getOriginalAmount());
+        $this->assertEquals('6000226', $voucher->getNumber());
+        $this->assertEquals('2017-02-17', $voucher->getExpiryDate()->format('Y-m-d'));
+        $this->assertEquals(10000, $voucher->getOriginalAmount());
         $this->assertEquals(0, $voucher->getUsedAmount());
-        $this->assertEquals(100, $voucher->getAvailableAmount());
-
+        $this->assertEquals(10000, $voucher->getAvailableAmount());
     }
 }
