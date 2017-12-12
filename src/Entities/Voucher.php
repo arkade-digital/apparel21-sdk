@@ -2,78 +2,79 @@
 
 namespace Arkade\Apparel21\Entities;
 
-use Illuminate\Support\Collection;
+use Carbon\Carbon;
 
 class Voucher
 {
     /**
-     * Unique number.
-     *
-     * @var integer
-     */
-    protected $voucherNumber;
-
-    /**
-     * Human readable date.
+     * Number.
      *
      * @var string
+     */
+    protected $number;
+
+    /**
+     * Expiry date.
+     *
+     * @var Carbon
      */
     protected $expiryDate;
 
     /**
-     * Original amount voucher created with
+     * Original amount in cents.
      *
      * @var integer
      */
     protected $originalAmount;
 
     /**
-     * Already used amount
+     * Used amount in cents.
      *
      * @var integer
      */
     protected $usedAmount;
+
     /**
-     * amount available to spend
+     * Available amount in cents.
      *
      * @var integer
      */
     protected $availableAmount;
 
     /**
-     * unique validation id
+     * Validation ID.
      *
      * @var string
      */
     protected $validationId;
 
     /**
-     * Return unique voucher number.
+     * Return number.
      *
      * @return string
      */
-    public function getVoucherNumber()
+    public function getNumber()
     {
-        return $this->voucherNumber;
+        return $this->number;
     }
 
     /**
-     * Set unique voucher number.
+     * Set number.
      *
-     * @param null $voucherNumber
-     * @return $this
+     * @param  string $number
+     * @return static
      */
-    public function setVoucherNumber($voucherNumber = null)
+    public function setNumber($number)
     {
-        $this->voucherNumber = $voucherNumber;
+        $this->number = $number;
 
         return $this;
     }
 
     /**
-     * Return human readable date.
+     * Return expiry date.
      *
-     * @return string
+     * @return Carbon
      */
     public function getExpiryDate()
     {
@@ -81,12 +82,12 @@ class Voucher
     }
 
     /**
-     * Set human readable name.
+     * Set expiry date.
      *
-     * @param  string $expiryDate
+     * @param  Carbon $expiryDate
      * @return static
      */
-    public function setExpiryDate($expiryDate = null)
+    public function setExpiryDate(Carbon $expiryDate = null)
     {
         $this->expiryDate = $expiryDate;
 
@@ -94,9 +95,9 @@ class Voucher
     }
 
     /**
-     * Return originalAmount.
+     * Return original amount in cents.
      *
-     * @return string
+     * @return integer
      */
     public function getOriginalAmount()
     {
@@ -104,12 +105,12 @@ class Voucher
     }
 
     /**
-     * Set originalAmount.
+     * Set original amount in cents.
      *
      * @param  integer $originalAmount
-     * @return string
+     * @return static
      */
-    public function setOriginalAmount($originalAmount = null)
+    public function setOriginalAmount($originalAmount)
     {
         $this->originalAmount = $originalAmount;
 
@@ -117,9 +118,9 @@ class Voucher
     }
 
     /**
-     * Return usedAmount.
+     * Return used amount in cents.
      *
-     * @return string
+     * @return integer
      */
     public function getUsedAmount()
     {
@@ -127,12 +128,12 @@ class Voucher
     }
 
     /**
-     * Set usedAmount.
+     * Set used amount in cents.
      *
      * @param  integer $usedAmount
-     * @return string
+     * @return static
      */
-    public function setUsedAmount($usedAmount = null)
+    public function setUsedAmount($usedAmount)
     {
         $this->usedAmount = $usedAmount;
 
@@ -140,9 +141,9 @@ class Voucher
     }
 
     /**
-     * Return availableAmount.
+     * Return available amount in cents.
      *
-     * @return string
+     * @return integer
      */
     public function getAvailableAmount()
     {
@@ -150,12 +151,12 @@ class Voucher
     }
 
     /**
-     * Set originalAmount.
+     * Set available amount in cents.
      *
      * @param  integer $availableAmount
-     * @return string
+     * @return static
      */
-    public function setAvailableAmount($availableAmount = null)
+    public function setAvailableAmount($availableAmount)
     {
         $this->availableAmount = $availableAmount;
 
@@ -163,7 +164,7 @@ class Voucher
     }
 
     /**
-     * Return unique validation id
+     * Return validation ID.
      *
      * @return string
      */
@@ -173,16 +174,15 @@ class Voucher
     }
 
     /**
-     * set validation id
+     * Set validation ID.
      *
-     * @param string $validationId
-     * @return $this
+     * @param  string $validationId
+     * @return static
      */
-    public function setValidationId($validationId = null)
+    public function setValidationId($validationId)
     {
         $this->validationId = $validationId;
 
         return $this;
     }
-
 }

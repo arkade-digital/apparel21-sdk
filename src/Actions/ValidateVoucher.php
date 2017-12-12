@@ -4,6 +4,7 @@ namespace Arkade\Apparel21\Actions;
 
 use GuzzleHttp;
 use Arkade\Apparel21\Parsers;
+use Arkade\Apparel21\Entities;
 use Arkade\Apparel21\Contracts;
 use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
@@ -12,21 +13,21 @@ use Psr\Http\Message\ResponseInterface;
 class ValidateVoucher extends BaseAction implements Contracts\Action
 {
     /**
-     * Apparel21 Voucher Number.
+     * Number.
      *
      * @var string
      */
-    public $voucherNumber;
+    public $number;
 
     /**
-     * pin for particular voucher
+     * PIN.
      * 
      * @var integer
      */
     public $pin;
 
     /**
-     * Amount you want to valiate against
+     * Amount to be validated in cents.
      * 
      * @var integer
      */
@@ -35,16 +36,18 @@ class ValidateVoucher extends BaseAction implements Contracts\Action
     /**
      * ValidateVoucher constructor.
      *
-     * @param string $voucherNumber
+     * @param string $number
      */
-    public function __construct($voucherNumber)
+    public function __construct($number)
     {
-        $this->voucherNumber = $voucherNumber;
+        $this->number = $number;
     }
 
     /**
-     * @param $pin
-     * @return $this
+     * Set PIN.
+     *
+     * @param  string $pin
+     * @return static
      */
     public function pin($pin) 
     {
@@ -54,8 +57,10 @@ class ValidateVoucher extends BaseAction implements Contracts\Action
     }
 
     /**
-     * @param $amount
-     * @return $this
+     * Set amount to be validated in cents.
+     *
+     * @param  integer $amount
+     * @return static
      */
     public function amount($amount)
     {
@@ -71,11 +76,11 @@ class ValidateVoucher extends BaseAction implements Contracts\Action
      */
     public function request()
     {
-        $request = new GuzzleHttp\Psr7\Request('GET', 'Voucher/GVValid/'.$this->voucherNumber);
+        $request = new GuzzleHttp\Psr7\Request('GET', 'Voucher/GVValid/'.$this->number);
         
         return $request->withUri($request->getUri()->withQuery(http_build_query([
-            'pin'     => $this->pin,
-            'amount' => $this->amount
+            'pin'    => $this->pin,
+            'amount' => $this->amount / 100
         ])));
     }
 
@@ -83,12 +88,12 @@ class ValidateVoucher extends BaseAction implements Contracts\Action
      * Transform a PSR-7 response.
      *
      * @param  ResponseInterface $response
-     * @return Collection
+     * @return Entities\Voucher
      */
     public function response(ResponseInterface $response)
     {
-        $voucher = (new Parsers\PayloadParser)->parse((string) $response->getBody());
-
-        return (new Parsers\VoucherParser())->parse($voucher);
+        return (new Parsers\VoucherParser)->parse(
+            (new Parsers\PayloadParser)->parse((string) $response->getBody())
+        );
     }
 }
