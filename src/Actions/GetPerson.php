@@ -23,6 +23,8 @@ class GetPerson extends BaseAction implements Contracts\Action
      * GetPerson constructor.
      *
      * @param string $id
+     *
+     * @throws Apparel21\Exceptions\NotFoundException
      */
     public function __construct($id)
     {

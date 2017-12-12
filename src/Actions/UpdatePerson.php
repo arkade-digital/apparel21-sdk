@@ -31,6 +31,7 @@ class UpdatePerson extends BaseAction implements Contracts\Action
      * CreatePerson constructor.
      *
      * @param Support\Contracts\Person $person
+     * @throws \Arkade\Apparel21\Exceptions\NotFoundException
      */
     public function __construct($id, Support\Contracts\Person $person)
     {

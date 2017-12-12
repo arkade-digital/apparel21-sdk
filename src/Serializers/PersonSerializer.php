@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Log;
 
 class PersonSerializer
 {
-    use Concerns\MapContacts, Concerns\MapAddresses;
+    use Concerns\MapContacts, Concerns\MapAddresses, Concerns\MapAttributes;
 
     /**
      * Serialize.
@@ -40,7 +40,7 @@ class PersonSerializer
             'Surname'   => $person->getLastName()
         ];
 
-        // Add the ID & UpdateTimeStamp fields to payload, which are required when sending PUT request
+        // Add the ID & Up  dateTimeStamp fields to payload, which are required when sending PUT request
         if ($person->getIdentifiers()->has('ap21_id')) {
             $payload['ID'] = $person->getIdentifiers()->get('ap21_id');
             $payload['UpdateTimeStamp'] = $person->getAttributes()->get('updated_at');
@@ -48,6 +48,7 @@ class PersonSerializer
 
         $payload = $this->mapContacts($payload, $person->getContacts());
         $payload = $this->mapAddresses($payload, $person->getAddresses());
+        $payload = $this->mapAttributes($payload, $person->getAttributes());
 
         return $payload;
     }
