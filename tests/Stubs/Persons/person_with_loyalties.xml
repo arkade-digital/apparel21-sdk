@@ -1,0 +1,48 @@
+<Person>
+    <Id>77284</Id>
+    <Code>AHWADA00</Code>
+    <Title>Mr</Title>
+    <Initials>DA</Initials>
+    <Firstname>Dan</Firstname>
+    <Surname>Ahwa</Surname>
+    <Sex />
+    <DateOfBirth />
+    <StartDate />
+    <JobTitle>Stylist</JobTitle>
+    <Privacy>false</Privacy>
+    <UpdateTimeStamp>20/03/2012 10:39:55 AM</UpdateTimeStamp>
+    <References Type="Array" />
+    <IsAgent>false</IsAgent>
+    <Addresses>
+        <Billing>
+            <ContactName>Dan Ahwa</ContactName>
+            <CompanyName>ACME Corp</CompanyName>
+            <AddressLine1>123 Springfield Lane</AddressLine1>
+            <AddressLine2 />
+            <City>Melbourne</City>
+            <State>VIC</State>
+            <Postcode>3000</Postcode>
+            <Country>Australia</Country>
+        </Billing>
+    </Addresses>
+    <Contacts>
+        <Email>danahwa@example.com</Email>
+        <Phones>
+            <Home>0123456789</Home>
+            <Mobile />
+            <Work>0987654321</Work>
+        </Phones>
+    </Contacts>
+    <Currency>
+        <Code>AUD</Code>
+        <Format>#,##0.00 'Aud'</Format>
+    </Currency>
+    <Loyalties>
+        <Loyalty>
+            <LoyaltyTypeId>1000</LoyaltyTypeId>
+            <LoyaltyType>Arkade Loyalty Card</LoyaltyType>
+            <CardNo>LM100001</CardNo>
+            <JoinDate>2018-01-01</JoinDate>
+        </Loyalty>
+    </Loyalties>
+</Person>

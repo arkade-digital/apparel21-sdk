@@ -44,6 +44,12 @@ class PersonParser
             (new AddressParser)->parseCollection($payload->Addresses)
         );
 
+        if($payload->Loyalties) {
+            $person->setLoyalties(
+                (new LoyaltyParser)->parseCollection($payload->Loyalties)
+            );
+        }
+
         return $person;
     }
 }

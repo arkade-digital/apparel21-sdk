@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Log;
 
 class PersonSerializer
 {
-    use Concerns\MapContacts, Concerns\MapAddresses, Concerns\MapAttributes;
+    use Concerns\MapContacts, Concerns\MapAddresses, Concerns\MapLoyalties, Concerns\MapAttributes;
 
     /**
      * Serialize.
@@ -48,6 +48,7 @@ class PersonSerializer
 
         $payload = $this->mapContacts($payload, $person->getContacts());
         $payload = $this->mapAddresses($payload, $person->getAddresses());
+        $payload = $this->mapLoyalties($payload, $person->getLoyalties());
         $payload = $this->mapAttributes($payload, $person->getAttributes());
 
         return $payload;

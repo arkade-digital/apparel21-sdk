@@ -106,4 +106,20 @@ class PersonParserTest extends TestCase
         $this->assertEquals('20/03/2012 10:39:55 AM', $person->getAttributes()->get('updated_at'));
         $this->assertEquals('false', $person->getAttributes()->get('is_agent'));
     }
+
+    /**
+     * @test
+     */
+    public function returns_populated_person_with_loyalties()
+    {
+        $person = (new PersonParser)->parse(
+            (new PayloadParser)->parse(file_get_contents(__DIR__ . '/../Stubs/Persons/person_with_loyalties.xml'))
+        );
+
+        $this->assertEquals('1000', $person->getLoyalties()->first()->getTypeId());
+        $this->assertEquals('Arkade Loyalty Card', $person->getLoyalties()->first()->getTypeName());
+        $this->assertEquals('LM100001', $person->getLoyalties()->first()->getCardNumber());
+        $this->assertEquals('2018-01-01', $person->getLoyalties()->first()->getJoinDate()->toDateString());
+
+    }
 }
