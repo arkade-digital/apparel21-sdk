@@ -200,6 +200,8 @@ class Client
         $this->bindHeadersMiddleware($stack);
         $this->bindCountryCodeMiddleware($stack);
 
+        if($this->getUsername() && $this->getPassword()) $this->bindBasicAuthMiddleware($stack);
+
         $this->client = new GuzzleHttp\Client(array_merge([
             'handler'  => $stack,
             'base_uri' => $this->base_url,
@@ -268,6 +270,20 @@ class Client
             return $request
                 ->withHeader('Accept', 'version_2.0')
                 ->withHeader('Content-type', 'text/xml');
+        }));
+    }
+
+    /**
+     * Bind basic auth middleware for headers.
+     *
+     * @param  GuzzleHttp\HandlerStack $stack
+     * @return void
+     */
+    protected function bindBasicAuthMiddleware(GuzzleHttp\HandlerStack $stack)
+    {
+        $stack->push(GuzzleHttp\Middleware::mapRequest(function (RequestInterface $request) {
+            return $request
+                ->withHeader('Authorization', ['Basic ' . base64_encode($this->getUsername() . ':' . $this->getPassword())]);
         }));
     }
 
