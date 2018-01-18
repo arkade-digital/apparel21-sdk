@@ -205,6 +205,7 @@ class Client
         $this->client = new GuzzleHttp\Client(array_merge([
             'handler'  => $stack,
             'base_uri' => $this->base_url,
+            'verify' => false,
             'timeout'  => 900, // 15 minutes
         ], $options));
 

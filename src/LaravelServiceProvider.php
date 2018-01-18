@@ -18,16 +18,15 @@ class LaravelServiceProvider extends ServiceProvider
         {
             $client = new Client(config('services.apparel21.base_url'));
 
-            if (config('services.apparel21.username') || config('services.apparel21.password')) {
-                $client->setCredentials(
-                    config('services.apparel21.username'),
-                    config('services.apparel21.password')
-                );
-            }
+            $client->setCredentials(
+                config('services.apparel21.username'),
+                config('services.apparel21.password')
+            );
+            $client->setCountryCode(config('services.apparel21.country_code'));
 
             $this->setupRecorder($client);
 
-            return $client;
+            return $client->setupClient();
         });
     }
 
