@@ -199,13 +199,12 @@ class Client
 
         $this->bindHeadersMiddleware($stack);
         $this->bindCountryCodeMiddleware($stack);
-
-        if($this->getUsername() && $this->getPassword()) $this->bindBasicAuthMiddleware($stack);
+        $this->bindBasicAuthMiddleware($stack);
 
         $this->client = new GuzzleHttp\Client(array_merge([
             'handler'  => $stack,
             'base_uri' => $this->base_url,
-            'verify' => false,
+            'verify' => config('app.env') === 'production',
             'timeout'  => 900, // 15 minutes
         ], $options));
 
@@ -282,7 +281,8 @@ class Client
      */
     protected function bindBasicAuthMiddleware(GuzzleHttp\HandlerStack $stack)
     {
-        $stack->push(GuzzleHttp\Middleware::mapRequest(function (RequestInterface $request) {
+        if(!($this->getUsername() && $this->getPassword())) return;
+            $stack->push(GuzzleHttp\Middleware::mapRequest(function (RequestInterface $request) {
             return $request
                 ->withHeader('Authorization', ['Basic ' . base64_encode($this->getUsername() . ':' . $this->getPassword())]);
         }));
