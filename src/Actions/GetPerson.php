@@ -26,7 +26,7 @@ class GetPerson extends BaseAction implements Contracts\Action
      *
      * @throws Apparel21\Exceptions\NotFoundException
      */
-    public function __construct($id)
+    public function  __construct($id)
     {
         // Throw exception if $id blank/ NULL to prevent full search timeout
         if (empty($id)) {
