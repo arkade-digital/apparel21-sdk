@@ -39,7 +39,7 @@ trait MapAttributes
             'DateOfBirth' => $attributes->get('dob'),
             'StartDate' => $attributes->get('join_date'),
             'JobTitle' => $attributes->get('job_title'),
-            'Privacy' => $attributes->get('_ap21_privacy'),
+            'Privacy' => $attributes->get('privacy'),
             'IsAgent' => $attributes->get('is_staff'),
         ]);
     }
