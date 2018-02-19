@@ -40,15 +40,18 @@ class PersonSerializer
             'Surname'   => $person->getLastName()
         ];
 
-        // Add the ID & Up  dateTimeStamp fields to payload, which are required when sending PUT request
+        // Add the ID & UpdateTimeStamp fields to payload, which are required when sending PUT request
         if ($person->getIdentifiers()->has('ap21_id')) {
             $payload['ID'] = $person->getIdentifiers()->get('ap21_id');
             $payload['UpdateTimeStamp'] = $person->getAttributes()->get('updated_at');
+        }else{
+            // This is bad, AP21 will return a 403 error if you attempt to set the same
+            // loyalty type id twice, so as a hack going to only allow setting of loyalties on create.. :(
+            $payload = $this->mapLoyalties($payload, $person->getLoyalties());
         }
 
-        $payload = $this->mapContacts($payload, $person->getContacts());
         $payload = $this->mapAddresses($payload, $person->getAddresses());
-        $payload = $this->mapLoyalties($payload, $person->getLoyalties());
+        $payload = $this->mapContacts($payload, $person->getContacts());
         $payload = $this->mapAttributes($payload, $person->getAttributes());
 
         return $payload;
