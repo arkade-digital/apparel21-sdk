@@ -23,6 +23,7 @@ class LaravelServiceProvider extends ServiceProvider
                 config('services.apparel21.password')
             );
             $client->setCountryCode(config('services.apparel21.country_code'));
+            $client->setVerifyPeer(config('app.env') === 'production');
 
             $this->setupRecorder($client);
 
