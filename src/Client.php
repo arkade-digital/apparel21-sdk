@@ -4,9 +4,12 @@ namespace Arkade\Apparel21;
 
 use Exception;
 use GuzzleHttp;
+use GuzzleHttp\Middleware;
+use GuzzleHttp\MessageFormatter;
 use Arkade\Apparel21\Exceptions;
 use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
+use Psr\Log\LoggerInterface;
 
 class Client
 {
@@ -60,6 +63,20 @@ class Client
     protected $debug;
 
     /**
+     * Enable logging of guzzle requests / responses
+     *
+     * @var bool
+     */
+    protected $logging = false;
+
+    /**
+     * PSR-3 logger
+     *
+     * @var LoggerInterface
+     */
+    protected $logger;
+
+    /**
      * Verify peer SSL
      *
      * @var bool
@@ -86,13 +103,21 @@ class Client
     }
 
     /**
-     * Return base URL for REST API.
-     *
      * @return string
      */
     public function getBaseUrl()
     {
         return $this->base_url;
+    }
+
+    /**
+     * @param string $base_url
+     * @return Client
+     */
+    public function setBaseUrl($base_url)
+    {
+        $this->base_url = $base_url;
+        return $this;
     }
 
     /**
@@ -103,6 +128,25 @@ class Client
     public function getUsername()
     {
         return $this->username;
+    }
+
+    /**
+     * @param string $username
+     * @return Client
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+        return $this;
+    }
+
+    /**
+     * @param string $password
+     * @return Client
+     */
+    public function setPassword($password)
+    {
+        return $this->password;
     }
 
     /**
@@ -179,6 +223,42 @@ class Client
     /**
      * @return bool
      */
+    public function getLogging()
+    {
+        return $this->logging;
+    }
+
+    /**
+     * @param bool $logging
+     * @return Client
+     */
+    public function setLogging($logging)
+    {
+        $this->logging = $logging;
+        return $this;
+    }
+
+    /**
+     * @return LoggerInterface
+     */
+    public function getLogger()
+    {
+        return $this->logger;
+    }
+
+    /**
+     * @param LoggerInterface $logger
+     * @return Client
+     */
+    public function setLogger($logger)
+    {
+        $this->logger = $logger;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
     public function getVerifyPeer()
     {
         return $this->verifyPeer;
@@ -186,7 +266,7 @@ class Client
 
     /**
      * @param bool $verifyPeer
-     * @return RestClient
+     * @return Client
      */
     public function setVerifyPeer($verifyPeer)
     {
@@ -204,7 +284,7 @@ class Client
 
     /**
      * @param int $timeout
-     * @return RestClient
+     * @return Client
      */
     public function setTimeout($timeout)
     {
@@ -251,9 +331,11 @@ class Client
         $this->bindCountryCodeMiddleware($stack);
         $this->bindBasicAuthMiddleware($stack);
 
+        if($this->logging) $this->bindLoggingMiddleware($stack);
+
         $this->client = new GuzzleHttp\Client(array_merge([
             'handler'  => $stack,
-            'base_uri' => $this->base_url,
+            'base_uri' => $this->getBaseUrl(),
             'verify' => $this->getVerifyPeer(),
             'timeout'  => $this->getTimeout(),
         ], $options));
@@ -356,5 +438,19 @@ class Client
                 GuzzleHttp\Psr7\Uri::withQueryValue($request->getUri(), 'CountryCode', $this->countryCode)
             );
         }));
+    }
+
+    /**
+     * Bind logging middleware.
+     *
+     * @param  GuzzleHttp\HandlerStack $stack
+     * @return void
+     */
+    protected function bindLoggingMiddleware(GuzzleHttp\HandlerStack $stack)
+    {
+        $stack->push(Middleware::log(
+            $this->logger,
+            new MessageFormatter('{request} - {response}')
+        ));
     }
 }

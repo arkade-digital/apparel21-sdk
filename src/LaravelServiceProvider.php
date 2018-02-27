@@ -3,6 +3,7 @@
 namespace Arkade\Apparel21;
 
 use GuzzleHttp;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelServiceProvider extends ServiceProvider
@@ -17,13 +18,14 @@ class LaravelServiceProvider extends ServiceProvider
         $this->app->singleton(Client::class, function ($app)
         {
             $client = new Client(config('services.apparel21.base_url'));
-
             $client->setCredentials(
                 config('services.apparel21.username'),
                 config('services.apparel21.password')
             );
             $client->setCountryCode(config('services.apparel21.country_code'));
+            $client->setLogging(config('services.apparel21.logging'));
             $client->setVerifyPeer(config('app.env') === 'production');
+            $client->setLogger(Log::getMonolog());
 
             $this->setupRecorder($client);
 
@@ -40,7 +42,7 @@ class LaravelServiceProvider extends ServiceProvider
     protected function setupRecorder(Client $client)
     {
         if (! $this->app->bound('Omneo\Plugins\HttpRecorder\Recorder')) {
-            return $client;
+            return $client->setupClient();
         }
 
         $stack = GuzzleHttp\HandlerStack::create();
