@@ -24,7 +24,7 @@ class LaravelServiceProvider extends ServiceProvider
             );
             $client->setCountryCode(config('services.apparel21.country_code'));
             $client->setLogging(config('services.apparel21.logging'));
-            $client->setVerifyPeer(config('app.env') === 'production');
+            $client->setVerifyPeer(config('services.apparel21.verify'));
             $client->setLogger(Log::getMonolog());
 
             $this->setupRecorder($client);
