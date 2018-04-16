@@ -20,7 +20,7 @@ class StoreParser
         $store = (new Entities\Store())
             ->setIdentifiers(new Collection([
                 'ap21_id'     => (integer) $payload->StoreId,
-                'ap21_code' => (integer) $payload->Code,
+                'ap21_code' => (string) $payload->Code,
                 'store_number' => (integer) $payload->StoreNo
             ]))
             ->setName((string) $payload->Name)
