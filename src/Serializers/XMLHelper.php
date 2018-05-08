@@ -12,23 +12,36 @@ class XMLHelper
      */
     public function appendXML(array $data, \SimpleXMLElement &$element)
     {
-        foreach ($data as $key => $value)
+        foreach ($data as $key => $node)
         {
-            if (is_array($value)) {
-
-                if (! empty($value['@node'])) {
-                    $key = $value['@node'];
-                    unset($value['@node']);
-                }
-
-                $child = $element->addChild($key);
-                $this->appendXML($value, $child);
-
-                continue;
-
+            $value = $node;
+            if(isset($node['@value'])){
+                $value = $node['@value'];
+                unset($value['@value']);
             }
 
-            $element->addChild($key, htmlspecialchars($value));
+            $name = $key;
+            if(isset($node['@node'])){
+                $name = $node['@node'];
+                unset($value['@node']);
+            }
+
+            $attributes = [];
+            if(isset($node['@attributes'])){
+                $attributes = $node['@attributes'];
+                unset($value['@attributes']);
+            }
+
+            if (is_array($value)) {
+                $child = $element->addChild($name);
+                $this->appendXML($value, $child);
+            } else {
+                $child = $element->addChild($key, htmlspecialchars($value));
+            }
+
+            foreach ($attributes as $aKey => $aValue) {
+                $child->addAttribute($aKey, $aValue);
+            }
         }
     }
 

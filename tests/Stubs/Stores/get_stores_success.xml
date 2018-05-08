@@ -1,0 +1,820 @@
+<Stores xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Store>
+        <StoreId>4656</StoreId>
+        <Code>3100VGP</Code>
+        <StoreNo>106</StoreNo>
+        <Name>Melbourne City VIC</Name>
+        <Address1>27 George Parade</Address1>
+        <Address2 />
+        <City>Melbourne</City>
+        <State>VIC</State>
+        <Postcode>3000</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>4665</StoreId>
+        <Code>2102NWS</Code>
+        <StoreNo>103</StoreNo>
+        <Name>Westfield City Sydney NSW</Name>
+        <Address1>Shop 3051, Westfield Sydney City</Address1>
+        <Address2>Cnr Pitt St. Mall &amp; Market St.</Address2>
+        <City>Sydney</City>
+        <State>NSW</State>
+        <Postcode>2000</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>5130</StoreId>
+        <Code>3104VCS</Code>
+        <StoreNo>115</StoreNo>
+        <Name>Chapel St South Yarra VIC</Name>
+        <Address1>574A Chapel Street</Address1>
+        <Address2 />
+        <City>South Yarra</City>
+        <State>VIC</State>
+        <Postcode>3141</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>5136</StoreId>
+        <Code>6200WMP</Code>
+        <StoreNo>204</StoreNo>
+        <Name>Myer Perth City WA</Name>
+        <Address1>Myer</Address1>
+        <Address2>200 Murray Street</Address2>
+        <City>Perth</City>
+        <State>WA</State>
+        <Postcode>6000</Postcode>
+        <Country>Australia</Country>
+        <Email>myerperth@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>11830</StoreId>
+        <Code>2110NWM</Code>
+        <StoreNo>223</StoreNo>
+        <Name>Warringah Mall NSW</Name>
+        <Address1>Shop 2302</Address1>
+        <Address2>Condamine St &amp; Old Pittwater Rd</Address2>
+        <City>Brookvale</City>
+        <State>NSW</State>
+        <Postcode>2100</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>13508</StoreId>
+        <Code>3107VSL</Code>
+        <StoreNo>306</StoreNo>
+        <Name>St Collins Lane VIC</Name>
+        <Address1>Shop RL1.08 Level 1</Address1>
+        <Address2>St Collins Lane 260 Collins St</Address2>
+        <City>Melbourne</City>
+        <State>VIC</State>
+        <Postcode>8007</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>11613</StoreId>
+        <Code>3203VMH</Code>
+        <StoreNo>222</StoreNo>
+        <Name>Myer Highpoint VIC</Name>
+        <Address1>Highpoint Shopping Centre</Address1>
+        <Address2>179 Rosamond Road</Address2>
+        <City>Maribyrnong</City>
+        <State>VIC</State>
+        <Postcode>3032</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>16588</StoreId>
+        <Code>4106QPC</Code>
+        <StoreNo>416</StoreNo>
+        <Name>Pacific Fair QLD</Name>
+        <Address1>Shop 2759 Lvl 1 Pacific Fair</Address1>
+        <Address2>Hooker Blvd</Address2>
+        <City>Broadbeach</City>
+        <State>QLD</State>
+        <Postcode>4218</Postcode>
+        <Country>Australia</Country>
+        <Email>pacificfair@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>4648</StoreId>
+        <Code>2300NBP</Code>
+        <StoreNo>301</StoreNo>
+        <Name>Birkenhead Point SC Drummoyne NSW</Name>
+        <Address1>Shop 65, Level 2, Birkenhead Point Shopping Centre</Address1>
+        <Address2>Roseby Street</Address2>
+        <City>Drummoyne</City>
+        <State>NSW</State>
+        <Postcode>2047</Postcode>
+        <Country>Australia</Country>
+        <Email>Birkenhead@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>4653</StoreId>
+        <Code>3102VWD</Code>
+        <StoreNo>111</StoreNo>
+        <Name>Westfield Doncaster VIC</Name>
+        <Address1>Shop 1093, Level 1, Westfield Doncaster</Address1>
+        <Address2>619 Doncaster Road</Address2>
+        <City>Doncaster</City>
+        <State>VIC</State>
+        <Postcode>3108</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>4657</StoreId>
+        <Code>5200SMA</Code>
+        <StoreNo>205</StoreNo>
+        <Name>Myer Adelaide City SA</Name>
+        <Address1>Myer, Rundle St Mall</Address1>
+        <Address2>22 Rundle Mall</Address2>
+        <City>Adelaide</City>
+        <State>SA</State>
+        <Postcode>5000</Postcode>
+        <Country>Australia</Country>
+        <Email>myerperth@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>4663</StoreId>
+        <Code>6100WBP</Code>
+        <StoreNo>105</StoreNo>
+        <Name>Perth City WA</Name>
+        <Address1>Shop HG109, Brookfield Place</Address1>
+        <Address2>125 St Georges Terrace</Address2>
+        <City>Perth</City>
+        <State>WA</State>
+        <Postcode>6000</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>13930</StoreId>
+        <Code>1300ACO</Code>
+        <StoreNo>307</StoreNo>
+        <Name>DFO Canberra ACT</Name>
+        <Address1>Shop 140A, Canberra Outlet Centre</Address1>
+        <Address2>337 Canberra Avenue</Address2>
+        <City>Fyshwick</City>
+        <State>ACT</State>
+        <Postcode>2906</Postcode>
+        <Country>Australia</Country>
+        <Email>dfocanberra@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>10989</StoreId>
+        <Code>2108NMAP</Code>
+        <StoreNo>212</StoreNo>
+        <Name>Martin Place NSW</Name>
+        <Address1>14 Martin Place</Address1>
+        <Address2 />
+        <City>Sydney</City>
+        <State>NSW</State>
+        <Postcode>2000</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>11611</StoreId>
+        <Code>6101WE1</Code>
+        <StoreNo>120</StoreNo>
+        <Name>Enex 100 WA</Name>
+        <Address1>Shop H120B, Level 2</Address1>
+        <Address2>Enex100, 683-703 Hay St Mall</Address2>
+        <City>Perth</City>
+        <State>WA</State>
+        <Postcode>6000</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>10584</StoreId>
+        <Code>DATAIMPORT</Code>
+        <StoreNo>999</StoreNo>
+        <Name>Warehouse used for data imports</Name>
+        <Address1 />
+        <Address2 />
+        <City />
+        <State />
+        <Postcode />
+        <Country />
+    </Store>
+    <Store>
+        <StoreId>14307</StoreId>
+        <Code>29101NSS</Code>
+        <StoreNo>414</StoreNo>
+        <Name>Shortland St NZ</Name>
+        <Address1>Tenancy 1, 18C Shortland St</Address1>
+        <Address2 />
+        <City>Auckland Central</City>
+        <State>Auckland</State>
+        <Postcode>1010</Postcode>
+        <Country>New Zealand</Country>
+        <Email>shortlandst@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>4652</StoreId>
+        <Code>2101NCP</Code>
+        <StoreNo>102</StoreNo>
+        <Name>Chifley Plaza Sydney NSW</Name>
+        <Address1>Shop UG18, Chifley Plaza</Address1>
+        <Address2>2 Chifley Square</Address2>
+        <City>Sydney</City>
+        <State>NSW</State>
+        <Postcode>2000</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>5131</StoreId>
+        <Code>2201NMB</Code>
+        <StoreNo>208</StoreNo>
+        <Name>Myer Westfield Bondi Junction NSW</Name>
+        <Address1>Myer, Westfield Bondi</Address1>
+        <Address2>500 Oxford Street</Address2>
+        <City>Bondi Junction</City>
+        <State>NSW</State>
+        <Postcode>2022</Postcode>
+        <Country>Australia</Country>
+        <Email>myerbondi@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>14607</StoreId>
+        <Code>4104QWC</Code>
+        <StoreNo>412</StoreNo>
+        <Name>Westfield Carindale QLD</Name>
+        <Address1>Shop 2043</Address1>
+        <Address2>1151 Creek Rd</Address2>
+        <City>Carindale</City>
+        <State>QLD</State>
+        <Postcode>4152</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>4649</StoreId>
+        <Code>2103NWB</Code>
+        <StoreNo>104</StoreNo>
+        <Name>Westfield Bondi Junction NSW</Name>
+        <Address1>Shop 4010/11, Lvl 4, Westfield Bondi Junction</Address1>
+        <Address2>500 Oxford Street</Address2>
+        <City>Bondi Junction</City>
+        <State>NSW</State>
+        <Postcode>NSW</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>4654</StoreId>
+        <Code>3101VME</Code>
+        <StoreNo>110</StoreNo>
+        <Name>Emporium Melbourne VIC</Name>
+        <Address1>Shop 2036, Emporium Melbourne</Address1>
+        <Address2>287 Lonsdale Street</Address2>
+        <City>Melbourne</City>
+        <State>VIC</State>
+        <Postcode>3000</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>4664</StoreId>
+        <Code>2104NQV</Code>
+        <StoreNo>108</StoreNo>
+        <Name>QVB Sydney NSW</Name>
+        <Address1>Shop 30, Ground Floor, Queen Victoria Building</Address1>
+        <Address2>455 george Street</Address2>
+        <City>Sydney</City>
+        <State>NSW</State>
+        <Postcode>2000</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>16448</StoreId>
+        <Code>4105QWC</Code>
+        <StoreNo>415</StoreNo>
+        <Name>Westfield Chermside QLD</Name>
+        <Address1>Shop 315</Address1>
+        <Address2>Cnr Gympie &amp; Hamilton Rds</Address2>
+        <City>Chermside</City>
+        <State>QLD</State>
+        <Postcode>4032</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>4651</StoreId>
+        <Code>1100ACC</Code>
+        <StoreNo>107</StoreNo>
+        <Name>Canberra Centre ACT</Name>
+        <Address1>Shop Af21, Level 1, Canberra Centre</Address1>
+        <Address2>148 Bunda Street</Address2>
+        <City>Canberra</City>
+        <State>ACT</State>
+        <Postcode>2601</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>4660</StoreId>
+        <Code>3200VMM</Code>
+        <StoreNo>201</StoreNo>
+        <Name>Myer Melbourne City VIC</Name>
+        <Address1>Myer</Address1>
+        <Address2>314-336 Bourke St</Address2>
+        <City>Melbourne</City>
+        <State>VIC</State>
+        <Postcode>3000</Postcode>
+        <Country>Australia</Country>
+        <Email>myermelbourne@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>5133</StoreId>
+        <Code>ONLINE</Code>
+        <StoreNo>401</StoreNo>
+        <Name>On Line Store</Name>
+        <Address1>Suite 2.16, 100 Collins St</Address1>
+        <Address2 />
+        <City>Alexandria</City>
+        <State>NSW</State>
+        <Postcode>2015</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>5082</StoreId>
+        <Code>2105NMP</Code>
+        <StoreNo>116</StoreNo>
+        <Name>Macquarie SC Macquarie Park NSW </Name>
+        <Address1>Shop 3312-22, Macquarie Park Shopping Centre</Address1>
+        <Address2>109 Waterloo Road</Address2>
+        <City>Macquarie Park</City>
+        <State>NSW</State>
+        <Postcode>2113</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>10025</StoreId>
+        <Code>2107NWP</Code>
+        <StoreNo>118</StoreNo>
+        <Name>Westfield Parramatta NSW</Name>
+        <Address1>Shop 4047, Westfield Parramatta</Address1>
+        <Address2>159-175 Church Street</Address2>
+        <City>Parramatta</City>
+        <State>NSW</State>
+        <Postcode>2150</Postcode>
+        <Country>Australia</Country>
+        <Email>parramatta@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>11831</StoreId>
+        <Code>2111NWC</Code>
+        <StoreNo>224</StoreNo>
+        <Name>Westfield Chatswood NSW</Name>
+        <Address1>Shop 453 Westfield Chatswood</Address1>
+        <Address2>1 Anderson St</Address2>
+        <City>Chatswood</City>
+        <State>NSW</State>
+        <Postcode>2067</Postcode>
+        <Country>Australia</Country>
+        <Email>chatswood@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>11833</StoreId>
+        <Code>4103QRS</Code>
+        <StoreNo>411</StoreNo>
+        <Name>Robina Shopping Centre QLD</Name>
+        <Address1>Tenancy 4021</Address1>
+        <Address2>Robina Town Centre  (off Robina Parkway) </Address2>
+        <City>Robina</City>
+        <State>QLD</State>
+        <Postcode>4230</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>11610</StoreId>
+        <Code>2109NGP</Code>
+        <StoreNo>221</StoreNo>
+        <Name>Greenwood Plaza NSW</Name>
+        <Address1>Shop P24</Address1>
+        <Address2>Greenwood Plaza, 36 Blue St</Address2>
+        <City>North Sydney</City>
+        <State>NSW</State>
+        <Postcode>2060</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>11612</StoreId>
+        <Code>6102WCQ</Code>
+        <StoreNo>121</StoreNo>
+        <Name>Claremont Quarter WA</Name>
+        <Address1>Shop 212, Claremont Quarter Shopping Centre</Address1>
+        <Address2>9 Bayview Terrace</Address2>
+        <City>Perth</City>
+        <State>WA</State>
+        <Postcode>6010</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>12861</StoreId>
+        <Code>29100NWM</Code>
+        <StoreNo>900</StoreNo>
+        <Name>Westfield Newmarket</Name>
+        <Address1>Shop F14</Address1>
+        <Address2>Westfield Newmarket</Address2>
+        <City>Auckland</City>
+        <State>Auckland</State>
+        <Postcode>1023</Postcode>
+        <Country>New Zealand</Country>
+        <Email>newmarket@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>16068</StoreId>
+        <Code>3600POP</Code>
+        <StoreNo>233</StoreNo>
+        <Name>M J Bale VIC Laneway</Name>
+        <Address1>Tenancy 1 Como Centre</Address1>
+        <Address2>Corner Toorak Road &amp; Chapel St</Address2>
+        <City>South Yarra</City>
+        <State>VIC</State>
+        <Postcode>3141</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>4650</StoreId>
+        <Code>4100QWB</Code>
+        <StoreNo>109</StoreNo>
+        <Name>Brisbane City QLD</Name>
+        <Address1>Shop G15, Wintergarden</Address1>
+        <Address2>171-209 Queen St Mall</Address2>
+        <City>Brisbane</City>
+        <State>QLD</State>
+        <Postcode>4000</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>4659</StoreId>
+        <Code>3202VMC</Code>
+        <StoreNo>207</StoreNo>
+        <Name>Myer Chadstone SC VIC</Name>
+        <Address1>Chadstone Shopping Centre</Address1>
+        <Address2>1341 Dandenong Road</Address2>
+        <City>Chadstone</City>
+        <State>VIC</State>
+        <Postcode>3418</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>4662</StoreId>
+        <Code>2200NMS</Code>
+        <StoreNo>202</StoreNo>
+        <Name>Myer Sydney City NSW</Name>
+        <Address1>Myer</Address1>
+        <Address2>436 George St</Address2>
+        <City>Sydney</City>
+        <State>NSW</State>
+        <Postcode>2000</Postcode>
+        <Country>Australia</Country>
+        <Email>myersydney@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>5134</StoreId>
+        <Code>HQCORPPO</Code>
+        <StoreNo>501</StoreNo>
+        <Name>Corporate HQ Store</Name>
+        <Address1>Suite 2.16, 100 Collins St</Address1>
+        <Address2 />
+        <City>Alexandria</City>
+        <State>NSW</State>
+        <Postcode>2015</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>10028</StoreId>
+        <Code>4300QDBA</Code>
+        <StoreNo>302</StoreNo>
+        <Name>DFO Brisbane Airport QLD</Name>
+        <Address1>Shop T147</Address1>
+        <Address2>Ninth Avenue</Address2>
+        <City>Brisbane Airport</City>
+        <State>QLD</State>
+        <Postcode>4007</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>12967</StoreId>
+        <Code>3108VCP</Code>
+        <StoreNo>888</StoreNo>
+        <Name>Collins Place VIC</Name>
+        <Address1>Shop 71, Ground Level</Address1>
+        <Address2>Collins Place Retail Centre</Address2>
+        <City>Melbourne</City>
+        <State>VIC</State>
+        <Postcode>3000</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>10967</StoreId>
+        <Code>3301VDE</Code>
+        <StoreNo>304</StoreNo>
+        <Name>DFO Essendon VIC</Name>
+        <Address1>Shop G-099A, </Address1>
+        <Address2>100 Bulla Road</Address2>
+        <City>Essendon Fields</City>
+        <State>VIC</State>
+        <Postcode>3041</Postcode>
+        <Country>Australia</Country>
+        <Email>essendon@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>14611</StoreId>
+        <Code>2204MWM</Code>
+        <StoreNo>413</StoreNo>
+        <Name>Myer Westfield Warringah Mall NSW</Name>
+        <Address1>Westfield Warringah Mall</Address1>
+        <Address2>Condamine St &amp; Old Pittwater Rd</Address2>
+        <City>Brookvale</City>
+        <State>NSW</State>
+        <Postcode>2100</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>14848</StoreId>
+        <Code>2302NAL</Code>
+        <StoreNo>123</StoreNo>
+        <Name>Alexandria NSW</Name>
+        <Address1>7D/2 Huntley Street</Address1>
+        <Address2 />
+        <City>Alexandria</City>
+        <State>NSW</State>
+        <Postcode>2015</Postcode>
+        <Country>Australia</Country>
+        <Email>alexandria@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>17167</StoreId>
+        <Code>2303NLP</Code>
+        <StoreNo>124</StoreNo>
+        <Name>Liverpool NSW</Name>
+        <Address1>Shop 41, Fashion Spree</Address1>
+        <Address2>5 Viscount Place</Address2>
+        <City>Liverpool</City>
+        <State>NSW</State>
+        <Postcode>2170</Postcode>
+        <Country>Australia</Country>
+        <Email>liverpool@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>4655</StoreId>
+        <Code>4101QIC</Code>
+        <StoreNo>112</StoreNo>
+        <Name>Indooroopilly SC QLD</Name>
+        <Address1>Shop 2110, Level 2</Address1>
+        <Address2>Indooroopilly Shopping Centre, 322 Moggil Road</Address2>
+        <City>Indooroopilly</City>
+        <State>QLD</State>
+        <Postcode>4068</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>4658</StoreId>
+        <Code>4200QMB</Code>
+        <StoreNo>203</StoreNo>
+        <Name>Myer Brisbane City QLD</Name>
+        <Address1>Myer, 91 Queen Street</Address1>
+        <Address2 />
+        <City>Brisbane</City>
+        <State>QLD</State>
+        <Postcode>4000</Postcode>
+        <Country>Australia</Country>
+        <Email>myerbrisbane@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>4741</StoreId>
+        <Code>3300VDSW</Code>
+        <StoreNo>303</StoreNo>
+        <Name>DFO South Wharf VIC</Name>
+        <Address1>Shop B-046 Direct Factory Outlet</Address1>
+        <Address2>20 Convention Centre Place</Address2>
+        <City>South Wharf</City>
+        <State>VIC</State>
+        <Postcode>3006</Postcode>
+        <Country>Australia</Country>
+        <Email>southwharf@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>5128</StoreId>
+        <Code>3103VCSC</Code>
+        <StoreNo>113</StoreNo>
+        <Name>Chadstone SC VIC</Name>
+        <Address1>Shop 357, Chadstone Shopping Centre</Address1>
+        <Address2>1341 Dandeonong Road</Address2>
+        <City>Chadstone</City>
+        <State>VIC</State>
+        <Postcode>3148</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>5129</StoreId>
+        <Code>5100SRS</Code>
+        <StoreNo>114</StoreNo>
+        <Name>Rundle St Adelaide SA</Name>
+        <Address1>255 Rundle Street</Address1>
+        <Address2 />
+        <City>Adelaide</City>
+        <State>SA</State>
+        <Postcode>5000</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>5132</StoreId>
+        <Code>2202NMC</Code>
+        <StoreNo>211</StoreNo>
+        <Name>Myer Westfield Chatswood NSW</Name>
+        <Address1>Myer, Westfield Chatswood</Address1>
+        <Address2>49-59 Albert Avenue</Address2>
+        <City>Chatswood</City>
+        <State>NSW</State>
+        <Postcode>2067</Postcode>
+        <Country>Australia</Country>
+        <Email>myerchatswood@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>10031</StoreId>
+        <Code>4201QMC</Code>
+        <StoreNo>209</StoreNo>
+        <Name>Myer Carindale QLD</Name>
+        <Address1>Myer, Westfield Carindale</Address1>
+        <Address2>1151 Creek Road</Address2>
+        <City>Carindale</City>
+        <State>QLD</State>
+        <Postcode>4152</Postcode>
+        <Country>Australia</Country>
+        <Email>myercarindale@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>12986</StoreId>
+        <Code>NZ ONLINE</Code>
+        <StoreNo>901</StoreNo>
+        <Name>NZ ONLINE</Name>
+        <Address1 />
+        <Address2 />
+        <City />
+        <State />
+        <Postcode />
+        <Country />
+    </Store>
+    <Store>
+        <StoreId>11832</StoreId>
+        <Code>3106VER</Code>
+        <StoreNo>122</StoreNo>
+        <Name>Eastland Ringwood VIC</Name>
+        <Address1>Shop 21181 Eastand Shopping Centre</Address1>
+        <Address2>171-175 Maroondah Hwy</Address2>
+        <City>Ringwood</City>
+        <State>VIC</State>
+        <Postcode>3134</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>11569</StoreId>
+        <Code>2203NMM</Code>
+        <StoreNo>213</StoreNo>
+        <Name>Myer Macquarie Centre NSW</Name>
+        <Address1>Myer, Macqaurie Centre</Address1>
+        <Address2>Cnr Waterloo and Herring Rds</Address2>
+        <City>North Ryde</City>
+        <State>NSW</State>
+        <Postcode>2112</Postcode>
+        <Country>Australia</Country>
+        <Email>myermacquarie@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>10990</StoreId>
+        <Code>3302VDM</Code>
+        <StoreNo>305</StoreNo>
+        <Name>DFO Moorabbin VIC</Name>
+        <Address1>Shop G-152</Address1>
+        <Address2>250 Centre Dandenong Road</Address2>
+        <City>Moorabbin Airport</City>
+        <State>VIC</State>
+        <Postcode>3194</Postcode>
+        <Country>Australia</Country>
+        <Email>moorabbin@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>10991</StoreId>
+        <Code>2301NDH</Code>
+        <StoreNo>230</StoreNo>
+        <Name>DFO Homebush NSW</Name>
+        <Address1>Shop 3-090 DFO Homebush</Address1>
+        <Address2>3-5 Underwood Rd</Address2>
+        <City>Homebush</City>
+        <State>NSW</State>
+        <Postcode>2140</Postcode>
+        <Country>Australia</Country>
+        <Email>homebush@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>11767</StoreId>
+        <Code>4102QCP</Code>
+        <StoreNo>410</StoreNo>
+        <Name>Central Plaza Brisbane</Name>
+        <Address1>Ground Floor Retail - Shop G022</Address1>
+        <Address2>345 Queen St</Address2>
+        <City>Brisbane</City>
+        <State>QLD</State>
+        <Postcode>4000</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>17170</StoreId>
+        <Code>4301QHT</Code>
+        <StoreNo>125</StoreNo>
+        <Name>Harbour Town QLD</Name>
+        <Address1>Shop GD C030, Harbour Town Outlet</Address1>
+        <Address2>147/189 Brisbane Rd</Address2>
+        <City> Biggera Waters</City>
+        <State>QLD</State>
+        <Postcode>4216</Postcode>
+        <Country>Australia</Country>
+        <Email>harbourtown@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>4661</StoreId>
+        <Code>6201WMK</Code>
+        <StoreNo>210</StoreNo>
+        <Name>Myer Karrinyup WA</Name>
+        <Address1>Myer, Karrinyup Shopping Centre</Address1>
+        <Address2>200 Karrinyup Road</Address2>
+        <City>Karrinyup</City>
+        <State>WA</State>
+        <Postcode>6018</Postcode>
+        <Country>Australia</Country>
+        <Email>myerkarrinyup@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>4666</StoreId>
+        <Code>2100NQS</Code>
+        <StoreNo>101</StoreNo>
+        <Name>Queen St Woolahra NSW</Name>
+        <Address1>106 Queen St</Address1>
+        <Address2 />
+        <City>Woollahra</City>
+        <State>NSW</State>
+        <Postcode>2025</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>5135</StoreId>
+        <Code>3201VMD</Code>
+        <StoreNo>206</StoreNo>
+        <Name>Myer Westfield Doncaster VIC</Name>
+        <Address1>Myer Westfield Doncaster</Address1>
+        <Address2>619 Doncaster Road</Address2>
+        <City>Doncaster</City>
+        <State>VIC</State>
+        <Postcode>3108</Postcode>
+        <Country>Australia</Country>
+        <Email>myerdoncaster@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>5084</StoreId>
+        <Code>2106NWM</Code>
+        <StoreNo>117</StoreNo>
+        <Name>Westfield Miranda NSW</Name>
+        <Address1>Shop 2184, Level 2, Zone S, Westfield Miranda</Address1>
+        <Address2>600 The Kingsway</Address2>
+        <City>Miranda</City>
+        <State>NSW</State>
+        <Postcode>2228</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>10026</StoreId>
+        <Code>3105VMSE</Code>
+        <StoreNo>119</StoreNo>
+        <Name>Rialto VIC</Name>
+        <Address1>Level M1, Rialto South Tower</Address1>
+        <Address2>525 Collins St Melbourne</Address2>
+        <City>Melbourne</City>
+        <State>VIC</State>
+        <Postcode>3000</Postcode>
+        <Country>Australia</Country>
+    </Store>
+    <Store>
+        <StoreId>11349</StoreId>
+        <Code>2600POP</Code>
+        <StoreNo>231</StoreNo>
+        <Name>M J Bale Laneway</Name>
+        <Address1>7 Macquarie Place</Address1>
+        <Address2 />
+        <City>Sydney</City>
+        <State>NSW</State>
+        <Postcode>2000</Postcode>
+        <Country>Australia</Country>
+        <Email>popup@mjbale.com</Email>
+    </Store>
+    <Store>
+        <StoreId>17129</StoreId>
+        <Code>ICONIC-ONLINE</Code>
+        <StoreNo>402</StoreNo>
+        <Name>Iconic On Line Store</Name>
+        <Address1>Suite 2.16, 100 Collins St</Address1>
+        <Address2 />
+        <City>Alexandria</City>
+        <State>NSW</State>
+        <Postcode>2015</Postcode>
+        <Country>Australia</Country>
+    </Store>
+</Stores>

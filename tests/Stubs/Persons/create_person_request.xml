@@ -1,26 +1,34 @@
 <Person>
     <Firstname>Bob</Firstname>
     <Surname>Norman</Surname>
-    <Contacts>
-        <Email>bob.norman@example.com</Email>
-        <Phones>
-            <Mobile>555-625-1199</Mobile>
-        </Phones>
-    </Contacts>
+    <LoyaltiesType="Array">
+        <Loyalty>
+            <LoyaltyTypeId>1000</LoyaltyTypeId>
+            <LoyaltyType>ArkadeLoyaltyCard</LoyaltyType>
+            <CardNo>LM100001</CardNo>
+            <JoinDate>2018-01-01</JoinDate>
+        </Loyalty>
+    </Loyalties>
     <Addresses>
         <Billing>
-            <AddressLine1>Chestnut Street 92</AddressLine1>
+            <AddressLine1>ChestnutStreet92</AddressLine1>
             <City>Louisville</City>
             <State>Kentucky</State>
             <Postcode>40202</Postcode>
-            <Country>United States</Country>
+            <Country>UnitedStates</Country>
         </Billing>
         <Delivery>
-            <AddressLine1>Foo bar Street 123</AddressLine1>
+            <AddressLine1>FoobarStreet123</AddressLine1>
             <City>Melbourne</City>
             <State>Victoria</State>
             <Postcode>3000</Postcode>
             <Country>Australia</Country>
         </Delivery>
     </Addresses>
+    <Contacts>
+        <Email>bob.norman@example.com</Email>
+        <Phones>
+            <Mobile>555-625-1199</Mobile>
+        </Phones>
+    </Contacts>
 </Person>
