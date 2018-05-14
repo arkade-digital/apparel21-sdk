@@ -200,6 +200,10 @@ class Client
         $this->bindHeadersMiddleware($stack);
         $this->bindCountryCodeMiddleware($stack);
 
+        if ($this->username && $this->password) {
+            $options['auth'] = [$this->username, $this->password];
+        }
+
         $this->client = new GuzzleHttp\Client(array_merge([
             'handler'  => $stack,
             'base_uri' => $this->base_url,
