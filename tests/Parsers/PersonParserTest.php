@@ -106,4 +106,30 @@ class PersonParserTest extends TestCase
         $this->assertEquals('20/03/2012 10:39:55 AM', $person->getAttributes()->get('updated_at'));
         $this->assertEquals('false', $person->getAttributes()->get('is_agent'));
     }
+
+
+    /**
+     * @test
+     */
+    public function returns_populated_person_with_loyalty()
+    {
+        $person = (new PersonParser)->parse(
+            (new PayloadParser)->parse(file_get_contents(__DIR__ . '/../Stubs/Persons/person.xml'))
+        );
+
+        $this->assertInstanceOf(Collection::class, $person->getLoyalties());
+        $this->assertCount(1, $person->getLoyalties());
+
+        $this->assertInstanceOf(Entities\Loyalty::class, $person->getLoyalties()->first());
+        $this->assertInstanceOf(Contracts\Loyalty::class, $person->getLoyalties()->first());
+
+ 
+        $this->assertEquals('1148403', $person->getLoyalties()->first()->getId());
+        $this->assertEquals('3989', $person->getLoyalties()->first()->getLoyaltyTypeId());
+
+        $this->assertEquals('Customer Loyalty', $person->getLoyalties()->first()->getLoyaltyType());
+        $this->assertEquals('L04757134', $person->getLoyalties()->first()->getCardNo());
+        $this->assertEquals('2018-09-14', $person->getLoyalties()->first()->getJoinDate()->toDateString());
+        
+    }
 }
