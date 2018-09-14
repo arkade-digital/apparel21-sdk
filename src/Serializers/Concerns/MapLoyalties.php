@@ -1,6 +1,6 @@
 <?php
 
-namespace Omneo\Apparel21\Serializers\Concerns;
+namespace Arkade\Apparel21\Serializers\Concerns;
 
 use Arkade\Apparel21\Entities;
 use Illuminate\Support\Collection;
@@ -14,11 +14,10 @@ trait MapLoyalties
      */
     protected function mapLoyalties(array $payload, Collection $loyalties)
     {
+        
         if($loyalties->count() == 0) return $payload;
 
-        array_set($payload, 'Loyalties', [
-            '@attributes' => ['Type' => 'Array'],
-        ]);
+        array_set($payload, 'Loyalties', []);
 
         $loyalties->each(function (Entities\Loyalty $loyalty) use (&$payload) {
             array_push($payload['Loyalties'], $this->serializeLoyalty($loyalty));

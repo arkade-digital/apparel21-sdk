@@ -1,0 +1,35 @@
+<Person>
+    <Firstname>Bob</Firstname>
+    <Surname>Norman</Surname>
+    <Contacts>
+        <Email>bob.norman@example.com</Email>
+        <Phones>
+            <Mobile>555-625-1199</Mobile>
+        </Phones>
+    </Contacts>
+    <Addresses>
+        <Billing>
+            <AddressLine1>Chestnut Street 92</AddressLine1>
+            <City>Louisville</City>
+            <State>Kentucky</State>
+            <Postcode>40202</Postcode>
+            <Country>United States</Country>
+        </Billing>
+        <Delivery>
+            <AddressLine1>Foo bar Street 123</AddressLine1>
+            <City>Melbourne</City>
+            <State>Victoria</State>
+            <Postcode>3000</Postcode>
+            <Country>Australia</Country>
+        </Delivery>
+    </Addresses>
+    <Loyalties>
+        <Loyalty>
+            <Id>1148403</Id>
+            <LoyaltyTypeId>3989</LoyaltyTypeId>
+            <LoyaltyType>Customer Loyalty</LoyaltyType>
+            <CardNo>L04757134</CardNo>
+            <JoinDate>2018-09-14</JoinDate>
+        </Loyalty>
+    </Loyalties>
+</Person>

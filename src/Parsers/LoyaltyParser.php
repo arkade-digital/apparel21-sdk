@@ -5,6 +5,7 @@ namespace Arkade\Apparel21\Parsers;
 use Arkade\Apparel21\Entities\Loyalty;
 use SimpleXMLElement;
 use Illuminate\Support\Collection;
+use Carbon\Carbon;
 
 class LoyaltyParser
 {
@@ -17,6 +18,8 @@ class LoyaltyParser
     public function parseCollection(SimpleXMLElement $xml)
     {
         $collection = collect();
+
+        if(!$xml->Loyalty || $xml->Loyalty->count() == 0) return $collection;
 
         foreach ($xml->Loyalty as $loyalty) {
             $collection->push(

@@ -6,7 +6,7 @@ use Arkade\Apparel21\Entities;
 
 class PersonSerializer
 {
-    use Concerns\MapContacts, Concerns\MapAddresses;
+    use Concerns\MapContacts, Concerns\MapAddresses, Concerns\MapLoyalties;
 
     /**
      * Serialize.
