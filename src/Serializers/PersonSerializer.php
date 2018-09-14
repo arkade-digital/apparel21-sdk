@@ -6,7 +6,7 @@ use Arkade\Apparel21\Entities;
 
 class PersonSerializer
 {
-    use Concerns\MapContacts, Concerns\MapAddresses;
+    use Concerns\MapContacts, Concerns\MapAddresses, Concerns\MapLoyalties;
 
     /**
      * Serialize.
@@ -41,6 +41,7 @@ class PersonSerializer
 
         $payload = $this->mapContacts($payload, $person->getContacts());
         $payload = $this->mapAddresses($payload, $person->getAddresses());
+        $payload = $this->mapLoyalties($payload, $person->getLoyalties());
 
         return $payload;
     }
