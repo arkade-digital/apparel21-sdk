@@ -15,7 +15,7 @@ class PersonSerializerTest extends TestCase
         $xml = (new PersonSerializer)->serialize(
             (new Factories\PersonFactoryWithLoyalty)->make()
         );
-        var_dump($xml);
+
         $this->assertTrue(
             (new XMLHelper)->compare(
                 file_get_contents(__DIR__.'/../Stubs/Persons/create_person_request_with_loyalty.xml'),
@@ -32,7 +32,7 @@ class PersonSerializerTest extends TestCase
         $xml = (new PersonSerializer)->serialize(
             (new Factories\PersonFactory)->make()
         );
-        var_dump($xml);
+
         $this->assertTrue(
             (new XMLHelper)->compare(
                 file_get_contents(__DIR__.'/../Stubs/Persons/create_person_request.xml'),
