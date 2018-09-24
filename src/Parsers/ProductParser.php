@@ -100,6 +100,11 @@ class ProductParser
                     strtolower($reference->getType()->getCode()),
                     $reference->getCode()
                 );
+
+                $product->getAttributes()->offsetSet(
+                  strtolower($reference->getType()->getCode()).'_descr',
+                  $reference->getName()
+              );
             }
 
         }
