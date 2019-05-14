@@ -234,6 +234,22 @@ class Client
     }
 
     /**
+     * Execute the request directly
+     *
+     * @param RequestInterface $request
+     * @return \Psr\Http\Message\ResponseInterface
+     * @throws Exceptions\Apparel21Exception
+     * @throws GuzzleHttp\Exception\GuzzleException
+     */
+    public function sendRequest(RequestInterface $request) {
+        try {
+            return $this->client->send($request);
+        } catch (Exception $e) {
+            throw $this->convertException($e);
+        }
+    }
+
+    /**
      * Pass unknown methods off to the underlying Guzzle client.
      *
      * @param  string $name
