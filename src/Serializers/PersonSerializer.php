@@ -35,16 +35,16 @@ class PersonSerializer
      */
     protected function buildXMLArray(Entities\Person $person)
     {
-        $payload = [
-            'Firstname' => $person->getFirstName(),
-            'Surname'   => $person->getLastName()
-        ];
+        $payload = [];
 
         // Add the ID & UpdateTimeStamp fields to payload, which are required when sending PUT request
         if ($person->getIdentifiers()->has('ap21_id')) {
-            $payload['ID'] = $person->getIdentifiers()->get('ap21_id');
+            $payload['Id'] = $person->getIdentifiers()->get('ap21_id');
             $payload['UpdateTimeStamp'] = $person->getAttributes()->get('updated_at');
         }
+
+        $payload['Firstname'] = $person->getFirstName();
+        $payload['Surname'] = $person->getLastName();
 
         $payload = $this->mapLoyalties($payload, $person->getLoyalties());
         $payload = $this->mapAddresses($payload, $person->getAddresses());
