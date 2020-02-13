@@ -208,6 +208,8 @@ class Client
             'handler'  => $stack,
             'base_uri' => $this->base_url,
             'timeout'  => 900, // 15 minutes
+            'curl'   => array(CURLOPT_SSL_VERIFYPEER => false),
+            'verify' => false
         ], $options));
 
         return $this;
