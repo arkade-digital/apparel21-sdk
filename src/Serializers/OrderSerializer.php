@@ -3,6 +3,7 @@
 namespace Arkade\Apparel21\Serializers;
 
 use Arkade\Apparel21\Entities;
+use Carbon\Carbon;
 
 class OrderSerializer
 {
@@ -43,6 +44,11 @@ class OrderSerializer
             'PersonId'    => $order->getCustomer()->getIdentifiers()->get('ap21_id'),
             'TotalDiscount' => $order->getTotalDiscount() / 100
         ]);
+
+        $orderDateTime = $order->getDateTime();
+        if($orderDateTime && $orderDateTime instanceof Carbon) {
+            $payload['OrderDateTime'] = $order->getDateTime()->format('Y-m-d\Th:i:s');
+        }
 
         $payload = $this->mapContacts($payload, $order->getContacts());
         $payload = $this->mapAddresses($payload, $order->getAddresses());
